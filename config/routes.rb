@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get 'chat' => 'home#chat'
   get 'enroll_mentor' => 'home#enroll_mentor'
   get 'service' => 'home#service'
+  
+  get 'meeting/index' => 'meeting#index'
+  get 'meeting_detail/:id'=>'meeting#meeting_detail'
+  post 'meeting/register_meeting'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
