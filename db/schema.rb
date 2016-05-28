@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 20160528134659) do
     t.string   "area"
     t.string   "period"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "personal_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "posts", force: :cascade do |t|

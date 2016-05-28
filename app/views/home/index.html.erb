@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-xs-7 col-sm-7 col-md-6 col-lg-5 menu_space">
                     <nav>
-                        <ul class="menu">
+                        <ul class="menu_home">
                             <li class="service"><a href="/service">서비스</a></li>
                             <li><a>도움말</a></li>
                             <li><a href="/mypage">안녕하세요! <%= @user.username %>님</a></li>
@@ -37,10 +37,10 @@
 <article>
     <section>
         <div class="search_section">
-            <form>
+            <form method="post" action="/search_list">
                 <div class="form-group search_input container">
                     <div class='row'>
-                        <input list="test" class="form-control city" id="search" placeholder="나라 혹은 도시" autocomplete="off">
+                        <input list="test" class="form-control city" name="region" id="search" placeholder="나라 혹은 도시" autocomplete="off">
                         <datalist id="test">
                             <% @region.each do |x| %>
                                 <option value="<%= x.region %>">

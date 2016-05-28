@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post 'enroll_process' => 'home#enroll_process'
   get 'admin' => 'home#admin'
   get 'service' => 'home#service'
+  post 'admit' => 'home#admit'
+  post 'search_list' => 'home#search_list'
   
   get 'meeting/index' => 'meeting#index'
   get 'meeting_detail/:id'=>'meeting#meeting_detail'

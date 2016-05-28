@@ -4,7 +4,8 @@ class CreateMentors < ActiveRecord::Migration
       t.string :area
       t.string :period
       t.text :content
-      
+      t.integer :personal_id
+    
       t.timestamps null: false
     end
   end

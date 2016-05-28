@@ -15,15 +15,37 @@ class HomeController < ApplicationController
     
   end
   def enroll_process
+    
     mentor = Mentor.new
     mentor.area = params[:mentor_area]
     mentor.period = params[:mentor_period]
     mentor.content = params[:mentor_content]
+    mentor.personal_id = current_user.id
     mentor.save
     
     redirect_to '/'
   end
   def admin
     @mentor_request = Mentor.all
+  end
+  def admit
+    admit_request = User.find_by(id: params[:hidden_personal_id])
+    admit_request.grade = 2
+    admit_request.region = params[:area]
+    
+    admit_request.save
+    
+    request_destroy = Mentor.find_by(personal_id: params[:hidden_personal_id])
+    request_destroy.destroy
+    redirect_to '/'
+  end
+  def search_list
+    @user = current_user
+    @region = Region.all
+    
+    @user_region = params[:region]
+    @searched_mentor = User.find_by(region: @user_region)
+    
+    
   end
 end
