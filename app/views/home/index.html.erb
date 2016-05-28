@@ -1,89 +1,120 @@
-
-    <header>
-        <div class="index_header">
-            <div class="container">  
-                <div class="row">
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <a href="/">
-                        <img id="logo" src="http://www.ensembletravel.com/assets/img/icon/independent-travel-circle.svg"/>
-                        </a>
-                    </div>
-                    <div class="col-xs-3 col-sm-3 col-md-5 col-lg-6">
-                    </div>
-                    <div class="col-xs-7 col-sm-7 col-md-5 col-lg-4 menu_space">
-                        <nav>
-                            <ul class="menu">
-                                <li class="service"><a href="">서비스</a></li>
-                                <li><a>도움말</a></li>
-                                <li><a>마이페이지</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+<header>
+    <div class="index_header">
+        <div class="container">  
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <a href="/">
+                    <img id="logo" src="http://www.ensembletravel.com/assets/img/icon/independent-travel-circle.svg"/>
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="index_p">
-                            <a href="/chat?nickname=<%= current_user.email %>">채팅시작</a>
-                            <h1>혼자이면서 함께하는 여행</h1>
-                            <h4>당신이 원하는 당신만의 가이드와 함께 더 풍부한 여행을 경험해 보세요.</h4>
-                        </div>
+                <div class="col-xs-3 col-sm-3 col-md-5 col-lg-6">
+                </div>
+                <div class="col-xs-7 col-sm-7 col-md-5 col-lg-4 menu_space">
+                    <nav>
+                        <ul class="menu">
+                            <li class="service"><a href="">서비스</a></li>
+                            <li><a>도움말</a></li>
+                            <li><a>마이페이지</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="index_p">
+                        <a href="/chat?nickname=<%= current_user.email %>">채팅시작</a>
+                        <h1>혼자이면서 함께하는 여행</h1>
+                        <h4>당신이 원하는 당신만의 가이드와 함께 더 풍부한 여행을 경험해 보세요.</h4>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <article>
-        <section>
-            <div class="search_section">
-                <form>
-                    <div class="form-group search_input container">
-                        <div class='row'>
-                            <input list="test" class="form-control city" id="search" placeholder="나라 혹은 도시">
-                            <datalist id="test">
-                                <option value="런던">
-                                <option value="서울">
-                                <option value="오리건">
-                                <option value="뉴욕">
-                            </datalist>
-                            <input type="text" class="form-control calendar" placeholder="달력">
-                            <button class="form-control button">
-                                <span>검색</span>
-                            </button>
-                        </div>
+    </div>
+</header>
+<article>
+    <section>
+        <div class="search_section">
+            <form>
+                <div class="form-group search_input container">
+                    <div class='row'>
+                        <input list="test" class="form-control city" id="search" placeholder="나라 혹은 도시">
+                        <datalist id="test">
+                            <option value="런던">
+                            <option value="서울">
+                            <option value="오리건">
+                            <option value="뉴욕">
+                        </datalist>
+                        <input type="text" class="form-control calendar" placeholder="달력">
+                        <button class="form-control button">
+                            <span>검색</span>
+                        </button>
                     </div>
-                </form>
-            </div>
-        </section>
-        <section>
-            <div class="service_section">
-                <div class="guide_section">
-                    <h2>완벽한 여행을 책임질 추천 가이드</h2>
-                    <h4>세계 곳곳에서 여러분을 기다리고 있습니다.</h4>
-                    <ul class="grid">
-                        <li class="item">
-                            <div class="box">
-                                <%= link_to image_tag("guide1.jpg") %>
-                                <h3>Wayne Rooney</h3>
-                                <h4>London</h4>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="box">
-                                <%= link_to image_tag("guide2.jpg") %>
-                                <h3>Adele</h3>
-                                <h4>Prague</h4>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="box">
-                                <%= link_to image_tag("guide3.jpg") %>
-                                <h3>Olivie Jiroud</h3>
-                                <h4>Paris</h4>
-                            </div>
-                        </li>
-                     </ul>
                 </div>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="service1_section">
+            <div class="guide_section">
+                <h2>완벽한 여행을 책임질 추천 가이드</h2>
+                <h4>세계 곳곳에서 여러분을 기다리고 있습니다.</h4>
+                <ul class="guide_grid">
+                    <li class="item">
+                        <div class="box">
+                            <%= link_to image_tag("guide1.jpg") %>
+                            <h3>Wayne Rooney</h3>
+                            <h4>London</h4>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="box">
+                            <%= link_to image_tag("guide2.jpg") %>
+                            <h3>Adele</h3>
+                            <h4>Prague</h4>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="box">
+                            <%= link_to image_tag("guide3.jpg") %>
+                            <h3>Olivie Jiroud</h3>
+                            <h4>Paris</h4>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="box">
+                            <%= link_to image_tag("guide3.jpg") %>
+                            <h3>Olivie Jiroud</h3>
+                            <h4>Paris</h4>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="box">
+                            <%= link_to image_tag("guide3.jpg") %>
+                            <h3>Olivie Jiroud</h3>
+                            <h4>Paris</h4>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="box">
+                            <%= link_to image_tag("guide3.jpg") %>
+                            <h3>Olivie Jiroud</h3>
+                            <h4>Paris</h4>
+                        </div>
+                    </li>
+                 </ul>
             </div>
-        </section>
-    </article>
+        </div>
+    </section>
+    <section>
+        <div class="service2_section">
+            <div class="comm_section">
+                <h2>언제 어디서나 사람들과 함께하세요</h2>
+                <h4>커뮤니티에서 당신의 여행담을 마음껏 나누고 자랑하세요.</h4>
+                <a href="">
+                   <button type="button" class="btn btn-primary btn-lg comm_button">커뮤니티 찾기</button>
+                </a>
+            </div>
+        </div>
+    </section>
+</article>
 

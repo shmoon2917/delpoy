@@ -44,8 +44,48 @@
  }
 
 
-/* CSS Customizing */
+ /* CSS layout */
  
+  .service1_section {
+  background-color : #edefed;
+  // position : relative;
+  width : 100%;
+ }
+ 
+ .guide_section {
+  width : 80%;
+  margin : 0px auto 0px auto;
+  padding-top : 100px;
+  padding-bottom : 80px;
+  text-align: center;
+  color : #3A3D3B;
+ }
+ 
+  .search_section {
+  // height : 100px;
+  background-color : black;
+  opacity : 0.8;
+  position : relative;
+  width : 100%;
+ }
+
+ .service2_section {
+  background-image : url(community.jpg);
+  background-repeat : none;
+  background-size : cover;
+  // position : relative;
+  width : 100%;
+ }
+ 
+ .comm_section {
+  width : 90%;
+  margin : 0 auto;
+  padding-top : 200px;
+  text-align : center;
+  color : white;
+ }
+
+/* CSS Customizing */
  
  .index_header {
   background-image : url(back.jpg);
@@ -97,14 +137,7 @@
   margin-top : 20px;
  }
  
- .search_section {
-  // height : 100px;
-  background-color : black;
-  opacity : 0.8;
-  position : relative;
-  width : 100%;
 
- }
 
  .search_input {
   // position : absolute;
@@ -143,39 +176,26 @@
   color : white;
  }
  
- .service_section {
-  height : 600px;
-  background-color : #edefed;
-  // position : relative;
-  width : 100%;
- }
- 
- .guide_section {
-  width : 80%;
-  margin : 0px auto 0px auto;
-  padding-top : 100px;
-  text-align: center;
-  color : #3A3D3B;
- }
+
  
  .guide_section h2 {
   font-size : 40px ;
   margin-bottom : 15px;
  }
  
- .guide_section h4 {
+ .guide_section > h4 {
   margin-bottom : 50px;
  }
  
  
  //
  
-.grid {
+.guide_grid {
   overflow : hidden;
   margin : 0 -10px;
 }
 
-.grid .item {
+.guide_grid .item {
   width : 33.333333%;
   float : left;
   padding : 10px;
@@ -209,3 +229,22 @@
   height : 40px;
   line-height: 40px;
 }
+
+ .comm_section h2 {
+  font-size : 50px;
+  margin-bottom : 20px;
+ }
+ 
+ .comm_section h4 {
+  font-size : 23px;
+ }
+ 
+ .comm_section .comm_button {
+  margin-top : 80px;
+  margin-bottom : 170px;
+  background-color : #27a8e0;
+  font-size:17px;
+  width : 15%;
+  height : 50px;
+  border : 0px;
+ }
