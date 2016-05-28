@@ -50,7 +50,7 @@ class HomeController < ApplicationController
   end
   
   def mentor_page
-    @one_post = Mentor.find(params[:id])
+    @one_post = User.find(params[:id])
   end
   
 end

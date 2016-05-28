@@ -2,19 +2,24 @@
 <div class="modal-content" style="margin-left:10%; margin-right:10%; margin-bottom:5%; margin-top:5%; width:80%">
 <table class="table table-striped table-bordered" style="text-align:center">
    <tr>
-        <td colspan="2"><%=@one_post.title%></td>
-    </tr>
-  <tr>
-      <td>멘토링 지역</td>
-      <td><%=@one_post.area%></td>
+      <td>유저명</td>
+      <td><%=@one_post.username%></td>
   </tr>
   <tr>
-      <td>여행 기간</td>
-      <td><%=@one_post.period%></td>
+      <td>지역</td>
+      <td><%=@one_post.region%></td>
   </tr>
   <tr>
-      <td>소개</td>
-      <td><%=@one_post.content%></td>
+      <td>연락처</td>
+      <td><%=@one_post.phone%></td>
+  </tr> 
+  <tr>
+      <td>사용 언어</td>
+      <td><%=@one_post.language%></td>
   </tr>
+  <tr>
+      <td colspan="2"><a href="/chat?nickname=<%= current_user.username %>">1:1 채팅에서 <%=@one_post.username%>을 찾아주세요.</a></td>
+  </tr>
+  
 </table>
 </div>

@@ -1,5 +1,5 @@
 
-var appId = 'D5B0AE28-2D0A-479D-A459-9155073F260F';
+var appId = 'D43B2A6A-3AC3-4608-8B78-B5AD860291D1';
 var currScrollHeight = 0;
 var MESSAGE_TEXT_HEIGHT = 27;
 
