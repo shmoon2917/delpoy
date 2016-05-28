@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'service' => 'home#service'
   post 'admit' => 'home#admit'
   post 'search_list' => 'home#search_list'
+  get 'mentor_page/:id'=>'home#mentor_page'
   
   get 'meeting/index' => 'meeting#index'
   get 'meeting_detail/:id'=>'meeting#meeting_detail'
