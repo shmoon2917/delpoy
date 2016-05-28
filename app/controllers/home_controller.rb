@@ -10,4 +10,9 @@ class HomeController < ApplicationController
   def mypage
     @user = current_user
   end
+  def enroll_mentor
+  end
+  
+  def service
+  end
 end
