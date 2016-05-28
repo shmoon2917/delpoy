@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160528140350) do
-
-  create_table "participates", force: :cascade do |t|
-    t.integer  "number"
-    t.string   "name"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-=======
-ActiveRecord::Schema.define(version: 20160528134659) do
 
   create_table "mentors", force: :cascade do |t|
     t.string   "area"
@@ -30,7 +20,14 @@ ActiveRecord::Schema.define(version: 20160528134659) do
     t.integer  "personal_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
->>>>>>> 6a922b888e452cd9471beda47aa75da60473a0ad
+  end
+
+  create_table "participates", force: :cascade do |t|
+    t.integer  "number"
+    t.string   "name"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -76,11 +73,11 @@ ActiveRecord::Schema.define(version: 20160528134659) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["gender"], name: "index_users_on_gender", unique: true
-  add_index "users", ["grade"], name: "index_users_on_grade", unique: true
-  add_index "users", ["language"], name: "index_users_on_language", unique: true
-  add_index "users", ["phone"], name: "index_users_on_phone", unique: true
-  add_index "users", ["region"], name: "index_users_on_region", unique: true
+  add_index "users", ["gender"], name: "index_users_on_gender"
+  add_index "users", ["grade"], name: "index_users_on_grade"
+  add_index "users", ["language"], name: "index_users_on_language"
+  add_index "users", ["phone"], name: "index_users_on_phone"
+  add_index "users", ["region"], name: "index_users_on_region"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 

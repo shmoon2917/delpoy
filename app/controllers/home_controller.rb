@@ -44,7 +44,7 @@ class HomeController < ApplicationController
     @region = Region.all
     
     @user_region = params[:region]
-    @all = User.all
+    @all_users = User.all
     
     
   end
