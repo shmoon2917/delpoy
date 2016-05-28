@@ -1,0 +1,19 @@
+<div>
+    <form method = "post" action="/admit">
+        <% @mentor_request.each do |x| %>
+            <div class="form-group">
+                <label for="area_<%= x.id %>">멘토링 지역</label>
+                <input type="text" class="form-control" id="area_<%= x.id %>" value="<%= x.area %>">
+            </div>
+            <div class="form-group">
+                <label for="area_<%= x.id %>">여행했던 기간</label>
+                <input type="text" class="form-control" id="period_<%= x.id %>" value="<%= x.period %>">
+            </div>
+            <div class="form-group">
+                <label for="area_<%= x.id %>">여행 내용</label>
+                <textarea class="form-control" id="content_<%= x.id %>"><%= x.content %></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">승인</button>
+        <% end %>        
+    </form>
+</div>

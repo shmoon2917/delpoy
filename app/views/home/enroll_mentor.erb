@@ -9,19 +9,19 @@
              <br>
              <div class="panel panel-default">
                 <div class="panel-body">
-                    <form>
+                    <form action="/enroll_process" method="post">
                       <div class="form-group">
                         <label for="exampleInputEmail1">멘토링 지역</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="나라 혹은 도시">
+                        <input type="text" class="form-control" name="mentor_area" id="exampleInputEmail1" placeholder="나라 혹은 도시">
                       </div>
                       <br>
                       <h5> <b> [여행 경험] </b> </h5>
                       <div class="form-group">
                         <label for="exampleInputPassword1">여행 기간</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ex) 20xx.xx.xx ~ xx.xx">
+                        <input type="text" class="form-control" name="mentor_period" id="exampleInputPassword1" placeholder="ex) 20xx.xx.xx ~ xx.xx">
                       </div>
                       <h5> <b> 여행 내용 </b></h5>
-                      <textarea class="form-control" rows="10"></textarea>
+                      <textarea class="form-control" name = "mentor_content" rows="10"></textarea>
                       <div class="form-group">
                         <label for="exampleInputFile">사진 첨부</label>
                         <input type="file" id="exampleInputFile">
