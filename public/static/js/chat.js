@@ -28,297 +28,297 @@ $('#guide_create').click(function() {
 /***********************************************
  *                OPEN CHAT
  **********************************************/
-// $('#btn_open_chat').click(function() {
-//   popupInit();
-//   $('.modal-guide-create').hide();
-//   $('.left-nav-button-guide').hide();
-//   $('.modal-messaging').hide();
-//   $('#btn_messaging_chat').removeClass('left-nav-messaging--active');
+$('#btn_open_chat').click(function() {
+  popupInit();
+  $('.modal-guide-create').hide();
+  $('.left-nav-button-guide').hide();
+  $('.modal-messaging').hide();
+  $('#btn_messaging_chat').removeClass('left-nav-messaging--active');
 
-//   if ($(this).hasClass('left-nav-open--active')) {
-//     $('.right-section__modal-bg').hide();
-//     $(this).removeClass('left-nav-open--active');
-//     $('.modal-open-chat').hide();
-//   } else {
-//     $('.right-section__modal-bg').show();
-//     $(this).addClass('left-nav-open--active');
-//     getChannelList(1);
-//   }
-// });
+  if ($(this).hasClass('left-nav-open--active')) {
+    $('.right-section__modal-bg').hide();
+    $(this).removeClass('left-nav-open--active');
+    $('.modal-open-chat').hide();
+  } else {
+    $('.right-section__modal-bg').show();
+    $(this).addClass('left-nav-open--active');
+    getChannelList(1);
+  }
+});
 
-// $('.modal-open-chat-more').click(function() {
-//   getChannelList(channelListPage + 1);
-// });
+$('.modal-open-chat-more').click(function() {
+  getChannelList(channelListPage + 1);
+});
 
-// function getChannelList(page) {
-//   if(page == 1) {
-//     $('.modal-open-chat-list').html('');
-//   }
-//   sendbird.getChannelList({
-//     "page": page,
-//     "limit": 20,
-//     "successFunc" : function(data) {
-//       $('.modal-open-chat-list').append(createChannelList(data));
-//       channelListPage = data['page'];
-//       if (data['next'] != 0) {
-//         $('.modal-open-chat-more').show();
-//       } else {
-//         $('.modal-open-chat-more').hide();
-//       }
-//       $('.modal-open-chat').show();
-//     },
-//     "errorFunc": function(status, error) {
-//       console.log(status, error);
-//     }
-//   });
-// }
+function getChannelList(page) {
+  if(page == 1) {
+    $('.modal-open-chat-list').html('');
+  }
+  sendbird.getChannelList({
+    "page": page,
+    "limit": 20,
+    "successFunc" : function(data) {
+      $('.modal-open-chat-list').append(createChannelList(data));
+      channelListPage = data['page'];
+      if (data['next'] != 0) {
+        $('.modal-open-chat-more').show();
+      } else {
+        $('.modal-open-chat-more').hide();
+      }
+      $('.modal-open-chat').show();
+    },
+    "errorFunc": function(status, error) {
+      console.log(status, error);
+    }
+  });
+}
 
-// function createChannelList(obj) {
-//   var channelListHtml = '';
-//   $.each(obj['channels'], function(index, channel) {
-//     channelListHtml += '' +
-//       '<div class="modal-open-chat-list__item" onclick="joinChannel(\''+ channel['channel_url'] +'\')">' +
-//       channel['name'] +
-//       '</div>';
-//   });
-//   return channelListHtml;
-// }
+function createChannelList(obj) {
+  var channelListHtml = '';
+  $.each(obj['channels'], function(index, channel) {
+    channelListHtml += '' +
+      '<div class="modal-open-chat-list__item" onclick="joinChannel(\''+ channel['channel_url'] +'\')">' +
+      channel['name'] +
+      '</div>';
+  });
+  return channelListHtml;
+}
 
 
 
-// function joinChannel(channelUrl) {
-//   if (channelUrl == currChannelUrl) {
-//     navInit();
-//     popupInit();
-//     return false;
-//   }
+function joinChannel(channelUrl) {
+  if (channelUrl == currChannelUrl) {
+    navInit();
+    popupInit();
+    return false;
+  }
 
-//   sendbird.joinChannel(
-//     channelUrl,
-//     {
-//       "successFunc": function(data) {
-//         currChannelInfo = data;
-//         currChannelUrl = currChannelInfo['channel_url'];
+  sendbird.joinChannel(
+    channelUrl,
+    {
+      "successFunc": function(data) {
+        currChannelInfo = data;
+        currChannelUrl = currChannelInfo['channel_url'];
 
-//         $('.chat-empty').hide();
-//         initChatTitle(currChannelInfo['name'], 0);
-//         $('.chat-canvas').html('');
-//         $('.chat-input-text__field').val('');
-//         $('.chat').show();
+        $('.chat-empty').hide();
+        initChatTitle(currChannelInfo['name'], 0);
+        $('.chat-canvas').html('');
+        $('.chat-input-text__field').val('');
+        $('.chat').show();
 
-//         navInit();
-//         popupInit();
+        navInit();
+        popupInit();
 
-//         sendbird.connect({
-//           "successFunc": function(data) {
-//             isOpenChat = true;
-//             loadMoreChatMessage(scrollPositionBottom);
-//             setWelcomeMessage(currChannelInfo['name']);
-//             addChannel();
-//             $('.chat-input-text__field').attr('disabled', false);
-//           },
-//           "errorFunc": function(status, error) {
-//             console.log(status, error);
-//           }
-//         });
-//       },
-//       "errorFunc": function(status, error) {
-//         console.log(status, error);
-//       }
-//     }
-//   );
+        sendbird.connect({
+          "successFunc": function(data) {
+            isOpenChat = true;
+            loadMoreChatMessage(scrollPositionBottom);
+            setWelcomeMessage(currChannelInfo['name']);
+            addChannel();
+            $('.chat-input-text__field').attr('disabled', false);
+          },
+          "errorFunc": function(status, error) {
+            console.log(status, error);
+          }
+        });
+      },
+      "errorFunc": function(status, error) {
+        console.log(status, error);
+      }
+    }
+  );
 
-// }
+}
 
-// function addChannel() {
-//   if ($('.left-nav-channel-open').length == 0) {
-//     $('.left-nav-channel-empty').hide();
-//   }
+function addChannel() {
+  if ($('.left-nav-channel-open').length == 0) {
+    $('.left-nav-channel-empty').hide();
+  }
 
-//   $.each($('.left-nav-channel'), function(index, channel) {
-//     $(channel).removeClass('left-nav-channel-open--active');
-//     $(channel).removeClass('left-nav-channel-messaging--active');
-//     $(channel).removeClass('left-nav-channel-group--active');
-//   });
+  $.each($('.left-nav-channel'), function(index, channel) {
+    $(channel).removeClass('left-nav-channel-open--active');
+    $(channel).removeClass('left-nav-channel-messaging--active');
+    $(channel).removeClass('left-nav-channel-group--active');
+  });
 
-//   var addFlag = true;
-//   $.each($('.left-nav-channel-open'), function(index, channel) {
-//     if (currChannelUrl == $(channel).data('channel-url')) {
-//       $(channel).addClass('left-nav-channel-open--active');
-//       addFlag = false;
-//     }
-//   });
+  var addFlag = true;
+  $.each($('.left-nav-channel-open'), function(index, channel) {
+    if (currChannelUrl == $(channel).data('channel-url')) {
+      $(channel).addClass('left-nav-channel-open--active');
+      addFlag = false;
+    }
+  });
 
-//   if(addFlag) {
-//     $('#open_channel_list').append(
-//       '<div class="left-nav-channel left-nav-channel-open left-nav-channel-open--active" ' +
-//       '     onclick="joinChannel(\'' + currChannelInfo["channel_url"] + '\')"' +
-//       '     data-channel-url="' + currChannelInfo["channel_url"] + '"' +
-//       '>' +
-//       (currChannelInfo["name"].length > 12 ? currChannelInfo["name"].substring(0, 12) + '...' : currChannelInfo["name"]) +
-//       '  <div class="left-nav-channel-leave" onclick="leaveChannel(currChannelInfo, $(this))"></div>' +
-//       '</div>'
-//     );
-//   }
+  if(addFlag) {
+    $('#open_channel_list').append(
+      '<div class="left-nav-channel left-nav-channel-open left-nav-channel-open--active" ' +
+      '     onclick="joinChannel(\'' + currChannelInfo["channel_url"] + '\')"' +
+      '     data-channel-url="' + currChannelInfo["channel_url"] + '"' +
+      '>' +
+      (currChannelInfo["name"].length > 12 ? currChannelInfo["name"].substring(0, 12) + '...' : currChannelInfo["name"]) +
+      '  <div class="left-nav-channel-leave" onclick="leaveChannel(currChannelInfo, $(this))"></div>' +
+      '</div>'
+    );
+  }
 
-//   $('.modal-guide-create').hide();
-//   $('.left-nav-button-guide').hide();
-// }
+  $('.modal-guide-create').hide();
+  $('.left-nav-button-guide').hide();
+}
 
-// function leaveChannel(channel, obj) {
-//   popupInit();
+function leaveChannel(channel, obj) {
+  popupInit();
 
-//   leaveChannelUrl = channel['channel_url'];
+  leaveChannelUrl = channel['channel_url'];
 
-//   if (obj.hasClass('chat-top__button')) {
-//     obj.addClass('chat-top__button-leave--active');
-//   } else {
-//     obj.addClass('left-nav-channel-leave--active');
-//   }
+  if (obj.hasClass('chat-top__button')) {
+    obj.addClass('chat-top__button-leave--active');
+  } else {
+    obj.addClass('left-nav-channel-leave--active');
+  }
 
-//   if($('.chat-top__button-invite').is(':visible')) {
-//     $('.modal-leave-channel-desc').html('Do you want to leave this messaging channel?');
-//   } else {
-//     $('.modal-leave-channel-desc').html('Do you want to leave this channel?');
-//   }
+  if($('.chat-top__button-invite').is(':visible')) {
+    $('.modal-leave-channel-desc').html('Do you want to leave this messaging channel?');
+  } else {
+    $('.modal-leave-channel-desc').html('Do you want to leave this channel?');
+  }
 
-//   $('.modal-leave-channel').show();
-//   return false;
-// }
+  $('.modal-leave-channel').show();
+  return false;
+}
 
-// $('.chat-top__button-leave').click(function() {
-//   if($('.chat-top__button-invite').is(':visible')) {
-//     endMessaging(currChannelInfo, $(this))
-//   } else {
-//     leaveChannel(currChannelInfo, $(this));
-//   }
-// });
+$('.chat-top__button-leave').click(function() {
+  if($('.chat-top__button-invite').is(':visible')) {
+    endMessaging(currChannelInfo, $(this))
+  } else {
+    leaveChannel(currChannelInfo, $(this));
+  }
+});
 
-// $('.chat-top__button-member').click(function() {
-//   if ($('.modal-member').is(":visible")) {
-//     $(this).removeClass('chat-top__button-member--active');
-//     $('.modal-member').hide();
-//   } else {
-//     popupInit();
-//     $(this).addClass('chat-top__button-member--active');
-//     getMemberList(currChannelUrl);
-//     $('.modal-member').show();
-//   }
-// });
+$('.chat-top__button-member').click(function() {
+  if ($('.modal-member').is(":visible")) {
+    $(this).removeClass('chat-top__button-member--active');
+    $('.modal-member').hide();
+  } else {
+    popupInit();
+    $(this).addClass('chat-top__button-member--active');
+    getMemberList(currChannelUrl);
+    $('.modal-member').show();
+  }
+});
 
-// $('.chat-top__button-invite').click(function() {
-//   if ($('.modal-invite').is(":visible")) {
-//     $(this).removeClass('chat-top__button-invite--active');
-//     $('.modal-invite').hide();
-//   } else {
-//     popupInit();
-//     $(this).addClass('chat-top__button-invite--active');
-//     getUserList();
-//     $('.modal-invite').show();
-//   }
-// });
+$('.chat-top__button-invite').click(function() {
+  if ($('.modal-invite').is(":visible")) {
+    $(this).removeClass('chat-top__button-invite--active');
+    $('.modal-invite').hide();
+  } else {
+    popupInit();
+    $(this).addClass('chat-top__button-invite--active');
+    getUserList();
+    $('.modal-invite').show();
+  }
+});
 
-// function getMemberList(channelUrl) {
-//   sendbird.getMemberList(
-//     channelUrl,
-//     {
-//       "successFunc" : function(data) {
-//         $('.modal-member-list').html('');
-//         var memberListHtml = '';
-//         $.each(data['members'], function(index, member) {
-//           memberListHtml += '' +
-//             '<div class="modal-member-list__item">' +
-//             (member['is_online'] ? '<div class="modal-member-list__icon modal-member-list__icon--online"></div>' : '<div class="modal-member-list__icon"></div>') +
-//             '  <div class="modal-member-list__name">' +
-//             (member['nickname'].length > 13 ? member['nickname'].substring(0, 12) + '...' : member['nickname']) +
-//             '  </div>' +
-//             '</div>';
-//         });
-//         $('.modal-member-list').html(memberListHtml);
-//       },
-//       "errorFunc": function(status, error) {
-//         console.log(status, error);
-//       }
-//     }
-//   );
-// }
+function getMemberList(channelUrl) {
+  sendbird.getMemberList(
+    channelUrl,
+    {
+      "successFunc" : function(data) {
+        $('.modal-member-list').html('');
+        var memberListHtml = '';
+        $.each(data['members'], function(index, member) {
+          memberListHtml += '' +
+            '<div class="modal-member-list__item">' +
+            (member['is_online'] ? '<div class="modal-member-list__icon modal-member-list__icon--online"></div>' : '<div class="modal-member-list__icon"></div>') +
+            '  <div class="modal-member-list__name">' +
+            (member['nickname'].length > 13 ? member['nickname'].substring(0, 12) + '...' : member['nickname']) +
+            '  </div>' +
+            '</div>';
+        });
+        $('.modal-member-list').html(memberListHtml);
+      },
+      "errorFunc": function(status, error) {
+        console.log(status, error);
+      }
+    }
+  );
+}
 
-// $('.modal-leave-channel-close').click(function() {
-//   $('.left-nav-channel-leave').removeClass('left-nav-channel-leave--active');
-//   $('.chat-top__button-leave').removeClass('chat-top__button-leave--active');
-//   $('.modal-leave-channel').hide();
-//   leaveChannelUrl = '';
-//   return false;
-// });
+$('.modal-leave-channel-close').click(function() {
+  $('.left-nav-channel-leave').removeClass('left-nav-channel-leave--active');
+  $('.chat-top__button-leave').removeClass('chat-top__button-leave--active');
+  $('.modal-leave-channel').hide();
+  leaveChannelUrl = '';
+  return false;
+});
 
-// $('.modal-leave-channel-submit').click(function() {
-//   $('#open_channel_list').removeClass('chat-top__button-leave--active');
-//   $('.chat-top__button-leave').removeClass('left-nav-channel-leave--active');
+$('.modal-leave-channel-submit').click(function() {
+  $('#open_channel_list').removeClass('chat-top__button-leave--active');
+  $('.chat-top__button-leave').removeClass('left-nav-channel-leave--active');
 
-//   if (!leaveChannelUrl.isEmpty()) {
-//     sendbird.leaveChannel(
-//       leaveChannelUrl,
-//       {
-//         "successFunc": function(data) {
-//           $('.chat-canvas').html('');
-//           $('.chat-input-text__field').val('');
-//           $('.chat').hide();
-//           initChatTitle('', -1);
-//           $('.chat-empty').show();
+  if (!leaveChannelUrl.isEmpty()) {
+    sendbird.leaveChannel(
+      leaveChannelUrl,
+      {
+        "successFunc": function(data) {
+          $('.chat-canvas').html('');
+          $('.chat-input-text__field').val('');
+          $('.chat').hide();
+          initChatTitle('', -1);
+          $('.chat-empty').show();
 
-//           $('.left-nav-channel-open--active').remove();
+          $('.left-nav-channel-open--active').remove();
 
-//           if ($('.left-nav-channel-open').length == 0) {
-//             $('.left-nav-channel-empty').show();
-//           }
+          if ($('.left-nav-channel-open').length == 0) {
+            $('.left-nav-channel-empty').show();
+          }
 
-//           $('.modal-leave-channel').hide();
-//           channelListPage = 0;
-//           currChannelUrl = null;
-//           currChannelInfo = null;
-//           leaveChannelUrl = '';
+          $('.modal-leave-channel').hide();
+          channelListPage = 0;
+          currChannelUrl = null;
+          currChannelInfo = null;
+          leaveChannelUrl = '';
 
-//           $('.chat-input-text__field').attr('disabled', true);
-//           sendbird.disconnect();
-//           sendbird.connect();
-//         },
-//         "errorFunc": function(status, error) {
-//           console.log(status, error);
-//         }
-//       }
-//     );
-//   } else if (!leaveMessagingChannelUrl.isEmpty()) {
-//     sendbird.endMessaging(
-//       leaveMessagingChannelUrl,
-//       {
-//         "successFunc" : function(data) {
-//           $('.chat-canvas').html('');
-//           $('.chat-input-text__field').val('');
-//           $('.chat').hide();
-//           initChatTitle('', -1);
-//           $('.chat-empty').show();
+          $('.chat-input-text__field').attr('disabled', true);
+          sendbird.disconnect();
+          sendbird.connect();
+        },
+        "errorFunc": function(status, error) {
+          console.log(status, error);
+        }
+      }
+    );
+  } else if (!leaveMessagingChannelUrl.isEmpty()) {
+    sendbird.endMessaging(
+      leaveMessagingChannelUrl,
+      {
+        "successFunc" : function(data) {
+          $('.chat-canvas').html('');
+          $('.chat-input-text__field').val('');
+          $('.chat').hide();
+          initChatTitle('', -1);
+          $('.chat-empty').show();
 
-//           $('.left-nav-channel-messaging--active').remove();
-//           $('.left-nav-channel-group--active').remove();
+          $('.left-nav-channel-messaging--active').remove();
+          $('.left-nav-channel-group--active').remove();
 
-//           $('.modal-leave-channel').hide();
-//           channelListPage = 0;
-//           currChannelUrl = null;
-//           currChannelInfo = null;
-//           leaveMessagingChannelUrl = '';
+          $('.modal-leave-channel').hide();
+          channelListPage = 0;
+          currChannelUrl = null;
+          currChannelInfo = null;
+          leaveMessagingChannelUrl = '';
 
-//           $('.chat-input-text__field').attr('disabled', true);
-//           sendbird.disconnect();
-//           sendbird.connect();
-//         },
-//         "errorFunc": function(status, error) {
-//           console.log(status, error);
-//         }
-//       }
-//     );
-//   }
+          $('.chat-input-text__field').attr('disabled', true);
+          sendbird.disconnect();
+          sendbird.connect();
+        },
+        "errorFunc": function(status, error) {
+          console.log(status, error);
+        }
+      }
+    );
+  }
 
-// });
+});
 /***********************************************
  *              // END OPEN CHAT
  **********************************************/
@@ -411,17 +411,15 @@ function userClick(obj) {
 }
 
 function startMessaging() {
-  // if ($('.modal-messaging-list__icon--select').length == 0) {
-  //   alert('Please select user');
-  //   return false;
-  // }
+  if ($('.modal-messaging-list__icon--select').length == 0) {
+    alert('Please select user');
+    return false;
+  }
 
-  var guestIds = "aaoo";
-  
-  
-  // $.each($('.modal-messaging-list__icon--select'), function(index, user) {
-  //   guestIds.push($(user).data("guest-id"));
-  // });
+  var guestIds = [];
+  $.each($('.modal-messaging-list__icon--select'), function(index, user) {
+    guestIds.push($(user).data("guest-id"));
+  });
 
   sendbird.startMessaging(
     guestIds,
