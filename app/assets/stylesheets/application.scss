@@ -52,8 +52,17 @@
   width : 100%;
  }
  
+ 
+ .mentor_section{
+  width : 70%;
+  margin : 0 auto;
+  padding-top: 100px;
+  text-align : center;
+  // display : flex;
+ }
+ 
  .guide_section {
-  width : 80%;
+  width : 70%;
   margin : 0px auto 0px auto;
   padding-top : 100px;
   padding-bottom : 80px;
@@ -181,6 +190,19 @@
   color : white;
  }
  
+ .mentor_section img {
+  width : 55%;
+  margin-left : 10px;
+  vertical-align : left;
+ }
+ 
+ .mentor_section .enroll_Info{
+  margin-right : 10px;
+  display : inline-block;
+  width : 35%;
+  background-color : white;
+ }
+
 
  
  .guide_section h2 {
@@ -255,7 +277,7 @@
  }
  
  .footer{
-  padding : 50pxㅎ;
+  padding : 50px;
   margin : 0 auto;
   width : 80%;
   text-align : center;
