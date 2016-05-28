@@ -11,8 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160528140350) do
+
+  create_table "mentors", force: :cascade do |t|
+    t.string   "area"
+    t.string   "period"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "participates", force: :cascade do |t|
     t.integer  "number"
@@ -20,17 +27,6 @@ ActiveRecord::Schema.define(version: 20160528140350) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
-ActiveRecord::Schema.define(version: 20160528134659) do
-
-  create_table "mentors", force: :cascade do |t|
-    t.string   "area"
-    t.string   "period"
-    t.text     "content"
-    t.integer  "personal_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
->>>>>>> 6a922b888e452cd9471beda47aa75da60473a0ad
   end
 
   create_table "posts", force: :cascade do |t|
