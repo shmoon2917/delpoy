@@ -1,3 +1,24 @@
+
+
+<script>
+    //class가 reply_submit인 버튼이 클릭되면 이 이벤트 발생되도록
+    $(function(){
+        $(".participate").click(function(){
+            post_id = this.value;
+            participate_user = '<%=@user.username%>'
+            
+             $.ajax({
+                  method: "POST",
+                  url: "/meeting/participate_in",
+                  data: { id_of_post: post_id, Add_name: participate_user},
+                })
+                  .done(function( msg ) {
+                    alert("등록되었습니다.");
+                  });
+        });
+    });
+</script>
+
 <div class="modal-content" style="margin-left:10%; margin-right:10%; margin-bottom:5%; margin-top:5%; width:80%">
 <table class="table table-striped table-bordered" style="text-align:center">
     <tr>
@@ -33,5 +54,12 @@
       <td>내용</td>
       <td><%=@one_post.content%></td>
   </tr>
+  <tr>
+      <td>
+    <input type = "hidden" value = "<%= @one_post.id%>" name = "id_of_post">
+    <button value = "<%= @one_post.id%>" type="submit" class="btn btn-default participate">등록하기</button>
+     </td> 
+ </tr>
 </table>
 </div>
+

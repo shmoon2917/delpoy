@@ -28,8 +28,24 @@ class MeetingController < ApplicationController
     end
       
     def meeting_detail
-          @one_post = Post.find(params[:id])
+        @user = current_user
+        @one_post = Post.find(params[:id])
     end
-
+    
+    def participate_in
+        participate = Participate.new
+        participate.post_id = params[:id_of_post]
+        participate.name = params[:Add_name]
+        
+        num = params[:id_of_post]
+        
+        temp = Post.find(num)
+        temp.current_num = temp.current_num + 1
+        temp.save
+        
+        if participate.save
+            redirect_to "/meeting/index"
+        end
+    end
 
 end

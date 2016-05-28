@@ -15,8 +15,10 @@ Rails.application.routes.draw do
   get 'meeting/index' => 'meeting#index'
   get 'meeting_detail/:id'=>'meeting#meeting_detail'
   post 'meeting/register_meeting'
-  
-  
+
+  post 'meeting/participate_in'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
