@@ -18,5 +18,6 @@ class AddUsernameToUsers < ActiveRecord::Migration
     add_column :users, :language, :integer
     add_index :users, :language, unique: true
     
+    
   end
 end
