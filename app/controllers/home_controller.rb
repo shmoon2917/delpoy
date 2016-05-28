@@ -6,4 +6,10 @@ class HomeController < ApplicationController
   
   def chat
   end
+  
+  def enroll_mentor
+  end
+  
+  def service
+  end
 end
