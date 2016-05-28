@@ -17,8 +17,14 @@ ActiveRecord::Schema.define(version: 20160528140350) do
     t.string   "area"
     t.string   "period"
     t.text     "content"
+<<<<<<< HEAD
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+    t.integer  "personal_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+>>>>>>> 38c312b71aa29031daf4ced96fca826c351a16c6
   end
 
   create_table "participates", force: :cascade do |t|
