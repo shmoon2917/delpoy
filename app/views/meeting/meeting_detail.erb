@@ -1,3 +1,4 @@
+
 <%= @user.username%>
 <h1>
     <%=@one_post.title%>
@@ -60,3 +61,42 @@
         });
     });
 </script>
+
+<div class="modal-content" style="margin-left:10%; margin-right:10%; margin-bottom:5%; margin-top:5%; width:80%">
+<table class="table table-striped table-bordered" style="text-align:center">
+    <tr>
+        <td colspan="2">
+        <center style="margin:2%">
+        <% unless @one_post.image_url.nil? %>   
+        <img class="img-responsive" alt="a" src="<%= @one_post.image_url%>">
+        <%else%>
+        <img class="img-responsive" alt="a" src="http://www.conradseoul.co.kr/_images/conradseoul/main/main_vis01.jpg">
+        <%end%>
+        </center>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><%=@one_post.title%></td>
+    </tr>
+  <tr>
+      <td>어디에서 모이는 건가요?</td>
+      <td><%=@one_post.about%></td>
+  </tr>
+  <tr>
+      <td>어느 여행지에 관한 내용인가요?</td>
+      <td><%=@one_post.region%>,<%=@one_post.where%></td>
+  </tr>
+  <tr>
+      <td>언제인가요?</td>
+      <td><%=@one_post.meet_time%></td>
+  </tr>
+  <tr>
+      <td colspan="2">지금까지 <%=@one_post.current_num%> / <%=@one_post.total_num%>명이 신청하셨습니다.</td>
+  </tr>
+  <tr>
+      <td>내용</td>
+      <td><%=@one_post.content%></td>
+  </tr>
+</table>
+</div>
+

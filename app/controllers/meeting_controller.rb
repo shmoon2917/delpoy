@@ -34,8 +34,8 @@ class MeetingController < ApplicationController
     
     def participate_in
         participate = Participate.new
-        participate.name = params[:Add_name]
         participate.post_id = params[:id_of_post]
+        participate.name = params[:Add_name]
         
         num = params[:id_of_post]
         

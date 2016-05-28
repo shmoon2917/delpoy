@@ -11,10 +11,13 @@
                 </div>
                 <div class="col-xs-7 col-sm-7 col-md-6 col-lg-5 menu_space">
                     <nav>
-                        <ul class="menu">
+                        <ul class="menu_home">
                             <li class="service"><a href="/service">서비스</a></li>
                             <li><a>도움말</a></li>
-                            <li><a>안녕하세요! <%= @user.username %>님</a></li>
+                            <li><a href="/mypage">안녕하세요! <%= @user.username %>님</a></li>
+                            <% if @user.grade != 1 %>
+                            <li><a href="/admin">관리자 페이지</a></li>
+                            <% end %>
                         </ul>
                     </nav>
                 </div>
@@ -34,17 +37,15 @@
 <article>
     <section>
         <div class="search_section">
-            <form>
+            <form method="post" action="/search_list">
                 <div class="form-group search_input container">
                     <div class='row'>
-                        <input list="test" class="form-control city" id="search" placeholder="나라 혹은 도시">
+                        <input list="test" class="form-control city" name="region" id="search" placeholder="나라 혹은 도시" autocomplete="off">
                         <datalist id="test">
-                            <option value="런던">
-                            <option value="서울">
-                            <option value="오리건">
-                            <option value="뉴욕">
+                            <% @region.each do |x| %>
+                                <option value="<%= x.region %>">
+                            <% end %>
                         </datalist>
-                        <input type="text" class="form-control calendar" placeholder="달력">
                         <button class="form-control button">
                             <span>검색</span>
                         </button>

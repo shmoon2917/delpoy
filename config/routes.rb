@@ -3,14 +3,24 @@ Rails.application.routes.draw do
   devise_for :users
   
   root 'home#index'
+  get 'mypage' => 'home#mypage'
   get 'chat' => 'home#chat'
   get 'enroll_mentor' => 'home#enroll_mentor'
+  post 'enroll_process' => 'home#enroll_process'
+  get 'admin' => 'home#admin'
   get 'service' => 'home#service'
+  post 'admit' => 'home#admit'
+  post 'search_list' => 'home#search_list'
   
   get 'meeting/index' => 'meeting#index'
   get 'meeting_detail/:id'=>'meeting#meeting_detail'
   post 'meeting/register_meeting'
+<<<<<<< HEAD
   post 'meeting/participate_in'
+=======
+  
+  
+>>>>>>> 6a922b888e452cd9471beda47aa75da60473a0ad
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
