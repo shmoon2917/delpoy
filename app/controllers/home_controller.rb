@@ -6,4 +6,8 @@ class HomeController < ApplicationController
   
   def chat
   end
+  
+  def mypage
+    @user = current_user
+  end
 end
