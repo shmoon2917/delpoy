@@ -59,6 +59,8 @@
   padding-top: 100px;
   text-align : center;
   // display : flex;
+  overflow : hidden;
+  height : 100%;
  }
  
  .guide_section {
@@ -189,27 +191,31 @@
   height : 50px;
   color : white;
  }
- 
- .mentor_section img {
-  width : 60%;
-  
- }
+
  
  .mentor_section .enroll_Info{
-  display : inline-block;
-  width : 40%;
   background-color : white;
+  height : 100%;
  }
 
+ .mentor_section img {
+  width : 60%;
+  float : left;
+  height : 100%;
+ }
+ .enroll_Expl {
+  padding-left : 10px;
+ }
  .mentor_section h2 {
-  padding : 85px 40px 25px 40px;
+  padding : 75px 0px 25px 30px;
  }
  
  .mentor_section h4 {
   padding-bottom : 40px;
  }
- .mentor_section a {
-  padding-bottom : 40px;
+ .mentor_section button {
+  margin-bottom : 64px;
+  // display : inline-block;
  }
  
  .guide_section h2 {

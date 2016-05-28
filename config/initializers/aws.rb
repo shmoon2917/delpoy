@@ -3,6 +3,8 @@ CarrierWave.configure do |config|
     provider:              'AWS',                        # required
     aws_access_key_id:     '',                        # required
     aws_secret_access_key: '',                        # required
+    aws_access_key_id:     'AKIAJRCOEQUZCOBO3DCQ',                        # required
+    aws_secret_access_key: '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',                        # required
     region:                'ap-northeast-2',                  # optional, defaults to 'us-east-1'
     endpoint:              'https://s3-ap-northeast-2.amazonaws.com' # optional, defaults to nil
   }

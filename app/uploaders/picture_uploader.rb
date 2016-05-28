@@ -46,8 +46,4 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # endpoint
   
-  def filename
-     [*('A'..'Z')].sample(8).join + "." + file.extension if original_filename
-  end
-  
 end
