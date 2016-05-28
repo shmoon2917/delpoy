@@ -1,0 +1,198 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+ 
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'home';
+ 
+ 
+ /* CSS Reset */
+
+ .container,body,p,div,a,ul {
+  margin : 0px;
+  padding : 0px;
+  // border: 2px solid black;
+ }
+ 
+ .container {
+  margin : 0 auto; 
+ }
+ 
+ a {
+  text-decoration : none;
+ }
+ 
+ li {
+  list-style-type : none;
+ }
+
+
+/* CSS Customizing */
+ 
+ 
+ .index_header {
+  background-image : url(back.jpg);
+  background-position : 50% 45%;
+  background-size : cover;
+  background-repeat : no-repeat;
+ }
+ 
+ 
+ #logo {
+  width : 60px;
+  margin: 30px 30px 30px 0px;
+ }
+ 
+ .menu {
+  overflow : hidden;
+  position : absolute;
+  right : 0px;
+ } 
+ 
+ .menu li {
+  float : left;
+  margin-left : 60px;
+
+ }
+ 
+ .menu li a {
+  padding : 10px;
+  display : block;
+
+  color : white;
+ }
+ 
+ .menu_space {
+  margin-top : 45px;
+ }
+ 
+ .index_p{
+  color : white;
+  margin : 100px auto 250px auto;
+  text-align : center;
+ }
+ 
+ .index_p h1{
+  font-size : 55px;
+ }
+ 
+ .index_p h4{
+  margin-top : 20px;
+ }
+ 
+ .search_section {
+  // height : 100px;
+  background-color : black;
+  opacity : 0.8;
+  position : relative;
+  width : 100%;
+
+ }
+
+ .search_input {
+  // position : absolute;
+  // left : 50%;
+  // top: 50%;
+  // transform: translate(-50%, -50%);
+  margin : 0 auto;
+  text-align: center;
+  padding-top : 40px;
+  padding-bottom : 40px;
+ }
+
+ 
+ .city {
+  display: inline;
+  font-size : 17px;
+  width : 40%;
+  height: 50px;
+ }
+ 
+ .calendar {
+  display : inline;
+  font-size : 17px;
+  width : 30%;
+  height : 50px;
+ }
+
+ .button {
+  display : inline;
+  width : 15%;
+  background-color : #27a8e0;
+  font-size : 17px;
+  border : 0px;
+  padding : 0;
+  height : 50px;
+  color : white;
+ }
+ 
+ .service_section {
+  height : 600px;
+  background-color : #fffff6;
+  // position : relative;
+  width : 100%;
+ }
+ 
+ .guide_section {
+  width : 70%;
+  margin : 100px auto 0px auto;
+  text-align: center;
+  color : #403E3E;
+ }
+ 
+ .guide_section h2 {
+  font-size : 40px ;
+  margin-bottom : 15px;
+ }
+ 
+ 
+ //
+ 
+.grid {
+  overflow : hidden;
+  margin : 0 -10px;
+}
+
+.grid .item {
+  width : 33.333333%;
+  float : left;
+  padding : 10px;
+  box-sizing: border-box;
+  /* margin 말고 padding 을 쓴다. margin 은 밖에 더 추가되는 기능이라서
+  그리고 box-sizing 쓴디.*/
+}
+
+.guide_section .box {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.guide_section .box img {
+  width : 100%;
+}
+
+.guide_section .box h2 {
+  color : orange;
+  height : 50px;
+  line-height: 50px;
+  text-indent: 20px;
+
+  border-top:2px solid orange;
+  /* border 해도 이상한 마진이 생김 */
+
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
