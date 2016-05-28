@@ -14,7 +14,7 @@
                         <ul class="menu">
                             <li class="service"><a href="">서비스</a></li>
                             <li><a>도움말</a></li>
-                            <li><a>마이페이지</a></li>
+                            <li><a>안녕하세요! <%= @user.username %>님</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="index_p">
-                        <a href="/chat?nickname=<%= current_user.email %>">채팅시작</a>
+                        <a href="/chat?nickname=<%= current_user.username %>">채팅시작</a>
                         <h1>혼자이면서 함께하는 여행</h1>
                         <h4>당신이 원하는 당신만의 가이드와 함께 더 풍부한 여행을 경험해 보세요.</h4>
                     </div>
@@ -55,6 +55,11 @@
     </section>
     <section>
         <div class="service1_section">
+            <div class="mentor_section">
+                <a href="/enroll_mentor">
+                멘토 등록하기
+                </a>
+            </div>
             <div class="guide_section">
                 <h2>완벽한 여행을 책임질 추천 가이드</h2>
                 <h4>세계 곳곳에서 여러분을 기다리고 있습니다.</h4>

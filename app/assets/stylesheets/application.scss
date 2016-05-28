@@ -85,6 +85,11 @@
   color : white;
  }
 
+ .footer_wrapper {
+  background-color : #373839;
+  width : 100%;
+ }
+
 /* CSS Customizing */
  
  .index_header {
@@ -247,4 +252,22 @@
   width : 15%;
   height : 50px;
   border : 0px;
+ }
+ 
+ .footer{
+  padding : 50pxㅎ;
+  margin : 0 auto;
+  width : 80%;
+  text-align : center;
+  height : 150px;
+  color : white;
+ }
+ 
+ .mentor_section {
+  margin : 0 auto;
+  width : 80%;
+  padding-top : 100px;
+  color : black;
+  font-size:30px;
+  text-align : center;
  }
