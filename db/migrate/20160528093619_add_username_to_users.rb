@@ -18,6 +18,8 @@ class AddUsernameToUsers < ActiveRecord::Migration
     add_column :users, :language, :integer
     add_index :users, :language, unique: false
     
+    add_column :users, :user_img_url, :string
+    add_index :users, :user_img_url, unique: true
     
     
   end

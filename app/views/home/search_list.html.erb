@@ -23,6 +23,7 @@
         </div>
         </div>
 </header>
+
 <article>
     <section>
         <div class="search_section">
@@ -43,16 +44,21 @@
             </form>
         </div>
     </section>
+    
     <section>
         <div class="service1_section">
             <div class="guide_section">
                 <h2>완벽한 여행을 책임질 추천 가이드</h2>
                 <h4>뛰어난 가이드들이 여러분을 기다리고 있습니다.</h4>
                 <ul class="guide_grid">
+
                     <% @all_users.each do |p| %>
                         <% if @user_region == p.region %>
                             <li class="item">
                                 <div class="box">
+                                    <% unless p.user_img_url.nil? %>   
+                                    <img class="img-responsive" alt="a" src="<%= p.user_img_url%>">
+                                    <%end%>
                                     <a href="/mentor_page/<%= p.id%>">
                                     <h3><%= p.username %></h3>
                                     <h4><%= p.region %></h4>
@@ -65,4 +71,5 @@
             </div>
         </div>
     </section>
+    
 </article>

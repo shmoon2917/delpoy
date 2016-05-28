@@ -191,19 +191,26 @@
  }
  
  .mentor_section img {
-  width : 55%;
-  margin-left : 10px;
-  vertical-align : left;
+  width : 60%;
+  
  }
  
  .mentor_section .enroll_Info{
-  margin-right : 10px;
   display : inline-block;
-  width : 35%;
+  width : 40%;
   background-color : white;
  }
 
-
+ .mentor_section h2 {
+  padding : 85px 40px 25px 40px;
+ }
+ 
+ .mentor_section h4 {
+  padding-bottom : 40px;
+ }
+ .mentor_section a {
+  padding-bottom : 40px;
+ }
  
  .guide_section h2 {
   font-size : 40px ;
@@ -285,11 +292,3 @@
   color : white;
  }
  
- .mentor_section {
-  margin : 0 auto;
-  width : 80%;
-  padding-top : 100px;
-  color : black;
-  font-size:30px;
-  text-align : center;
- }
