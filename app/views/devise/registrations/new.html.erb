@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {enctype: "multipart/form-data"}) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
@@ -27,8 +27,8 @@
   </div>
   
   <div class="field">
-  <p><%= f.label :phone %><br />
-  <%= f.text_field :phone %></p>
+    <p><%= f.label :phone %><br />
+    <%= f.text_field :phone %></p>
   </div>
   
   <div class="field">
@@ -37,13 +37,16 @@
    </p>
   </div>
   
-    <div class="field">
-   <p><%= f.label :language %><br />
-   <p><%= f.select :language, options_for_select(["Select One", "한국어", "영어","중국어" ,"일본어"],:disabled => ["Select One"]), :class => 'genForm_dropBox' %>
-   </p>
+  <div class="field">
+    <p><%= f.label :language %><br />
+    <p><%= f.select :language, options_for_select(["Select One", "한국어", "영어","중국어" ,"일본어"],:disabled => ["Select One"]), :class => 'genForm_dropBox' %>
+    </p>
   </div>
   
-
+  <div class="field">
+    <%= f.label :user_img_url %><br>
+    <%= f.file_field :user_img_url, accept: 'image/png,image/gif,image/jpeg' %>
+  </div>
   
   <div class="actions">
     <%= f.submit "Sign up" %>

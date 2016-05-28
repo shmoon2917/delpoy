@@ -23,6 +23,7 @@
         </div>
         </div>
 </header>
+
 <article>
     <section>
         <div class="search_section">
@@ -43,6 +44,7 @@
             </form>
         </div>
     </section>
+    
     <section>
         <div class="service1_section">
             <div class="guide_section">
@@ -52,7 +54,10 @@
                     <% @searched_mentor.recent(6).each do |p| %>
                         <li class="item">
                             <div class="box">
-                                <!--<%= link_to image_tag("") %> 승윤이형 부탁합니다-->
+                                <% unless p.user_img_url.nil? %>   
+                                    <img class="img-responsive" alt="a" src="<%= p.user_img_url%>">
+                                <%end%>
+        
                                 <h3>p.username</h3>
                                 <h4>p.region</h4>
                             </div>
@@ -62,4 +67,5 @@
             </div>
         </div>
     </section>
+    
 </article>

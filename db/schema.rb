@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160528140350) do
-
-  create_table "participates", force: :cascade do |t|
-    t.integer  "number"
-    t.string   "name"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-=======
-ActiveRecord::Schema.define(version: 20160528134659) do
 
   create_table "mentors", force: :cascade do |t|
     t.string   "area"
@@ -30,7 +20,14 @@ ActiveRecord::Schema.define(version: 20160528134659) do
     t.integer  "personal_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
->>>>>>> 6a922b888e452cd9471beda47aa75da60473a0ad
+  end
+
+  create_table "participates", force: :cascade do |t|
+    t.integer  "number"
+    t.string   "name"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -73,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160528134659) do
     t.string   "phone"
     t.integer  "gender"
     t.integer  "language"
+    t.string   "user_img_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -82,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160528134659) do
   add_index "users", ["phone"], name: "index_users_on_phone", unique: true
   add_index "users", ["region"], name: "index_users_on_region", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["user_img_url"], name: "index_users_on_user_img_url", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
