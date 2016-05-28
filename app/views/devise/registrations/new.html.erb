@@ -37,6 +37,11 @@
    </p>
   </div>
   
+    <div class="field">
+   <p><%= f.label :language %><br />
+   <p><%= f.select :language, options_for_select(["Select One", "한국어", "영어","중국어" ,"일본어"],:disabled => ["Select One"]), :class => 'genForm_dropBox' %>
+   </p>
+  </div>
   
 
   
