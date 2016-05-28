@@ -20,7 +20,7 @@
  
  /* CSS Reset */
 
- .container,body,p,div,a,ul {
+ .container,body,p,div,a,ul,h1,h2,h3,h4,h5,h6 {
   margin : 0px;
   padding : 0px;
   // border: 2px solid black;
@@ -36,6 +36,11 @@
  
  li {
   list-style-type : none;
+ }
+ 
+ img {
+  vertical-align: top;
+  /* 세로 정렬을 위한 것이므로 이것을 하면 border spacing 해결 */
  }
 
 
@@ -140,21 +145,26 @@
  
  .service_section {
   height : 600px;
-  background-color : #fffff6;
+  background-color : #edefed;
   // position : relative;
   width : 100%;
  }
  
  .guide_section {
-  width : 70%;
-  margin : 100px auto 0px auto;
+  width : 80%;
+  margin : 0px auto 0px auto;
+  padding-top : 100px;
   text-align: center;
-  color : #403E3E;
+  color : #3A3D3B;
  }
  
  .guide_section h2 {
   font-size : 40px ;
   margin-bottom : 15px;
+ }
+ 
+ .guide_section h4 {
+  margin-bottom : 50px;
  }
  
  
@@ -176,23 +186,26 @@
 
 .guide_section .box {
   background-color: white;
-  border-radius: 10px;
+  text-align : right;
 }
 
 .guide_section .box img {
   width : 100%;
 }
 
-.guide_section .box h2 {
-  color : orange;
-  height : 50px;
-  line-height: 50px;
-  text-indent: 20px;
+.guide_section .box h4 {
+  text-align : center;
+  color : #3A3D3B;
+  height : 30px;
+  line-height: 30px;
+  
+  // border-top:3px solid #3A3D3B;
+  // /* border 해도 이상한 마진이 생김 */
+}
 
-  border-top:2px solid orange;
-  /* border 해도 이상한 마진이 생김 */
-
-  background-image: url();
-  background-repeat: no-repeat;
-  background-position: right 10px center;
+ .guide_section .box h3 {
+  text-align : center;
+  color : #3A3D3B;
+  height : 40px;
+  line-height: 40px;
 }
