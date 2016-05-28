@@ -4,36 +4,37 @@
   <div class="sample-body">
 
     <!-- left nav -->
-    <div class="left-nav">
-      <div class="left-nav-channel-select">
-        <button type="button" class="left-nav-button left-nav-open" id="btn_open_chat">
-          OPEN CHAT
-          <div class="left-nav-button-guide"></div>
-        </button>
-        <button type="button" class="left-nav-button left-nav-messaging" id="btn_messaging_chat">
-          1ON1 & GROUP CHAT
-          <div class="left-nav-button-guide"></div>
-        </button>
-      </div>
+    <!--<div class="left-nav">-->
+    <!--  <div class="left-nav-channel-select">-->
+    <!--    <button type="button" class="left-nav-button left-nav-open" id="btn_open_chat">-->
+    <!--      오픈채팅-->
+    <!--      <div class="left-nav-button-guide"></div>-->
+    <!--    </button>-->
+    <!--    <button type="button" class="left-nav-button left-nav-messaging" id="btn_messaging_chat">-->
+    <!--      1:1 채팅-->
+    <!--      <div class="left-nav-button-guide"></div>-->
+    <!--    </button>-->
+    <!--  </div>-->
 
-      <div class="left-nav-channel-section">
-        <div class="left-nav-channel-title">OPEN CHAT</div>
-        <div class="left-nav-channel-empty">Get started to select<br>a channel</div>
-        <div id="open_channel_list"></div>
+    <!--  <div class="left-nav-channel-section">-->
+    <!--    <div class="left-nav-channel-title">오픈채팅</div>-->
+    <!--    <div class="left-nav-channel-empty">오픈 채팅을 시작하세요</div>-->
+    <!--    <div id="open_channel_list"></div>-->
 
-        <div class="left-nav-channel-title title-messaging">1ON1 & GROUP CHAT</div>
-        <div id="messaging_channel_list"></div>
-      </div>
+    <!--    <div class="left-nav-channel-title title-messaging">1:1 채팅</div>-->
+    <!--    <div id="messaging_channel_list"></div>-->
+    <!--  </div>-->
 
-      <div class="left-nav-user">
-        <div class="left-nav-user left-nav-user-icon"></div>
-        <div class="left-nav-user left-nav-login-user">
-          <div class="left-nav-user left-nav-user-title">username</div>
-          <div class="left-nav-user left-nav-user-nickname"></div>
-        </div>
-      </div>
+    <!--  <div class="left-nav-user">-->
+    <!--    <div class="left-nav-user left-nav-user-icon"></div>-->
+    <!--    <div class="left-nav-user left-nav-login-user">-->
+    <!--      <div class="left-nav-user left-nav-user-title">username</div>-->
+    <!--      <div class="left-nav-user left-nav-user-nickname"></div>-->
+    <!--    </div>-->
+    <!--  </div>-->
 
-    </div> <!-- // end left nav -->
+    <!--</div> -->
+    <!-- // end left nav -->
 
 
     <!-- chat section -->
@@ -42,37 +43,33 @@
       <div class="right-section__modal-bg"></div>
 
       <!-- top -->
-      <div class="chat-top">
-        <div class="chat-top__title"></div>
-        <div class="chat-top-button">
+      <!--<div class="chat-top">-->
+      <!--  <div class="chat-top__title"></div>-->
+      <!--  <div class="chat-top-button">-->
 
-          <div class="chat-top__button chat-top__button-invite">INVITE</div>
-          <div class="modal-guide-user">
-            user list
-          </div>
+      <!--    <div class="chat-top__button chat-top__button-invite">초대</div>-->
+      <!--    <div class="modal-guide-user">-->
+      <!--      유저 리스트-->
+      <!--    </div>-->
 
-          <div class="chat-top__button chat-top__button-member"></div>
-          <div class="modal-guide-member">
-            Current member list
-          </div>
+      <!--    <div class="chat-top__button chat-top__button-member"></div>-->
+      <!--    <div class="modal-guide-member">-->
+      <!--      접속 중인 유저-->
+      <!--    </div>-->
 
-          <div class="chat-top__button chat-top__button-leave"></div>
-          <div class="modal-guide-leave">
-            Leave
-          </div>
+      <!--    <div class="chat-top__button chat-top__button-leave"></div>-->
+      <!--    <div class="modal-guide-leave">-->
+      <!--      나가기-->
+      <!--    </div>-->
 
-        </div>
-      </div>
+      <!--  </div>-->
+      <!--</div>-->
 
       <!-- channel empty -->
       <div class="chat-empty">
-        <div class="chat-empty chat-empty__tile">WELCOME TO SAMPLE CHAT</div>
-        <div class="chat-empty chat-empty__icon"></div>
-        <div class="chat-empty chat-empty__desc">
-          Create or select a channel to chat in.<br>
-          If you don't have a channel to participate,<br>
-          go ahead and create your first channel now.
-        </div>
+        <div class="chat-empty chat-empty__tile">345채팅을 시작하세요</div>
+        <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">아자아자 화이팅</button>
+
       </div>
 
       <!-- chat -->
@@ -84,7 +81,7 @@
             <input type="file" name="file" id="chat_file_input" style="display: none;">
           </label>
           <div class="chat-input-text">
-            <textarea class="chat-input-text__field" placeholder="Write a chat" disabled="true"></textarea>
+            <textarea class="chat-input-text__field" placeholder="내용을 입력하세요" disabled="true"></textarea>
           </div>
         </div>
         <label class="chat-input-typing"></label>
@@ -100,7 +97,7 @@
 
   <div class="modal-open-chat">
     <div class="modal-open-chat-top">
-      <input type="text" class="modal-open-chat-top__search" placeholder="Search Channel" id="modal_open_chat_search">
+            <label class="modal-messaging-top__title">오픈채팅</label>
     </div>
     <div class="modal-open-chat-list"></div>
     <div class="modal-open-chat-more">
@@ -110,8 +107,7 @@
 
   <div class="modal-messaging">
     <div class="modal-messaging-top">
-      <label class="modal-messaging-top__title">1on1 Chat</label>
-      <label class="modal-messaging-top__desc">Member list shows people inside the application.</label>
+      <label class="modal-messaging-top__title">1:1 채팅</label>
     </div>
     <div class="modal-messaging-list">
       <div class="modal-messaging-list__item">Username1<div class="modal-messaging-list__icon"></div></div>
@@ -120,37 +116,36 @@
       <div class="modal-messaging-more">MORE<div class="modal-messaging-more__icon"></div></div>
     </div>
     <div class="modal-messaging-bottom">
-      <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">START MESSAGE</button>
+      <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">채팅 시작</button>
     </div>
   </div>
 
   <div class="modal-member">
-    <div class="modal-member-title">CURRENT MEMBER LIST</div>
+    <div class="modal-member-title">현재 유저</div>
     <div class="modal-member-list"></div>
   </div>
 
   <div class="modal-invite">
-    <div class="modal-invite-title">USER LIST</div>
+    <div class="modal-invite-title">유저 리스트</div>
     <div class="modal-invite-top">
-      <label class="modal-messaging-top__title modal-invite-top__title">1on1 Chat</label>
-      <label class="modal-invite-top__desc">Member list shows people inside the application.</label>
+      <label class="modal-messaging-top__title modal-invite-top__title">1:1 채팅</label>
     </div>
     <div class="modal-messaging-list modal-invite-list">
 
     </div>
     <div class="modal-invite-bottom">
-      <button type="button" class="modal-invite-bottom__button" onclick="inviteMember()">INVITE</button>
+      <button type="button" class="modal-invite-bottom__button" onclick="inviteMember()">초대</button>
     </div>
   </div>
 
   <div class="modal-leave-channel">
     <div class="modal-leave-channel-card">
-      <div class="modal-leave-channel-title">Are you Sure?</div>
-      <div class="modal-leave-channel-desc">Do you want to leave this channel?</div>
+      <div class="modal-leave-channel-title">나가시겠습니까?</div>
+      <div class="modal-leave-channel-desc">채팅 나가게요?</div>
       <div class="modal-leave-channel-separator"></div>
       <div class="modal-leave-channel-bottom">
-        <button type="button" class="modal-leave-channel-button modal-leave-channel-close">CANCEL</button>
-        <button type="button" class="modal-leave-channel-button modal-leave-channel-submit">YES</button>
+        <button type="button" class="modal-leave-channel-button modal-leave-channel-close">아니오</button>
+        <button type="button" class="modal-leave-channel-button modal-leave-channel-submit">네</button>
       </div>
     </div>
   </div>
@@ -159,6 +154,5 @@
   ------------------------>
 
   <script src="/static/lib/SendBird.min.js"></script>
-  <script src="/static/js/jquery-1.11.3.min.js"></script>
   <script src="/static/js/util.js"></script>
   <script src="/static/js/chat.js"></script>
