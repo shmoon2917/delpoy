@@ -44,7 +44,7 @@ class HomeController < ApplicationController
     @region = Region.all
     
     @user_region = params[:region]
-    @searched_mentor = User.find_by(region: @user_region)
+    @all = User.all
     
     
   end
