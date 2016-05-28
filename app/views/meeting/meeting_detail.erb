@@ -1,0 +1,40 @@
+<h1>
+    <%=@one_post.title%>
+</h1>
+
+<% unless @one_post.image_url.nil? %>   
+    <img class="img-responsive" alt="a" src="<%= @one_post.image_url%>">
+<%else%>
+    <img class="img-responsive" alt="a" src="http://www.conradseoul.co.kr/_images/conradseoul/main/main_vis01.jpg">
+<%end%>
+
+<p>
+    모임장소
+    <%=@one_post.about%>
+</p>
+
+<p>
+    여행지역
+    <%=@one_post.region%><br>
+    <%=@one_post.where%>
+</p>
+
+
+<p>
+    날짜
+    <%=@one_post.meet_time%>
+</p>
+
+<p>
+    정원 : 
+    <%=@one_post.total_num%>
+    <br>
+    현재
+    <%=@one_post.current_num%>
+</p>
+
+<p>
+    본문
+    <%=@one_post.content%>
+</p>
+
