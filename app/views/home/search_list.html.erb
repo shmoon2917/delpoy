@@ -53,8 +53,10 @@
                         <% if @user_region == p.region %>
                             <li class="item">
                                 <div class="box">
+                                    <a href="/mentor_page/<%= p.id%>">
                                     <h3><%= p.username %></h3>
                                     <h4><%= p.region %></h4>
+                                    </a>
                                 </div>
                             </li>
                         <% end %>
