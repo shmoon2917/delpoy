@@ -1,35 +1,32 @@
 <header>
-    <div class="index_header">
-        <div class="container">  
-            <div class="row">
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    <div class="img_header">
+        <div class="wrapper_header">
+            <div class="basic_header">
+                <div class="logo">
                     <a href="/">
-                    <img id="logo" src="http://www.ensembletravel.com/assets/img/icon/independent-travel-circle.svg"/>
+                    <%= link_to image_tag("logo.svg" , id:'logo')  %>
                     </a>
                 </div>
-                <div class="col-xs-3 col-sm-3 col-md-4 col-lg-5">
-                </div>
-                <div class="col-xs-7 col-sm-7 col-md-6 col-lg-5 menu_space">
+                <div class="menu">
                     <nav>
-                        <ul class="menu_home">
+                        <ul class="nav">
                             <li class="service"><a href="/service">서비스</a></li>
                             <li><a>도움말</a></li>
                             <li><a href="/mypage">안녕하세요! <%= @user.username %>님</a></li>
-                            <% if @user.grade != 1 %>
+                            <% if @user.grade == 1 %>
                             <li><a href="/admin">관리자 페이지</a></li>
                             <% end %>
                         </ul>
                     </nav>
-                </div>
+                </div>     
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="index_p">
-                        <h1>혼자이면서 함께하는 여행</h1>
-                        <h4>당신이 원하는 당신만의 가이드와 함께 더 풍부한 여행을 경험해 보세요.</h4>
-                    </div>
+            
+            <div class="">
+                <div class="index_p">
+                    <h1>혼자이면서 함께하는 여행</h1>
+                    <h4>당신만의 여행 멘토와 함께 더 풍부한 여행을 경험해 보세요.</h4>
                 </div>
-            </div>
+            </div>    
         </div>
     </div>
 </header>
@@ -37,18 +34,16 @@
     <section>
         <div class="search_section">
             <form method="post" action="/search_list">
-                <div class="form-group search_input container">
-                    <div class='row'>
-                        <input list="test" class="form-control city" name="region" id="search" placeholder="나라 혹은 도시" autocomplete="off">
-                        <datalist id="test">
-                            <% @region.each do |x| %>
-                                <option value="<%= x.region %>">
-                            <% end %>
-                        </datalist>
-                        <button class="form-control button">
-                            <span>검색</span>
-                        </button>
-                    </div>
+                <div class="form-group search_input">
+                    <input list="test" class="form-control city" name="region" id="search" placeholder="나라 혹은 도시" autocomplete="off">
+                    <datalist id="test">
+                        <% @region.each do |x| %>
+                            <option value="<%= x.region %>">
+                        <% end %>
+                    </datalist>
+                    <button class="form-control button">
+                        <span>검색</span>
+                    </button>
                 </div>
             </form>
         </div>
@@ -58,8 +53,8 @@
             <div class="mentor_section">
                 <%= link_to image_tag("enroll_mentor") %>
                 <div class="enroll_Info">
-                    <div class="enroll_Expl">
-                        <h2>누군가의 여행의 든든한 후원자가 되세요!</h2>
+                    <div class="enroll_Exp">
+                        <h2>누군가의 여행의 든든한 멘토가 되세요!</h2>
                         <h4>자신의 경험을 살려 수익을 창출하세요</h4>
                         <a href="enroll_mentor">
                             <button type="button" class="btn btn-primary btn-lg comm_button">가이드 등록하기</button>
@@ -68,7 +63,7 @@
                 </div>
             </div>
             <div class="guide_section">
-                <h2>완벽한 여행을 책임질 추천 가이드</h2>
+                <h2>풍부한 여행을 책임질 추천 멘토</h2>
                 <h4>세계 곳곳에서 여러분을 기다리고 있습니다.</h4>
                 <ul class="guide_grid">
                     <li class="item">

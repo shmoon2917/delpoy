@@ -43,8 +43,13 @@
   /* 세로 정렬을 위한 것이므로 이것을 하면 border spacing 해결 */
  }
 
-
- /* CSS layout */
+ 
+ /* Common CSS */
+ 
+ .wrapper_header {
+  width : 100%;
+  height : 600px;
+ }
  
   .service1_section {
   background-color : #edefed;
@@ -103,32 +108,47 @@
 
 /* CSS Customizing */
  
- .index_header {
+ .img_header {
   background-image : url(back.jpg);
   background-position : 50% 45%;
   background-size : cover;
   background-repeat : no-repeat;
+  
+  height : 600px;
  }
  
+ .logo {
+  width : 70px;
+  display : inline;
+ }
  
  #logo {
-  width : 60px;
-  margin: 30px 30px 30px 0px;
+  width : 50px;
+  margin: 20px;
  }
  
- .menu_home, .menu_search_list {
+ .menu {
+  display : inline-block;
+ }
+ 
+ .nav {
+  margin-top : 10px;
+  margin-right : 30px;
+ }
+ 
+ .nav, .menu_search_list {
   overflow : hidden;
   position : absolute;
   right : 0px;
  } 
  
- .menu_home li , .menu_search_list li {
+ .nav li , .menu_search_list li {
   float : left;
   margin-left : 60px;
 
  }
  
- .menu_home li a {
+ .nav li a {
   padding : 10px;
   display : block;
 
@@ -141,22 +161,19 @@
   color :black;
  }
  
- .menu_space {
-  margin-top : 45px;
- }
  
  .index_p{
   color : white;
-  margin : 100px auto 250px auto;
+  margin : 150px auto 250px auto;
   text-align : center;
  }
  
  .index_p h1{
-  font-size : 55px;
+  font-size : 60px;
  }
  
  .index_p h4{
-  margin-top : 20px;
+  margin-top : 30px;
  }
  
 
