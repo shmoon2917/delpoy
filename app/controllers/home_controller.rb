@@ -4,7 +4,9 @@ class HomeController < ApplicationController
     @user = current_user
     @region = Region.all
   end
-  
+  def service
+    @user = current_user
+  end
   def chat
   end
   
@@ -12,7 +14,10 @@ class HomeController < ApplicationController
     @user = current_user
   end
   def enroll_mentor
-    
+    @user = current_user
+  end
+  def help
+    @user = current_user
   end
   def enroll_process
     
@@ -45,8 +50,6 @@ class HomeController < ApplicationController
     
     @user_region = params[:region]
     @all_users = User.all
-    
-    
   end
   
   def mentor_page

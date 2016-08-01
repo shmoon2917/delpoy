@@ -18,7 +18,7 @@ class MeetingController < ApplicationController
         post.current_num = 0
         
         file = params[:pic]
-        uploader = PictureUploader.new
+        uploader = SanghoUploader.new
         uploader.store!(file)
         
         post.image_url = uploader.url

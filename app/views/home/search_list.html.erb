@@ -13,7 +13,7 @@
                     <ul class="menu_search_list">
                         <li class="service"><a href="/service">서비스</a></li>
                         <li><a>도움말</a></li>
-                        <li><a href="/mypage">안녕하세요! <%= @user.username %>님</a></li>
+                        <li><a href="/mypage">안녕하세요! 비회원님</a></li>
                         <% if @user.grade != 1 %>
                         <li><a href="/admin">관리자 페이지</a></li>
                         <% end %>
@@ -46,7 +46,7 @@
     </section>
     
     <section>
-        <div class="service1_section">
+        <div class="wrapper_section1">
             <div class="guide_section">
                 <h2>완벽한 여행을 책임질 추천 가이드</h2>
                 <h4>뛰어난 가이드들이 여러분을 기다리고 있습니다.</h4>
@@ -67,9 +67,9 @@
                             </li>
                         <% end %>
                     <% end %>
+                    
                 </ul>
             </div>
         </div>
     </section>
-    
 </article>

@@ -1,39 +1,92 @@
-<div style="background-color:#FAFAFA">
-<div class="body"> 
-   <div class = "container" > 
-     <div class="row"> 
-       <div class="col-md-12">
-         <div class="col-md-8 col-md-offset-2">
-             <h2> <center> <br> trip service 멘토 등록 </center> </h2>
-             <h3> <center> trip service의 멘토가 되어 여행자들과 생생한 팁을 공유하세요! </center> </h3>
-             <br>
-             <div class="panel panel-default">
-                <div class="panel-body">
-                    <form action="/enroll_process" method="post">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">멘토링 지역</label>
-                        <input type="text" class="form-control" name="mentor_area" id="exampleInputEmail1" placeholder="나라 혹은 도시">
-                      </div>
-                      <br>
-                      <h5> <b> [여행 경험] </b> </h5>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">여행 기간</label>
-                        <input type="text" class="form-control" name="mentor_period" id="exampleInputPassword1" placeholder="ex) 20xx.xx.xx ~ xx.xx">
-                      </div>
-                      <h5> <b> 여행 내용 </b></h5>
-                      <textarea class="form-control" name = "mentor_content" rows="10"></textarea>
-                      <div class="form-group">
-                        <label for="exampleInputFile">사진 첨부</label>
-                        <input type="file" id="exampleInputFile">
-                     </div>
-                      <br>
-                      <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
+<header>
+    <div class="img_header3">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="mobile_menu">
+                <%= image_tag("logo2.png", id:'mobile_nav_logo') %>
+                <%= image_tag("x.png", id:'x_logo') %>
+                <div>
+                    <ul>
+                        <li><a href="/mypage">안녕하세요! <%= @user.username %>님</a></li>
+                        <li><a href="/service">서비스</a></li>
+                        <li><a href="/help">도움말</a></li>
+                        <li><a href="enroll_mentor">멘토 등록하기</a></li>
+                    </ul>            
                 </div>
             </div>
-         </div>
+            
+            <div class="mobile_header">
+                <%= image_tag("mobile_menu.png" , id: 'mobile_menu_logo') %>
+                <a class="mobile_brand" href="#page-top">
+                    <%= image_tag("logo.png", id:'mobile_logo') %>
+                </a>
+            </div>
+
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <%= image_tag("logo.png" , id:'logo')  %>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li mene_help"><a href="/doum" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+            <div class="">
+                <div class="service_introduce">
+                    <h1 class="service_introduce_h1">델포이의 든든한 여행 멘토가 되어<br>수입을 창출하세요.</h1>
+                    <h4 class="service_introduce_h2">당신이 알고 있는 많은 정보들과 간단한 도움을 제공함으로써, 당신은 어렵지 않게 수익을 낼 수 있습니다.</h4>
+                </div>
+            </div>  
         </div>
-      </div>
     </div>
-</div>
-</div>
+</header>
+<section> 
+    <div class="wrapper_section2 margin_plus2">
+        <h2 class="text_center">Delpoy 멘토 등록</h2>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form action="/enroll_process" method="post">
+                  <div class="form-group">
+                    <label for="mentor_area">멘토링 지역</label>
+                    <input type="text" class="form-control enroll_input" name="mentor_area" id="mentor_area" placeholder="나라 혹은 도시">
+                  </div>
+                  <div class="form-group">
+                    <label for="mentor_period">거주 기간</label>
+                    <input type="text" class="form-control enroll_input" name="mentor_period" id="mentor_period" placeholder="ex) 20xx.xx.xx ~ xx.xx">
+                  </div>
+                  <div class="form-group">
+                    <label for="mentor_content">멘토링 내용</label>
+                    <textarea class="form-control" name = "mentor_content" id="mentor_content" rows="10"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputFile">사진 첨부</label>
+                    <input type="file" id="exampleInputFile">
+                 </div>
+                  <br>
+                  <button type="submit" class="btn btn-default enroll_mentor_button ">멘토로 등록</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>

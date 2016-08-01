@@ -15,3 +15,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+$('#mobile_menu_logo').click(function(){
+    $('.mobile_menu').css('display','block');
+})
+
+$('#x_logo').click(function(){
+    $('.mobile_menu').css('display','none');
+})
+
+$('help_nav ul li').click(function(){
+    $(this).css('text-weight','900');
+})

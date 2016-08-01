@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   
   root 'home#index'
+  
+  get 'help' => 'home#help'
   get 'mypage' => 'home#mypage'
   get 'chat' => 'home#chat'
   get 'enroll_mentor' => 'home#enroll_mentor'
