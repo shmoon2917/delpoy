@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   
+  get 'go' => 'home#mentor_apply_form'
   get 'help' => 'home#help'
   get 'mypage' => 'home#mypage'
   get 'chat' => 'home#chat'
