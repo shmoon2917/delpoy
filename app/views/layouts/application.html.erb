@@ -10,6 +10,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <%= favicon_link_tag 'shortcut.png' %>
   <title>Delpoy - 당신의 완벽한 여행을 위해</title>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+				
+						<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
   <%= yield %>
@@ -28,7 +33,5 @@
     </div>
   </footer>
   
-  <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
