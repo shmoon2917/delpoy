@@ -1,0 +1,131 @@
+<header>
+    <div class="img_header5">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="mobile_menu">
+                <%= image_tag("logo2.png", id:'mobile_nav_logo') %>
+                <%= image_tag("x.png", id:'x_logo') %>
+                <div>
+                    <ul>
+                        <li><a href="/mypage">안녕하세요! 비회원님</a></li>
+                        <li><a href="/service">서비스</a></li>
+                        <li><a href="/doum">도움말</a></li>
+                        <li><a href="enroll_mentor">멘토 등록하기</a></li>
+                    </ul>            
+                </div>
+            </div>
+            
+            <div class="mobile_header">
+                <%= image_tag("mobile_menu.png" , id: 'mobile_menu_logo') %>
+                <a class="mobile_brand" href="#page-top">
+                    <%= image_tag("logo.png", id:'mobile_logo') %>
+                </a>
+            </div>
+        
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <%= image_tag("logo.png" , id:'logo')  %>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li menu_help"><a href="/help" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+            <div class="">
+                <div class="my_page_p">
+                    <h1>MY PAGE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="wrapper_section2 margin_plus"> 
+        <div class="panel panel-default panel-edit">
+            <div class="panel-body">
+                <img class="img-responsive" alt="a" src="http://presentationvoice.com/wp-content/uploads/2014/03/Photo-March-Issue_Facebook--1024x1024.jpg" style="width:200px;">
+                <div class="personal_info">
+                    <p> <b> E-mail </b> <%= @user.email %> </p>
+                    <p> <b> Username </b> <%= @user.username %>  </p>
+                    <p> <b> Phone </b> <%= @user.phone %> </p>
+                    <% if @user.gender == 0 %>
+                    <p> <b> Gender </b> Male </p>
+                    <% else %>
+                    <p> <b> Gender </b> Female</p>
+                    <% end %>
+                    <% if @user.language == 0 %>
+                    <p> <b> Language </b> Korean </p>
+                    <% end %>
+                </div>
+                <!-- Nav tabs -->
+                <ul class="nav nav_edit nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#now" aria-controls="home" role="tab" data-toggle="tab">현재 진행중인 여행</a></li>
+                    <li role="presentation"><a href="#seminar" aria-controls="profile" role="tab" data-toggle="tab">등록된 모임</a></li>
+                    <li role="presentation"><a href="#enrollmentor" aria-controls="messages" role="tab" data-toggle="tab">멘토 등록</a></li>
+                    <li role="presentation"><a href="#mentees" aria-controls="settings" role="tab" data-toggle="tab">내게 등록한 멘티</a></li>
+                    <li role="presentation"><a href="#setting" aria-controls="settings" role="tab" data-toggle="tab">개인정보 수정</a></li>
+                </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="now">
+                    <div class="travel_now">
+                        <div>
+                            <h2>Prague</h2>
+                            <p>6/29 ~ 7/11 (13박 14일)</p>
+                            <p>프라하 - 체스키크룸로프 - 바이둘</p>
+                        </div>
+                        <a>플래너 수정하기</a>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="seminar">
+                    <table class="table table-hover">
+                    ...
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="enrollmentor">...</div>
+                <div role="tabpanel" class="tab-pane" id="mentees">...</div>
+                <div role="tabpanel" class="tab-pane" id="setting">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">비밀번호</label>
+                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">비밀번호 확인</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password Confirmation">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPhonenumber">핸드폰 번호</label>
+                        <input type="text" class="form-control" id="exampleInputPhone" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">프로필 사진</label>
+                        <input type="file" id="exampleInputFile">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>

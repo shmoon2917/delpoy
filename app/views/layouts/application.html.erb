@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <%= favicon_link_tag 'shortcut.png' %>
+  <title>Delpoy - 당신의 완벽한 여행을 위해</title>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+				
+						<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+</head>
+<body>
+  <%= yield %>
+  <footer>
+    <div class="footer_wrapper">
+      <div class="footer">
+        <ul class="footer_nav">
+            <li class="service"><a href="/service">서비스 소개</a></li>
+            <li><a href="/doum">도움말</a></li>
+            <li><a href="/doum">호스팅</a></li>
+            <li><a href="/mypage">자주 묻는 질문</a></li>
+            <li><a href="/mypage">개인정보 취급 방침</a></li>
+        </ul>
+        <h3>© 멋쟁이 사자처럼 2016</h3>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

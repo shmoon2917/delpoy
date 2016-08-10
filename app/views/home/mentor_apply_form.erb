@@ -1,0 +1,47 @@
+<section>
+	<div class="wrapper_section2 margin_plus2">
+		<h2 class="text_center">Delpoy 멘토링 플래너 신청하기 </h2>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form action="/need_mentor" method="post">
+					<div class="form-group">
+						<label for="mentor_area">멘토링 지역</label>
+						<input type="text" class="form-control enroll_input" name="mentor_area" id="mentor_area" placeholder="나라 혹은 도시">
+					</div>
+					<div class="form-group">
+
+													
+  							
+						<script>
+							$(function() {
+							$("#datepicker1, #datepicker2").datepicker({
+							dateFormat : 'yy-mm-dd'
+							});
+							});
+						</script>
+
+						<p>
+							<label for="mentor_period">여행 기간</label>	
+							<input type="text" id="datepicker1" name="from">
+							~
+							<input type="text" id="datepicker2" name="to">
+						</p>
+
+						
+					</div>
+					<div class="form-group">
+						<label for="mentor_content">멘토링 내용</label>
+						<textarea class="form-control" name = "mentor_content" id="mentor_content" rows="10"></textarea>
+					</div>
+					
+					<br>
+					<button type="submit" class="btn btn-default enroll_mentor_button ">
+						멘토로 등록
+					</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</section>
