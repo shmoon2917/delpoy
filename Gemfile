@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+
+gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
