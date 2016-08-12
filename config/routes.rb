@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   
-  get 'go' => 'home#mentor_apply_form'
+  
   get 'help' => 'home#help'
   get 'mypage' => 'home#mypage'
   get 'chat' => 'home#chat'
@@ -23,6 +23,11 @@ Rails.application.routes.draw do
   post 'meeting/participate_in'
   post '/need_mentor' => 'home#need_mentor'
 
+
+
+  #mentoring related routing 
+  get 'mentoring_apply' => 'mentoring#mentoring_apply_form_1'
+  get 'mentoring_apply2' => 'mentoring#mentoring_apply_form_2'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
