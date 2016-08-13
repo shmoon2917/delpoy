@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   get 'mentoring_apply' => 'mentoring#mentoring_apply_form_1'
   get 'mentoring_apply2' => 'mentoring#mentoring_apply_form_2'
   post 'need_mentor1' => 'mentoring#success'
+  get 'auction' => 'mentoring#mentoring_auction'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -16,5 +16,8 @@ class MentoringController < ApplicationController
     @to = params[:to]
     @text = params[:mentor_content] 
   end    
+  def mentoring_auction
+    @user = current_user
+  end
   
 end
