@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-   
+   #M:N
   has_many :mentoring_applies
   has_many :mentors, through: :mentoring_applies         
 end

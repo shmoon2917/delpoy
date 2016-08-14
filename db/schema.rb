@@ -29,29 +29,6 @@ ActiveRecord::Schema.define(version: 20160812051701) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "participates", force: :cascade do |t|
-    t.integer  "number"
-    t.string   "name"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "about"
-    t.string   "region"
-    t.string   "where"
-    t.string   "meet_time"
-    t.text     "content"
-    t.integer  "user_id"
-    t.string   "image_url",   default: ""
-    t.integer  "total_num"
-    t.integer  "current_num", default: 1
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "regions", force: :cascade do |t|
     t.string   "region"
     t.datetime "created_at", null: false
