@@ -59,63 +59,30 @@
 
 <section>
 	<div class="wrapper_section2 margin_plus2">
-		<h2 class="text_center"> 1-1. 여행 기본 정보 작성하  </h2>
+		<h2 class="text_center"> 1-2. 견적서 작성하기 </h2>
 		
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<form action="/mentoring_process2" method="post">
 					
-					<!--지역-->
+					<!--여행 견적 -->
 					<div class="form-group">
-						<label for="mentor_area"> 가고 싶은 지역 (지도 API 넣기 ) </label>
+						<label for="mentor_area">  숙박 유형 (사진 + 호텔, 호스텔 , 민박, 펜션 ,기타 , 섞어서 등등 ) </label>
 						<input type="text" class="form-control enroll_input" name="mentor_area" id="mentor_area" placeholder="나라 혹은 도시">
 					</div>
-					<!-- 날짜 -->
+					<!-- 예산 범위 -->
 					<div class="form-group">
-						<script>
-							$(function() {
-							$("#datepicker1, #datepicker2").datepicker({
-							dateFormat : 'yy-mm-dd'
-							});
-							});
-						</script>
-
-						<p>
-							<label for="mentor_period">여행 일정 </label>	
-							<input type="text" id="datepicker1" name="from">
-							~
-							<input type="text" id="datepicker2" name="to">
-						</p>	
-					</div>
-				<!-- 여행 인원 -->
-					<div class="form-group">
-						<label for="mentor_area"> 여행 인원 (선택 ) </label>
-						<input type="text" class="form-control enroll_input" name="from" id="" name ="numOfMem">
-					</div>
-				<!--여행 테마 -->
-					<div class="form-group">
-						<label for="mentor_area"> 여행 테마 ( 사진 + text + checkbox? )  </label>
-						<input type="text" class="form-control enroll_input" name="to" id="" name="themeOfPlan">
-					</div>
-				<!--			
-					<div class="form-group">
-						<label for="mentor_content"> 예산 범위  </label>
-						<textarea class="form-control" name = "mentor_content" id="mentor_content" rows="10"></textarea>
+						<label for="mentor_area"> 예산 </label>
+						<input type="text" class="form-control enroll_input" name="mentor_area" id="" name ="numOfMem">
 					</div>
 					
-					<div class="form-group">
-						<label for="mentor_content"> 여행 테마 (%로 조절)  </label>
-						<textarea class="form-control" name = "mentor_content" id="mentor_content" rows="10"></textarea>
-					</div>
-				
 					<div class="form-group">
 						<label for="mentor_content">멘토에게 하고 싶은 말 </label>
 						<textarea class="form-control" name = "mentor_content" id="mentor_content" rows="10"></textarea>
 					</div>
-				-->	
-					<br>
+					
 					<button type="submit" class="btn btn-default enroll_mentor_button ">
-						다음 단계로 
+						멘토링 신청하기 
 					</button>
 				</form>
 			</div>
@@ -123,3 +90,5 @@
 
 	</div>
 </section>
+
+
