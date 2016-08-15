@@ -10,16 +10,8 @@ class MentoringController < ApplicationController
   
   def success
     @user = current_user
-   
-  end    
-  def mentoring_auction
-    @user = current_user
-  end
-  def mentoring_apply_form_3
-    @user = current_user
-    
-    
-    
+       @user = current_user
+ 
     @apply =Apply.new 
     @apply.area  = params[:mentor_area]
     @apply.from = params[:from]
@@ -29,8 +21,10 @@ class MentoringController < ApplicationController
     @apply.mentor_id = params[:id_of_user]
     @apply.save 
     
-    
-    
-  end 
-  
+   
+  end    
+  def mentoring_auction
+    @user = current_user
+  end
+ 
 end
