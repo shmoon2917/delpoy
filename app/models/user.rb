@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
    #M:N
-  has_many :mentoring_applies
-  has_many :mentors, through: :mentoring_applies         
+  has_many :applies
+  has_many :mentors, through: :applies         
 end

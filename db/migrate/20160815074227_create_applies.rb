@@ -1,6 +1,6 @@
-class CreateMentoringApplies < ActiveRecord::Migration
+class CreateApplies < ActiveRecord::Migration
   def change
-    create_table :mentoring_applies do |t|
+    create_table :applies do |t|
       t.integer :mentor_id
       t.integer :user_id
       

@@ -19,7 +19,8 @@ class MentoringController < ApplicationController
     @user = current_user
     
     
-    @apply =Mentoring_apply.new 
+    
+    @apply =Apply.new 
     @apply.area  = params[:mentor_area]
     @apply.from = params[:from]
     @apply.to = params[:to]
