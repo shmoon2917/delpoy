@@ -64,7 +64,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<form action="/mentoring_process2" method="post">
-					
+					<input type="hidden" value ="<%= @user.id => name="id_of_user">
 					<!--지역-->
 					<div class="form-group">
 						<label for="mentor_area"> 가고 싶은 지역 (지도 API 넣기 ) </label>
