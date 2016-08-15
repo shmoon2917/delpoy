@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   post 'meeting/participate_in'
   post '/need_mentor' => 'home#need_mentor'
 
+
+  get 'ad_index' => 'home#ad_index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -63,4 +63,8 @@ class HomeController < ApplicationController
     
     
   end
+  
+  def ad_index
+    @mentor_request = Mentor.all
+  end
 end
