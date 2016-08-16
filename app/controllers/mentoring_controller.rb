@@ -23,8 +23,6 @@ class MentoringController < ApplicationController
     apply.request = params[:mentor_content]
     apply.save
     
-    @b = Apply.new
-    @b= apply
     
     
     m = Mentor.all
