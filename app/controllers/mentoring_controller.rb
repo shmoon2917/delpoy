@@ -26,14 +26,18 @@ class MentoringController < ApplicationController
     
     
     m = Mentor.all
-   
+    cnt = 0 ;
     m.each do |men|
       if men.area == apply.area
              men.applies << apply
             # alert 기능이 필요함 
             men.save
+            cnt +=1 
        end 
     end 
+    if cnt == 0 
+       # 해당하는 멘토가 한명도 없을 때 ,예외 처리 
+    end
         
       
     
