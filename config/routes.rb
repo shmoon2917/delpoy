@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   post '/mentoring_process2' => 'mentoring#success'
   
   
-  post 'need_mentor1' => 'mentoring#success'
+  
   get 'auction' => 'mentoring#mentoring_auction'
   
   # The priority is based upon order of creation: first created -> highest priority.
