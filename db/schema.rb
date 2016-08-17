@@ -61,10 +61,11 @@ ActiveRecord::Schema.define(version: 20160817040815) do
     t.string   "name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email"
   add_index "users", ["gender"], name: "index_users_on_gender"
   add_index "users", ["grade"], name: "index_users_on_grade"
   add_index "users", ["language"], name: "index_users_on_language"
+  add_index "users", ["name"], name: "index_users_on_name"
   add_index "users", ["phone"], name: "index_users_on_phone"
   add_index "users", ["region"], name: "index_users_on_region"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

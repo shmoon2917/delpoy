@@ -30,6 +30,10 @@
  a {
   text-decoration : none;
  }
+
+ a:hover {
+   text-decoration: none;
+ }
  
  li {
   list-style-type : none;
@@ -706,7 +710,8 @@
   font-size : 15px;
   margin-top : 10px;
   background-color : white;
-  color : #424242;  
+  color : #424242;
+   cursor : pointer;
  }
  
  .login_email {
@@ -743,9 +748,9 @@
  }
 
  .login_forgot_pw a {
-  font-size : 13px;
+  font-size : 15px;
   position : relative;
-  left : 59px;
+  left : 192px;
   color : #27a8e0;
  } 
  
@@ -769,10 +774,10 @@
  
  .login_sign_up_button {
   position : relative;
-  left : 26%;
-  font-size : 13px;
+  left : 145px;
+  font-size : 15px;
   color : #27a8e0;
-  
+
  }
  
  .sign_up {

@@ -29,13 +29,6 @@
       <div class="field">
         <%= f.password_field :password, autocomplete: "off", placeholder: '비밀번호를 입력하세요.' ,class:'login_pw' %>
       </div>
-    
-      <div class="field login_remember_pw">
-      <% if devise_mapping.rememberable? %>
-        <%= f.check_box :remember_me, class:'pw_remember_check' %>
-        <%= f.label :remember_me, class: 'pw_remember'%>
-      <% end %>
-      </div>
       
       <div class="login_forgot_pw">
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

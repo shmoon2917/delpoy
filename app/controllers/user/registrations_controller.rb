@@ -6,9 +6,10 @@ before_action :configure_permitted_parameters
 protected
 def configure_permitted_parameters
   #added_attrs = [:user_img_url,:language,:grade, :region, :phone, :gender,:username, :email, :password, :password_confirmation, :remember_me]
-  devise_parameter_sanitizer.for(:sign_up).push(:user_img_url,:language,:grade, :region, :phone, :gender,:username, :email, :password, :password_confirmation, :remember_me)
-  devise_parameter_sanitizer.for(:account_update).push(:user_img_url,:language,:grade, :region, :phone, :gender,:username, :email, :password, :password_confirmation, :remember_me)
+  devise_parameter_sanitizer.for(:sign_up).push(:user_img_url,:language,:grade, :region, :phone, :gender,:username, :name, :email, :password, :password_confirmation, :remember_me)
+  devise_parameter_sanitizer.for(:account_update).push(:user_img_url,:language,:grade, :region, :phone, :gender,:username, :name, :email, :password, :password_confirmation, :remember_me)
 end
+
  
 # private
 #     # Never trust parameters from the scary internet, only allow the white list through.
