@@ -5,12 +5,20 @@
     </div>
     
     <div class="login">
-      
+
+      <%- if devise_mapping.omniauthable? %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to '<span>페이스북 계정으로 로그인</span>'.html_safe, omniauth_authorize_path(resource_name, provider) %>
+          <% end -%>
+      <% end -%>
+
       <h2>다른 계정으로 로그인</h2>
       <a class="login_facebook">
         <%= image_tag("facebook_icon.png", class:'f&g_icon') %>
         <span>페이스북 계정으로 로그인</span>
       </a>
+
+
       <a class="login_google">
         <%= image_tag("google_icon.png", class:'f&g_icon') %>
         <span>구글 계정으로 로그인</span>
@@ -51,7 +59,7 @@
       
       <% end %>
 
-      <%= render "devise/shared/links" %>
+
     </div>
   </div>
 </section>
