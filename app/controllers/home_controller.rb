@@ -33,6 +33,7 @@ class HomeController < ApplicationController
   def admin
     @mentor_request = Mentor.all
   end
+  
   def admit
     admit_request = User.find_by(id: params[:hidden_personal_id])
     admit_request.grade = 2
@@ -64,7 +65,31 @@ class HomeController < ApplicationController
     
   end
   
-  def ad_index
+  def admin_index  
+  end
+  
+  def admin_all
+    @all_users = User.all
+  end
+      
+  def admin_mentor
+    @all_mentors=User.all
+  end
+  
+  def admin_apply
     @mentor_request = Mentor.all
+  end
+  
+  def admin_destroy
+    destroy_user=User.find(params[:id])
+    destroy_user.destroy
+    redirect_to '/admin_all'
+  end
+  
+  def down_grade
+    destroy_mentor = User.find(params[:id])
+    destroy_mentor.grade = 1
+    destroy_mentor.save
+    redirect_to '/admin_mentor'
   end
 end

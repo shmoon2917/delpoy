@@ -35,29 +35,18 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        Admin page
                     </a>
                 </li>
+               
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="/admin_all">전 회원 관리</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="/admin_mentor">멘토 관리</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="/admin_apply">멘토 신청</a>
                 </li>
             </ul>
         </div>
@@ -68,16 +57,33 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <h1>멘토 신청자 관리</h1>
+                        <% @mentor_request.each do |x| %>
+						    <form method = "post" action="/admit">
+						        <div class="form-group">
+						            <label for="area_<%= x.id %>">멘토링 지역</label>
+						            <input type="text" class="form-control" name="area" id="area_<%= x.id %>" value="<%= x.area %>">
+						        </div>
+						        <div class="form-group">
+						            <label for="area_<%= x.id %>">여행했던 기간</label>
+						            <input type="text" class="form-control" id="period_<%= x.id %>" value="<%= x.period %>">
+						        </div>
+						        <div class="form-group">
+						            <label for="area_<%= x.id %>">여행 내용</label>
+						            <textarea class="form-control" id="content_<%= x.id %>"><%= x.content %></textarea>
+						        </div>
+						        <input type="hidden" name="hidden_personal_id" value="<%= x.personal_id %>">
+						        <button type="submit" class="btn btn-default">승인</button>
+						    </form>
+						<% end %>
+						<p></p>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
+		
     </div>
     <!-- /#wrapper -->
 
@@ -96,5 +102,4 @@
     </script>
 
 </body>
-
 </html>

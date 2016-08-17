@@ -24,8 +24,12 @@ Rails.application.routes.draw do
   post '/need_mentor' => 'home#need_mentor'
 
 
-  get 'ad_index' => 'home#ad_index'
-
+  get 'admin_index' => 'home#admin_all'
+  get 'admin_all' =>'home#admin_all'
+  get 'admin_mentor' =>'home#admin_mentor'
+  get 'admin_apply' =>'home#admin_apply'
+  get 'admin_destroy' =>'home#admin_destroy'
+  get 'down_grade'=>'home#down_grade'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
