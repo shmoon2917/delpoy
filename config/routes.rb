@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
 
 
+
   #mentoring related routing 
   
   get 'mentoring_apply' => 'mentoring#mentoring_apply_form_1'
@@ -35,6 +36,14 @@ Rails.application.routes.draw do
   
   get 'auction' => 'mentoring#mentoring_auction'
   
+  # admin_ page 
+  get 'admin_index' => 'home#admin_all'
+  get 'admin_all' =>'home#admin_all'
+  get 'admin_mentor' =>'home#admin_mentor'
+  get 'admin_apply' =>'home#admin_apply'
+  get 'admin_destroy' =>'home#admin_destroy'
+  get 'down_grade'=>'home#down_grade'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
