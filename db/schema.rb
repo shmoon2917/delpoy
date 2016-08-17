@@ -13,6 +13,21 @@
 
 ActiveRecord::Schema.define(version: 20160817040815) do
 
+  create_table "applies", force: :cascade do |t|
+    t.integer  "mentor_id"
+    t.integer  "user_id"
+    t.text     "area"
+    t.string   "from"
+    t.string   "to"
+    t.integer  "numOfMem"
+    t.string   "themeOfPlan"
+    t.text     "hotel"
+    t.integer  "money"
+    t.text     "request"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"

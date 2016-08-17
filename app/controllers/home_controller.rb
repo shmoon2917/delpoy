@@ -55,12 +55,4 @@ class HomeController < ApplicationController
   def mentor_page
     @one_post = User.find(params[:id])
   end
-  def need_mentor
-    @area = params[:mentor_area]
-    @from = params[:from]
-    @to = params[:to]
-    @text = params[:mentor_content]
-    
-    
-  end
 end

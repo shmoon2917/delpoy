@@ -1,0 +1,87 @@
+<!--견적서를 보내고나서 대기타는 부분 -->
+
+
+<header>
+	<div class="img_header">
+		<div class="wrapper_header">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="mobile_menu">
+				<%= image_tag("logo2.png", id:'mobile_nav_logo') %>
+				<%= image_tag("x.png", id:'x_logo') %>
+				<div>
+					<ul>
+						<li>
+							<a href="/mypage">안녕하세요! <%= @user.username %>님</a>
+						</li>
+						<li>
+							<a href="/service">서비스</a>
+						</li>
+						<li>
+							<a href="/doum">도움말</a>
+						</li>
+						<li>
+							<a href="enroll_mentor">멘토 등록하기</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="mobile_header">
+				<%= image_tag("mobile_menu.png" , id: 'mobile_menu_logo') %>
+				<a class="mobile_brand" href="#page-top"> <%= image_tag("logo.png", id:'mobile_logo') %> </a>
+			</div>
+
+			<div class="basic_header">
+				<div class="logo">
+					<a href="/"> <%= image_tag("logo.png" , id:'logo')  %> </a>
+				</div>
+				<div class="menu">
+					<nav>
+						<div class="nav">
+							<div class="li menu_service">
+								<a href="/service" class="li_a">서비스</a>
+							</div>
+							<div class="li menu_help">
+								<a href="/help" class="li_a">도움말</a>
+							</div>
+							<div class="li menu_user">
+								<a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+								<div class="user_scroll">
+									<ul>
+										<li class="my_page">
+											<a href="/mypage">마이페이지</a>
+										</li>
+										<li class="log_out">
+											<a href="/users/sign_out">로그아웃</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<% if @user.grade == 1 %>
+							<div class="li menu_admin">
+								<a href="/admin" class="li_a ">관리자 페이지</a>
+							</div>
+							<% end %>
+							<div class="li menu_enroll">
+								<a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+</header>
+
+<section>
+	<div class="wrapper_section2 margin_plus2">
+		<h2 class="text_center"> 2. 견적요청 완료  </h2>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<p>멘토들이 견적서를 확인 중 입니다. </p>				
+					
+				</div>
+				
+				
+			</div>
+	</div>
+</section>
+
