@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528140350) do
+ActiveRecord::Schema.define(version: 20160817040815) do
+
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "mentors", force: :cascade do |t|
     t.string   "area"
@@ -20,29 +30,6 @@ ActiveRecord::Schema.define(version: 20160528140350) do
     t.integer  "personal_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "participates", force: :cascade do |t|
-    t.integer  "number"
-    t.string   "name"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "about"
-    t.string   "region"
-    t.string   "where"
-    t.string   "meet_time"
-    t.text     "content"
-    t.integer  "user_id"
-    t.string   "image_url",   default: ""
-    t.integer  "total_num"
-    t.integer  "current_num", default: 1
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
   end
 
   create_table "regions", force: :cascade do |t|
@@ -71,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160528140350) do
     t.integer  "gender"
     t.integer  "language"
     t.string   "user_img_url"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

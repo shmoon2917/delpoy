@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  
+  devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks' }
   root 'home#index'
   
   get 'go' => 'home#mentor_apply_form'
