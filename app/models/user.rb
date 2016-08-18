@@ -53,9 +53,5 @@ class User < ActiveRecord::Base
   def email_changed?
     false
   end
-         
-   #M:N
-  has_many :applies
-  has_many :mentors, through: :applies         
-
+        
 end

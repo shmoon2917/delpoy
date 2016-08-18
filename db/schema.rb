@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160817040815) do
+
   create_table "applies", force: :cascade do |t|
     t.integer  "mentor_id"
     t.integer  "user_id"
@@ -45,8 +46,6 @@ ActiveRecord::Schema.define(version: 20160817040815) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-
 
   create_table "regions", force: :cascade do |t|
     t.string   "region"
