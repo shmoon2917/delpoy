@@ -11,21 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817040815) do
+ActiveRecord::Schema.define(version: 20160818110240) do
 
-  create_table "applies", force: :cascade do |t|
-    t.integer  "mentor_id"
+  create_table "apply_list_details", force: :cascade do |t|
+    t.integer  "id_of_mentor"
     t.integer  "user_id"
-    t.text     "area"
+    t.integer  "auction_money"
+    t.boolean  "complete"
+    t.string   "mentor_area"
     t.string   "from"
     t.string   "to"
     t.integer  "numOfMem"
     t.string   "themeOfPlan"
-    t.text     "hotel"
-    t.integer  "money"
-    t.text     "request"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "budget"
+    t.text     "mentor_content"
+    t.text     "accomodation"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "identities", force: :cascade do |t|

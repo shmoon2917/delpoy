@@ -10,34 +10,36 @@ class MentoringController < ApplicationController
   
   def success
     @user = current_user
+    
+    @a = ApplyListDetail.new 
+    @a.user_id = params[:id_of_user]
+      
+    @a.mentor_area  = params[:mentor_area]
+    @a.from = params[:from]
+    @a.to = params[:to]
+    @a.numOfMem = params[:numOfMem] 
+    @a.themeOfPlan = params[:themeOfPlan]
+    @a.accomodation = params[:accomodation]
+    @a.budget = params[:budget]
+    @a.mentor_content = params[:mentor_content]
  
-    apply =Apply.new
-    apply.user_id = params[:id_of_user] 
-    apply.area  = params[:mentor_area]
-    apply.from = params[:from]
-    apply.to = params[:to]
-    apply.numOfMem = params[:numOfMem] 
-    apply.themeOfPlan = params[:themeOfPlan]
-    apply.hotel = params[:accomodation]
-    apply.money = params[:budget]
-    apply.request = params[:mentor_content]
-    apply.save
+    @a.save
     
     
     
-    m = Mentor.all
-    cnt = 0 ;
-    m.each do |men|
-      if men.area == apply.area
-             men.applies << apply
+ #   m = Mentor.all
+ #   cnt = 0 ;
+ #   m.each do |men|
+ #     if men.area == apply.area
+ #            men.applies << apply
             # alert 기능이 필요함 
-            men.save
-            cnt +=1 
-       end 
-    end 
-    if cnt == 0 
+ #           men.save
+  #          cnt +=1 
+  #     end 
+  #  end 
+  #  if cnt == 0 
        # 해당하는 멘토가 한명도 없을 때 ,예외 처리 
-    end
+  #  end
         
       
     

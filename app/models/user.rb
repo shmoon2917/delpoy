@@ -1,4 +1,14 @@
 class User < ActiveRecord::Base
+  
+  
+  # 1: N  with applyListDetails
+  
+  has_many :applyListDetails
+
+
+
+
+
   has_many :post
 
   mount_uploader :user_img_url, SanghoUploader
@@ -53,5 +63,7 @@ class User < ActiveRecord::Base
   def email_changed?
     false
   end
+      
+      
         
 end
