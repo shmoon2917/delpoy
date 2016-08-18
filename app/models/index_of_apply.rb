@@ -1,4 +1,4 @@
 class IndexOfApply < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :mentors
+  belongs_to :user
+  belongs_to :mentor
 end

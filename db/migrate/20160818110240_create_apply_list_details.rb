@@ -5,7 +5,7 @@ class CreateApplyListDetails < ActiveRecord::Migration
       #list_id : 
       t.integer "id_of_mentor"
       t.integer "user_id"
-      t.integer "auction_money"
+      t.integer "auction_price" # 최종 가격이적힌 
       t.boolean "complete"  # 입찰이 끝났는지.. 1이면 해결 , 0 이면 아직 진행중인 것 .
       
       

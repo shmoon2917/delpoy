@@ -3,12 +3,12 @@ class User < ActiveRecord::Base
   
   # 1: N  with applyListDetails
   
-  has_many :applyListDetails
+  has_many :apply_list_details
 
   # N:M  user & mentor through indexOfApply
   
-  has_many :indexOfApplies
-  has_many :mentors, :through => :indexOfApplies
+  has_many :index_of_applies
+  has_many :mentors, :through => :index_of_applies
   
 
 

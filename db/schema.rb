@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160818112857) do
   create_table "apply_list_details", force: :cascade do |t|
     t.integer  "id_of_mentor"
     t.integer  "user_id"
-    t.integer  "auction_money"
+    t.integer  "auction_price"
     t.boolean  "complete"
     t.string   "mentor_area"
     t.string   "from"
@@ -44,9 +44,10 @@ ActiveRecord::Schema.define(version: 20160818112857) do
     t.integer  "user_id"
     t.integer  "mentor_id"
     t.integer  "list_id"
-    t.boolean  "complete"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "complete"
+    t.integer  "auction_price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "mentors", force: :cascade do |t|

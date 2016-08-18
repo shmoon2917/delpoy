@@ -21,26 +21,26 @@ class MentoringController < ApplicationController
     @a.accomodation = params[:accomodation]
     @a.budget = params[:budget]
     @a.mentor_content = params[:mentor_content]
-    @a.complete = false
+    @a.complete = 0    
     @a.save
 
     m = Mentor.all
     cnt = 0 ;
     m.each do |men|
-      if men.area == a.mentor_area
+      if men.area == @a.mentor_area
         i =IndexOfApply.new
         i.user_id = params[:id_of_user]
         i.mentor_id = men.id
-        i.list_id = @a.applyListDetails.last.id #이건 돌아갈지 모르겠다  
-        
-      # alert 기능이 필요함
-      men.save
-      cnt +=1
+        i.list_id = @a.id  # 현재 user의 1:N관계에 있는 list의 몇번째 idx에 있을까요 
+        cnt +=1
+        i.save 
       end
     end
     if cnt == 0
-    # 해당하는 멘토가 한명도 없을 때 ,예외 처리
+      # 해당하는 멘토가 한명도 없을 때 ,예외 처리
     end
+    
+    # 그담에 알림 해야함
 
   end
 
