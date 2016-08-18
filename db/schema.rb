@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818110240) do
+ActiveRecord::Schema.define(version: 20160818112857) do
 
   create_table "apply_list_details", force: :cascade do |t|
     t.integer  "id_of_mentor"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20160818110240) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
+  create_table "index_of_applies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "mentor_id"
+    t.integer  "list_id"
+    t.boolean  "complete"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mentors", force: :cascade do |t|
     t.string   "area"

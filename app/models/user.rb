@@ -5,7 +5,11 @@ class User < ActiveRecord::Base
   
   has_many :applyListDetails
 
-
+  # N:M  user & mentor through indexOfApply
+  
+  has_many :indexOfApplies
+  has_many :mentors, :through => :indexOfApplies
+  
 
 
 
