@@ -4,7 +4,7 @@ class CreateRealMentors < ActiveRecord::Migration
       t.string :area
       t.string :period
       t.text :content
-      t.integer :personal_id
+      
       
       t.integer :user_id 
       

@@ -63,10 +63,9 @@ ActiveRecord::Schema.define(version: 20160819073107) do
     t.string   "area"
     t.string   "period"
     t.text     "content"
-    t.integer  "personal_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "regions", force: :cascade do |t|

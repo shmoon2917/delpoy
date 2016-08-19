@@ -35,9 +35,13 @@ class HomeController < ApplicationController
   end
 
   def admit
-    admit_request = User.find_by(id: params[:hidden_personal_id])
-    admit_request.grade = 2
-    admit_request.region = params[:area]
+    admit_request = User.find_by(id: params[:hidden_personal_id])    # mentor db 상의 저장된 user_id를 이용해 User 를 찾음 
+    r = RealMentor.new                                               # 새 멘토 생성
+    r.area = params[:area]
+    r.user_id = admit_request.id
+    admit_request.real_mentor = r                                    #1:1 관계 형성시켜주기 
+    admit_request.grade = 2                                          #유저 상의 등급 grade up ! 
+    admit_request.region = params[:area]                             # 지역 업데이트 !
     
     admit_request.save
     
