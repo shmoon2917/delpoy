@@ -70,6 +70,6 @@ ActiveRecord::Schema.define(version: 20160817040815) do
   add_index "users", ["region"], name: "index_users_on_region"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["user_img_url"], name: "index_users_on_user_img_url"
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["username"], name: "index_users_on_username"
 
 end

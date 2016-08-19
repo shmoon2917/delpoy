@@ -25,21 +25,21 @@ class User < ActiveRecord::Base
           # 없다면 새로운 데이터를 생성한다.
           if user.nil?
             user = User.new(
+
                 username: auth.info.name,
                 email: auth.info.email,
                 password: Devise.friendly_token[0,20],
                 language: 1,
                 gender: 1,
-                phone: '01035492912'
+                phone: '010252355492912',
+                user_img_url: 'abc',
+                grade: 1
             )
 
           user.save!
         end
-
       end
-
     end
-
     if identity.user != user
       identity.user = user
       identity.save!

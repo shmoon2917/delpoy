@@ -8,7 +8,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '8eccca7c96a73b699d40c98195a384ca446c1d9c2248e1511940bf2c8da72f6d8ab4ace39a029ad3e9b7465fd51cb82d68643d86291bf5ead4e7d1a7d5f2a711'
 
-  config.omniauth :facebook, "126358881142595", "b11562e8740838d6033d7fc6a6a86f45"
+  config.omniauth :facebook, "126358881142595", "b11562e8740838d6033d7fc6a6a86f45", :image_size => 'large'
   # config.omniauth :naver, "key", "secret"
   # config.omniauth :google_oauth2, "key", "secret"
   #
