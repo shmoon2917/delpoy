@@ -23,7 +23,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
 
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :validatable
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # user와 identity가 nil이 아니라면 받는다
@@ -38,27 +39,30 @@ class User < ActiveRecord::Base
       user = User.where(:email => email).first
       unless self.where(email: auth.info.email).exists?
 
-        # 없다면 새로운 데이터를 생성한다.
-        if user.nil?
-          user = User.new(
-              name: auth.info.name,
-              email: auth.info.email,
-              password: Devise.friendly_token[0,20]
-          )
+          # 없다면 새로운 데이터를 생성한다.
+          if user.nil?
+            user = User.new(
+
+                username: auth.info.name,
+                email: auth.info.email,
+                password: Devise.friendly_token[0,20],
+                language: 1,
+                gender: 1,
+                phone: '010252355492912',
+                user_img_url: 'abc',
+                grade: 1
+            )
 
           user.save!
         end
-
       end
-
     end
-
     if identity.user != user
       identity.user = user
       identity.save!
     end
-    user
 
+    user
   end
 
   def email_required?

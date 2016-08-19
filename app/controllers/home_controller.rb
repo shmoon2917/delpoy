@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   end
   def chat
   end
-  
+
   def mypage
     @user = current_user
   end
@@ -66,8 +66,6 @@ class HomeController < ApplicationController
     @from = params[:from]
     @to = params[:to]
     @text = params[:mentor_content]
-    
-    
   end
 
   

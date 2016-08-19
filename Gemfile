@@ -11,11 +11,13 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'carrierwave'
 gem "fog-aws"
+gem 'mini_magick'
 
 gem 'devise'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+
 # gem 'omniauth-naver'
 # gem "omniauth-google-oauth2"
 # gem 'omniauth-instagram'
