@@ -48,4 +48,7 @@ class MentoringController < ApplicationController
     @user = current_user
   end
 
+  def mentor_view
+    @user = current_user
+  end
 end

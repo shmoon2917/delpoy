@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   get '/mentoring_process1' => 'mentoring#mentoring_apply_form_2'
   post '/mentoring_process2' => 'mentoring#success'
   
+  get'mentor_view'=>'mentoring#mentor_view'
+  
   
   
   get 'auction' => 'mentoring#mentoring_auction'
@@ -45,6 +47,8 @@ Rails.application.routes.draw do
   get 'admin_apply' =>'home#admin_apply'
   get 'admin_destroy' =>'home#admin_destroy'
   get 'down_grade'=>'home#down_grade'
+  
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
