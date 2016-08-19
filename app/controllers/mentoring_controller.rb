@@ -24,7 +24,7 @@ class MentoringController < ApplicationController
     @a.complete = 0    
     @a.save
 
-    m = Mentor.all
+    m = RealMentor.all
     cnt = 0 ;
     m.each do |men|
       if men.area == @a.mentor_area
@@ -50,5 +50,7 @@ class MentoringController < ApplicationController
 
   def mentor_view
     @user = current_user
+    @find_my_apply= IndexOfApply.all
+    # @detail_content=
   end
 end

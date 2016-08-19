@@ -58,9 +58,22 @@
         </div>
     </div>
 </header>
+
 <section>
 	<div class="wrapper_section2 margin_plus2">
-		<h2 class="text_center"> 멘토링 요청 가져오기 </h2>
+		<h2 class="text_center"> 멘토링 요청 </h2>
+		<form action="/mentoring_view2" method="post">		
+			<%@find_my_apply.each do |p|%>
+				<%if p.mentor_id==@user.id%>
+					<div class="panel panel-default">
+					<div class="panel-body">
+					<li><%=p.user_id%></li>
+					</div>
+					</div>
+				<%end%>
+    		<%end%>	
+		</form>
+
 
 		<div class="panel panel-default">
 			<div class="panel-body">
