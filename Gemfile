@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 
 gem 'jquery-ui-rails'
+
+
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -11,6 +13,7 @@ gem 'carrierwave'
 gem "fog-aws"
 
 gem 'devise'
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 # gem 'omniauth-naver'

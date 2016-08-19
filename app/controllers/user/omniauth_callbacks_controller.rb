@@ -25,6 +25,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
+
   def self.provides_callback_for(provider)
     class_eval %Q{
       def #{provider}
@@ -51,3 +52,4 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
 
 # :instagram, :kakao, :naver, :facebook, :google_oauth2, :line
+

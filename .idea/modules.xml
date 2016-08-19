@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/delpoy.iml" filepath="$PROJECT_DIR$/.idea/delpoy.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/Delpoy.iml" filepath="$PROJECT_DIR$/.idea/Delpoy.iml" />
+>>>>>>> sh
     </modules>
   </component>
 </project>
