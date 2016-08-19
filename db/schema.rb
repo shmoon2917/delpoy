@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818112857) do
+ActiveRecord::Schema.define(version: 20160819073107) do
 
   create_table "apply_list_details", force: :cascade do |t|
     t.integer  "id_of_mentor"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20160818112857) do
     t.string   "period"
     t.text     "content"
     t.integer  "personal_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "real_mentors", force: :cascade do |t|
+    t.string   "area"
+    t.string   "period"
+    t.text     "content"
+    t.integer  "personal_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

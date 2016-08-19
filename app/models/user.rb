@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+  # 1:1 with Mentor 
+  has_one :real_mentor
   
   # 1: N  with applyListDetails
   
@@ -8,7 +9,7 @@ class User < ActiveRecord::Base
   # N:M  user & mentor through indexOfApply
   
   has_many :index_of_applies
-  has_many :mentors, :through => :index_of_applies
+  has_many :real_mentors, :through => :index_of_applies
   
 
 
