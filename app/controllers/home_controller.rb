@@ -43,7 +43,7 @@ class HomeController < ApplicationController
     
     request_destroy = Mentor.find_by(personal_id: params[:hidden_personal_id])
     request_destroy.destroy
-    redirect_to '/'
+    redirect_to '/admin_apply'
   end
   def search_list
     @user = current_user
@@ -89,7 +89,7 @@ class HomeController < ApplicationController
   
   def down_grade
     destroy_mentor = User.find(params[:id])
-    destroy_mentor.grade = 1
+    destroy_mentor.grade = 0
     destroy_mentor.save
     redirect_to '/admin_mentor'
   end
