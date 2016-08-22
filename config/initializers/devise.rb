@@ -11,7 +11,7 @@ Devise.setup do |config|
 
 
   
-  config.omniauth :facebook, "126358881142595", "b11562e8740838d6033d7fc6a6a86f45", :image_size => 'large'
+  config.omniauth :facebook, "126358881142595", "b11562e8740838d6033d7fc6a6a86f45"
 
   # config.omniauth :naver, "key", "secret"
   # config.omniauth :google_oauth2, "key", "secret"
