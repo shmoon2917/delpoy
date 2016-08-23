@@ -62,10 +62,70 @@
 <section>
 	<div class="contaioner">
 		<div class="wrapper_section2 margin_plus2">
-			<h2 class="text_center"> 완료 </h2>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<h3>수락되었습니다. <%=@print%></h3>					
+					<!-- 멘토링신청 거절할때  -->
+					<%if @result=='1'%>
+					<h2 class="text-center"> <strong> <%=@mentee.username%>님의 멘토링 신청이 거절되었습니다. </strong></h2>		
+					<%end%>		
+					
+					<!-- 멘토링신청 수락할때 디테일/제안 비용 프린트  -->
+					<%else if @result=='0'%>
+					<h2 class="text-center"> <strong> <%=@mentee.username%>님의 멘토링 신청을 수락했습니다. </strong></h2>	
+					<br>
+					<br>	
+					<div class="form-group">
+						<label for="mentor_area"> 가고 싶은 지역 (지도 API 넣기 ) </label>
+						<p><%=@details.mentor_area%></p>
+					</div>
+
+					<!-- 날짜 -->
+					<div class="form-group">
+
+						<script>
+							$(function() {
+								$("#datepicker1, #datepicker2").datepicker({
+									dateFormat : 'yy-mm-dd'
+								});
+							});
+						</script>
+
+						<p>
+							<label for="mentor_period">여행 일정 </label>
+							<br><%=@details.from%> ~ <%=@details.to%>
+						</p>
+					</div>
+					<!-- 여행 인원 -->
+					<div class="form-group">
+						<label for="mentor_area"> 여행 인원 (선택 ) </label>
+						<br><%=@details.numOfMem%> 명
+					</div>
+					<!--여행 테마 -->
+					<div class="form-group">
+						<label for="mentor_area"> 여행 테마 ( 사진 + text + checkbox? ) </label>
+						<br><%=@details.themeOfPlan%>
+					</div>
+
+					<div class="form-group">
+						<label for="mentor_content"> 예산 범위 </label>
+						<br><%=@details.budget%>
+					</div>
+					<div class="form-group">
+						<label for="mentor_area"> 숙박 유형 (사진 + 호텔, 호스텔 , 민박, 펜션 ,기타 , 섞어서 등등 ) </label>
+						<br><%=@details.accomodation%>
+					</div>
+					
+					<div class="form-group">
+						<label for="mentor_content">멘토에게 하고 싶은 말 </label>
+						<br><%=@details.mentor_content%>
+					</div>
+					<%end%>	
+					<br>
+					<br>
+					
+					<div class="margin-left:auto; margin-right:auto;">
+						<a class="btn btn-lg btn-primary btn-block" href="/mentor_view/" role="button"> 목록으로 돌아가기 </a>	
+					</div>
 				</div>
 			</div>
 	

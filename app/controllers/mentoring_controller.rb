@@ -82,31 +82,38 @@ class MentoringController < ApplicationController
     myindex.auction_price=params[:cost]
     myindex.save
     
-    redirect_to '/mentor_view/apply_success?result=0'
+    
+    # redirect_to '/mentor_view/apply_success?result=0'
+    redirect_to :controller => 'mentoring', :action => 'reply_success', :result => 0, :list_id => myindex.list_id
+    #해당 indexofapply의 list_id까지 보내주기 위한 redirect_to         
   end
   
   def reply_reject
     @user=current_user
+    @list_id=params[:list_id]
     myindex=IndexOfApply.find_by(list_id: params[:list_id])
     myindex.complete=3  #멘토링 거절시 compelte=>3으로
     
     myindex.save
     
-    redirect_to '/mentor_view/apply_success?result=1'
+    # redirect_to '/mentor_view/apply_success?result=1'
+    redirect_to :controller => 'mentoring', :action => 'reply_success', :result => 1, :list_id => myindex.list_id
+    #해당 indexofapply의 list_id까지 보내주기 위한 redirect_to
+
   end
   
   def reply_success
     @user = current_user
-    if params[:result]=0
-      @print="수락되었습니다."
-    end
-    if params[:result]=1
-      @print="거절했습니다."
-    end
+    @list_id=params[:list_id]
+    @result=params[:result]
+    @details = ApplyListDetail.find(params[:list_id])
+    @mentee=User.find(@details.user_id)
     
   end
   def show
+    #멘토링 신청 폼(db) 확인하기위한 page
     @user=current_user
     @index=IndexOfApply.all
+    
   end
 end
