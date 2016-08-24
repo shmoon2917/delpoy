@@ -10,9 +10,6 @@ class User < ActiveRecord::Base
   
   has_many :index_of_applies
   has_many :real_mentors, :through => :index_of_applies
-  
-
-
 
   has_many :post
 
@@ -73,15 +70,6 @@ class User < ActiveRecord::Base
     false
   end
       
-      
-        
 
-  has_many :post
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  mount_uploader :user_img_url, SanghoUploader
-  
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 
 end

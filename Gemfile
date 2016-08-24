@@ -18,6 +18,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'underscore-rails'
+
 # gem 'omniauth-naver'
 # gem "omniauth-google-oauth2"
 # gem 'omniauth-instagram'
