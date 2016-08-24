@@ -60,30 +60,36 @@
 </header>
 
 <section>
-	<div class="wrapper_section2 margin_plus2">
-		<h2 class="text_center"> 멘토링 요청 리스트 </h2>
-		<%@find_my_apply.each do |p|%>
-			<%if p.mentor_id==@user.id && p.complete==0 %>
-			<!-- 접속 아이디가 멘토 아이디이고 해당 indexofapply의 complete==0인것	 -->
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<input type="hidden" value ="<%=p.user_id %>" name="mentee_id">
-							<%@all_user.each do |u|%>
-								<%if u.id==p.user_id%>
-									<li>
-										<a href="/mentor_viewdetail?list_id=<%=p.list_id%>">  
-											<%=u.username%> 님의 멘토링 요청 확인하기 </a>
-									</li>
-								<%end%>
-							<%end%>
-					</div>
+	<div class="contaioner">
+		<div class="wrapper_section2 margin_plus2">
+			<h2 class="text_center">  </h2>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<% @index.each do |i|%>
+					<li>
+						<%=i.user_id%>
+						<%=i.complete%>
+						<%=i.auction_price%>
+					</li>
+					<%end%>
 				</div>
-			<%end%>
-		<%end%>	
-		
-		
-		
-		
+			</div>
+	
+		</div>
 	</div>
-
 </section>
+<!-- <script>
+$(".reply_submit").click(function(){
+		var id=this.value;
+		var cost=promt("얼마를 제안하시겠습니까?");
+		
+		 // $.ajax({
+			 // method: "POST",
+			 // url: "/mentor_view/reply_admit",
+			 // data: { id: id, cost: cost },
+			 // .done(function( msg ) {
+			 // alert("리플이 작성되었습니다");
+			 // });
+		// });
+});
+ </script> -->

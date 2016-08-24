@@ -35,8 +35,13 @@ Rails.application.routes.draw do
   post '/mentoring_process2' => 'mentoring#success'
   
   get'mentor_view'=>'mentoring#mentor_view'
-  
-  
+  get'mentor_viewdetail' =>'mentoring#mentor_viewdetail'
+  get'mentor_view/reply_admit'=>'mentoring#reply_admit'
+  get 'mentor_view/reply_admit2'=>'mentoring#reply_admit2'
+  # post'mentor_view/reply_admit2'=>'mentoring#reply_admit2'
+  get 'mentor_view/reply_reject'=>'mentoring#reply_reject'
+  get 'mentor_view/apply_success'=>'mentoring#reply_success'
+  get 'mentor_view/show' =>'mentoring#show'
   
   get 'auction' => 'mentoring#mentoring_auction'
   

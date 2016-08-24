@@ -60,30 +60,81 @@
 </header>
 
 <section>
-	<div class="wrapper_section2 margin_plus2">
-		<h2 class="text_center"> 멘토링 요청 리스트 </h2>
-		<%@find_my_apply.each do |p|%>
-			<%if p.mentor_id==@user.id && p.complete==0 %>
-			<!-- 접속 아이디가 멘토 아이디이고 해당 indexofapply의 complete==0인것	 -->
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<input type="hidden" value ="<%=p.user_id %>" name="mentee_id">
-							<%@all_user.each do |u|%>
-								<%if u.id==p.user_id%>
-									<li>
-										<a href="/mentor_viewdetail?list_id=<%=p.list_id%>">  
-											<%=u.username%> 님의 멘토링 요청 확인하기 </a>
-									</li>
-								<%end%>
-							<%end%>
+	<div class="contaioner">
+		<div class="wrapper_section2 margin_plus2">
+			<h2 class="text_center"> <%=@mentee.username%> 님의 멘토링 요청 세부 내용 </h2>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<input type="hidden" value ="<%= @user.id %>" name="id_of_user">
+					<!--지역-->
+					<div class="form-group">
+						<label for="mentor_area"> 가고 싶은 지역 (지도 API 넣기 ) </label>
+						<p><%=@details.mentor_area%></p>
 					</div>
-				</div>
-			<%end%>
-		<%end%>	
-		
-		
-		
-		
-	</div>
 
+					<!-- 날짜 -->
+					<div class="form-group">
+
+						<script>
+							$(function() {
+								$("#datepicker1, #datepicker2").datepicker({
+									dateFormat : 'yy-mm-dd'
+								});
+							});
+						</script>
+
+						<p>
+							<label for="mentor_period">여행 일정 </label>
+							<br><%=@details.from%> ~ <%=@details.to%>
+						</p>
+					</div>
+					<!-- 여행 인원 -->
+					<div class="form-group">
+						<label for="mentor_area"> 여행 인원 (선택 ) </label>
+						<sbr><%=@details.numOfMem%> 명
+					</div>
+					<!--여행 테마 -->
+					<div class="form-group">
+						<label for="mentor_area"> 여행 테마 ( 사진 + text + checkbox? ) </label>
+						<br><%=@details.themeOfPlan%>
+					</div>
+
+					<div class="form-group">
+						<label for="mentor_content"> 예산 범위 </label>
+						<br><%=@details.budget%>
+					</div>
+					<div class="form-group">
+						<label for="mentor_area"> 숙박 유형 (사진 + 호텔, 호스텔 , 민박, 펜션 ,기타 , 섞어서 등등 ) </label>
+						<br><%=@details.accomodation%>
+					</div>
+					
+					<div class="form-group">
+						<label for="mentor_content">멘토에게 하고 싶은 말 </label>
+						<br><%=@details.mentor_content%>
+					</div>
+					
+						
+					<a class="btn btn-primary btn-lg btn-block" href="mentor_view/reply_admit?list_id=<%=@details.id%>" role="button"> 수락하기 </a>
+					<a class="btn btn-default btn-lg btn-block" href="mentor_view/reply_reject?list_id=<%=@details.id%>" role="button"> 거절하기 </a>
+					
+				</div>
+			</div>
+	
+		</div>
+	</div>
 </section>
+<!-- <script>
+$(".reply_submit").click(function(){
+		var id=this.value;
+		var cost=promt("얼마를 제안하시겠습니까?");
+		
+		 // $.ajax({
+			 // method: "POST",
+			 // url: "/mentor_view/reply_admit",
+			 // data: { id: id, cost: cost },
+			 // .done(function( msg ) {
+			 // alert("리플이 작성되었습니다");
+			 // });
+		// });
+});
+ </script> -->
