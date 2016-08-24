@@ -17,7 +17,7 @@ class MentoringController < ApplicationController
     @a.from = params[:from]
     @a.to = params[:to]
     @a.numOfMem = params[:numOfMem]
-    @a.themeOfPlan = params[:themeOfPlan]
+    @a.themeOfPlan = params[:theme]
     @a.accomodation = params[:accomodation]
     @a.budget = params[:budget]
     @a.mentor_content = params[:mentor_content]
