@@ -207,6 +207,13 @@
     });
   });
 
+  $(function() {
+    $("input:text").keydown(function(evt) {
+      if (evt.keyCode == 13)
+        return false;
+    });
+  });
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA72zF0QFMu6C2d3aim0lUlMJLsmbQEwIo&libraries=places&callback=initAutocomplete"
         async defer></script>
