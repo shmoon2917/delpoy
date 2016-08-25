@@ -38,13 +38,14 @@
                                 <div class="user_scroll">
                                     <ul>
                                         <li class="my_page"><a href="/mypage">마이페이지</a></li>
-                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+			                            <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <% if @user.grade == 1 %>
                             <div class="li menu_admin"><a href="/admin" class="li_a ">관리자 페이지</a></div>
                             <% end %>
+                                        	
                             <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
                         </div>
                     </nav>
