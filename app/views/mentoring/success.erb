@@ -2,7 +2,7 @@
 
 
 <header>
-	<div class="img_header">
+	<div class="img_header5">
 		<div class="wrapper_header">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="mobile_menu">
@@ -70,21 +70,61 @@
 				</div>
 			</div>
 </header>
+<article>
+  <section>
+    <div class="wrapper_section2 margin_plus2">
+      <h2 class="text_center"> 2. 견적서 작성 완료  </h2>
+      <div class="mentoring_success_div">
+        <div class="panel panel-default sheet_list">
+          <div class="panel-body">
+            <p><%= @user.username %>님의 견적서 </p>
+            <h4>여행 지역</h4>
+            <%= @a.mentor_area %>
+            <h4>여행 일정</h4>
+            <%= @a.from %> ~ <%= @a.to %>
+            <h4>여행 인원</h4>
+            <%= @a.numOfMem %>
+            <h4>여행 유형</h4>
+            <%= @a.themeOfPlan %>
+            <h4>예산 범위</h4>
+            <%= @a.budget %>
+            <h4>숙박 유형</h4>
+            <%= @a.accomodation %>
+            <h4>추가 요청 사항</h4>
+            <%= @a.mentor_content %>
+          </div>
+        </div>
+        <div class="panel panel-default mentor_list">
+          <p>멘토 선택</p>
+          <h5>견적서를 보낼 멘토들을 선택해주세요. (최대 20명)</h5>
+          <form action="/mentoring_process3" method="POST">
+            <input type="hidden" value="<%= @a.user_id %>" name="id_of_user">
+            <input type="hidden" value ="<%= @a.id %>" name="id_of_applylist">
+            <div class="form-group">
+              <div class="mentor_list_content">
+                <input type="checkbox" name="chk_info[]" value="<%= @mentor_name[0] %>">&nbsp;&nbsp;<%= @mentor_name[0] %>
+              </div>
+              <div class="mentor_list_content">
+                <input type="checkbox" name="chk_info[]" value="<%= @mentor_name[1] %>">&nbsp;&nbsp;<%= @mentor_name[1] %>
+              </div>
+              <div class="mentor_list_content">
+                <input type="checkbox" name="chk_info[]" value="kangmao">&nbsp;&nbsp;kangmao
+              </div>
+            </div>
+            <input type="submit" class="real_send_sheet_submit" value="submit">
+          </form>
+        </div>
+        <div class="send_sheet_button">
+          견적서 보내기
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
 
-<section>
-	<div class="wrapper_section2 margin_plus2">
-		<h2 class="text_center"> 2. 견적요청 완료  </h2>
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<p>멘토들이 견적서를 확인 중 입니다. </p>				
-					
-				</div>
-				<div>
-					<%= @a.mentor_area %>
-					
-				</div>
-				
-			</div>
-	</div>
-</section>
+<script>
+  $('.send_sheet_button').click(function(){
+    $('.real_send_sheet_submit').trigger("click");
+  })
+</script>
 

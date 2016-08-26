@@ -95,6 +95,7 @@
  /* Common CSS */
  body {
 	 font-family: 'RixJGulim B';
+    min-width : 1200px;
  }
  
  .wrapper_header {
@@ -316,6 +317,7 @@
  .nav, .menu_search_list {
   position : absolute;
   right : 0px;
+  // float : right;
  } 
  
  .nav .li, .menu_search_list li {
@@ -1148,334 +1150,417 @@
   text-decoration : none;
   background-color : #37a9e0;
  }
- 
- @media screen and (min-width : 768px) and (max-width : 1024px) {
-  
-  .nav li {
-   margin-left : 0px;
-  }
-  
-  .mobile_header {
-   display : none;
-  }
-   
-  .nav li a.nav_enroll_mentor{
-   padding-left : 15px;
-   padding-right : 15px;
-  }
-   
-  .nav > li > a {
-   padding : 10px 7px;
-  }
-  // .img_header {
-  //  height : 500px;
-  // }
-   
-  .index_p{
-   color : white;
-   margin : 120px auto 220px auto;
-   text-align : center;
-  }
-  
-  .index_p h1{
-   font-size : 45px;
-  }
-  
-  .index_p h4{
-   margin-top : 30px;
-   font-size : 16px;
-  }
-  
-  .mentor_section{
-   width : 692px;
-   padding-top : 30px;
-   padding-bottom : 30px;
-  }
-  
-   #mentor_img {
-   width : 442px;
-   height : 250px;
-  }
-  
-  .mentor_section .enroll_Info{
-   width : 250px;
-   height : 250px;
-  }
- 
-  .mentor_section h2 {
-   padding : 40px 20px 10px 20px;
-   line-height : 30px;
-   font-size : 22px;
-  }
-  
-  .mentor_section h4 {
-   padding : 0px 40px 30px 40px;
-   font-size : 15px;
-  }
-  
-  .guide_section {
-   width : 692px;
-  }
- 
-  .guide_grid .item {
-   width : 50%;
-  }
- 
-  .guide_grid .item_2{
-  width : 50%;
-  }
- 
-  .guide_grid .item_3 {
-   width : 100%;
-  }
- 
-  .guide_grid img {
-   width : 100%;
-   height : 300px;
-  }
-  
-  .comm_section h2 {
-   font-size : 44px;
-   margin-bottom : 20px;
-  }
- 
-  .comm_section h4 {
-   font-size : 20px;
-  }
- }
- 
- @media screen and (min-width : 640px) and (max-width : 767px) {
-  
-  .img_header {
-   height : 350px;
-  }
-  
-  .basic_header {
-   display : none;
-  }
-  
-  .mobile_header {
-   display : block;
-  }
-   
-  .index_p{
-   color : white;
-   margin-top : 100px;
-   margin-left : 20px;
-   text-align : left;
-  }
-  
-  .index_p h1{
-   font-size : 25px;
-  }
-  
-  .index_p h4{
-   margin-top : 20px;
-   font-size : 15px;
-  }
-  
-  .wrapper_search {
-   background-color : #f7f7f7 ;
-  }
-  
-  .search_input {
-   padding-top : 20px;
-  }
-  
-  .city {
-   width : 85%;
-   font-size : 13px;
-   height : 40px;
-  }
-  
-  .button {
-   width : 50px;
-   font-size : 13px;
-   height : 40px;
-  }
-  
-  .search_best {
-   display : none;
-  }
-  
-  .guide_section {
-   width : 100%;
-   padding-top : 40px;
-  }
-  
-  .guide_section h2 {
-   font-size : 28px ;
-   margin-bottom : 15px;
-  }
- 
-  .guide_section > h4 {
-   font-size : 17px;
-   margin-bottom : 30px;
-  }
-   
-  .guide_grid .item {
-    width : 50%;
-    height : 280px;
-    padding : 0px;
-   }
-   
-  .guide_grid .item_2{
-   width : 50%;
-   height : 280px;
-   padding : 0px;
-  }
-  
-  .guide_grid .item_3 {
-   width : 100%;
-   height : 280px;
-   padding : 0px;
-  }
-  
-  .wrapper_section2 {
-   display : none;
-  }
-  
-  .wrapper_section3 {
-   display : none;
-  }
-  
-  .footer_nav li {
-   margin-right : 30px;
-  }
- 
- .footer_nav .service {
-  margin-left : 30px;
- }
- 
- .footer_nav li a {
-  padding : 5px;
-  display : block;
-  font-size : 14px;
-  color : #C5C7C9;
- }
- 
- .footer h3 {
-  padding-top : 20px;
-  font-size : 14px;
- }
- }
- 
- @media screen and (min-width : 350px) and (max-width : 639px) {
-  .img_header {
-   height : 350px;
-  }
-  
-  .basic_header {
-   display : none;
-  }
-  
-  .mobile_header {
-   display : block;
-  }
-   
-  .index_p{
-   color : white;
-   margin-top : 100px;
-   margin-left : 20px;
-   text-align : left;
-  }
-  
-  .index_p h1{
-   font-size : 25px;
-   padding-right : 20px;
-  }
-  
-  .index_p h4{
-   margin-top : 20px;
-   font-size : 15px;
-   padding-right : 20px;
-  }
-  
-    .wrapper_search {
-   background-color : #f7f7f7 ;
-  }
-  
-  .search_input {
-   padding-top : 20px;
-  }
-  
-  .city {
-   width : 85%;
-   font-size : 13px;
-   height : 40px;
-  }
-  
-  .button {
-   width : 50px;
-   font-size : 13px;
-   height : 40px;
-  }
-  
-  .search_best {
-   display : none;
-  }
-  
-  .guide_section {
-   padding-top : 40px;
-   width : 100%;
-  }
-  
-  .guide_section h2 {
-   font-size : 26px ;
-   margin-bottom : 15px;
-  }
- 
-  .guide_section > h4 {
-   font-size : 16px;
-   margin-bottom : 30px;
-  }
-  
-  .guide_grid .item {
-    width : 100%;
-    height : 280px;
-    padding : 0px;
-   }
-   
-  .guide_grid .item_2{
-   width : 100%;
-   height : 280px;
-   padding : 0px;
-  }
-  
-  .guide_grid .item_3 {
-   width : 100%;
-   height : 280px;
-   padding : 0px;
-  }
 
-  .wrapper_section2 {
-   display : none;
-  }
-  
-  .wrapper_section3 {
-   display : none;
-  }
-  
-  .footer_nav li {
-   margin-right : 20px;
-  }
- 
- .footer_nav .service {
-  margin-left : 20px;
- }
- 
- .footer_nav li a {
-  padding : 0px;
-  display : block;
-  font-size : 11px;
-  color : #C5C7C9;
- }
- 
- .footer h3 {
-  padding-top : 20px;
-  font-size : 13px;
- }
- }
+ // 견적서 작성 완료 (success.html)
+
+
+.mentoring_success_div {
+  margin : 40px auto 40px;
+  width : 1020px;
+  height : 750px;
+}
+.sheet_list {
+  width : 630px;
+  height : 650px;
+  display : inline-block;
+  margin : 0;
+  float : left;
+  border-top : 3px solid #27a8e0;
+}
+
+.sheet_list p, .mentor_list p {
+  text-align : center;
+  font-size : 20px;
+  // margin-bottom : 10px;
+}
+
+.sheet_list h4 {
+  margin-top : 20px;
+  margin-bottom : 10px;
+}
+
+.mentor_list {
+  padding : 25px 20px;
+  width : 360px;
+  height : 650px;
+  display : inline-block;
+  margin : 0 0 0 25px;
+  border-top : 3px solid #27a8e0;
+}
+
+.mentor_list h5 {
+  margin-top : 20px;
+  margin-bottom : 15px;
+}
+
+.mentor_list .form-group {
+  border-top : 1px solid #ddd;
+}
+
+.mentor_list_content {
+  margin : 0 auto;
+  height : 40px;
+  width : 320px;
+  line-height : 40px;
+  padding-left : 15px;
+  border-bottom : 1px solid #ddd;
+  //box-shadow : 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.send_sheet_button {
+  width : 400px;
+  height : 70px;
+  line-height : 70px;
+  text-align: center;
+  font-size : 18px;
+  color : white;
+  margin : 30px auto;
+  text-align: center;
+  border-radius : 10px;
+  background-color: #27a8e0;
+  cursor : pointer;
+}
+
+.send_sheet_button:hover {
+  background-color : #0e6bc4;
+}
+
+.send_sheet_button:active {
+  background-color: #083F73;
+  //box-shadow: 0 1px #666;
+  //transform: translateY(1px);
+}
+
+.real_send_sheet_submit {
+  display : none;
+}
+ //@media screen and (min-width : 768px) and (max-width : 1024px) {
+ //
+ // .nav li {
+ //  margin-left : 0px;
+ // }
+ //
+ // .mobile_header {
+ //  display : none;
+ // }
+ //
+ // .nav li a.nav_enroll_mentor{
+ //  padding-left : 15px;
+ //  padding-right : 15px;
+ // }
+ //
+ // .nav > li > a {
+ //  padding : 10px 7px;
+ // }
+ // // .img_header {
+ // //  height : 500px;
+ // // }
+ //
+ // .index_p{
+ //  color : white;
+ //  margin : 120px auto 220px auto;
+ //  text-align : center;
+ // }
+ //
+ // .index_p h1{
+ //  font-size : 45px;
+ // }
+ //
+ // .index_p h4{
+ //  margin-top : 30px;
+ //  font-size : 16px;
+ // }
+ //
+ // .mentor_section{
+ //  width : 692px;
+ //  padding-top : 30px;
+ //  padding-bottom : 30px;
+ // }
+ //
+ //  #mentor_img {
+ //  width : 442px;
+ //  height : 250px;
+ // }
+ //
+ // .mentor_section .enroll_Info{
+ //  width : 250px;
+ //  height : 250px;
+ // }
+ //
+ // .mentor_section h2 {
+ //  padding : 40px 20px 10px 20px;
+ //  line-height : 30px;
+ //  font-size : 22px;
+ // }
+ //
+ // .mentor_section h4 {
+ //  padding : 0px 40px 30px 40px;
+ //  font-size : 15px;
+ // }
+ //
+ // .guide_section {
+ //  width : 692px;
+ // }
+ //
+ // .guide_grid .item {
+ //  width : 50%;
+ // }
+ //
+ // .guide_grid .item_2{
+ // width : 50%;
+ // }
+ //
+ // .guide_grid .item_3 {
+ //  width : 100%;
+ // }
+ //
+ // .guide_grid img {
+ //  width : 100%;
+ //  height : 300px;
+ // }
+ //
+ // .comm_section h2 {
+ //  font-size : 44px;
+ //  margin-bottom : 20px;
+ // }
+ //
+ // .comm_section h4 {
+ //  font-size : 20px;
+ // }
+ //}
+ //
+ //@media screen and (min-width : 640px) and (max-width : 767px) {
+ //
+ // .img_header {
+ //  height : 350px;
+ // }
+ //
+ // .basic_header {
+ //  display : none;
+ // }
+ //
+ // .mobile_header {
+ //  display : block;
+ // }
+ //
+ // .index_p{
+ //  color : white;
+ //  margin-top : 100px;
+ //  margin-left : 20px;
+ //  text-align : left;
+ // }
+ //
+ // .index_p h1{
+ //  font-size : 25px;
+ // }
+ //
+ // .index_p h4{
+ //  margin-top : 20px;
+ //  font-size : 15px;
+ // }
+ //
+ // .wrapper_search {
+ //  background-color : #f7f7f7 ;
+ // }
+ //
+ // .search_input {
+ //  padding-top : 20px;
+ // }
+ //
+ // .city {
+ //  width : 85%;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .button {
+ //  width : 50px;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .search_best {
+ //  display : none;
+ // }
+ //
+ // .guide_section {
+ //  width : 100%;
+ //  padding-top : 40px;
+ // }
+ //
+ // .guide_section h2 {
+ //  font-size : 28px ;
+ //  margin-bottom : 15px;
+ // }
+ //
+ // .guide_section > h4 {
+ //  font-size : 17px;
+ //  margin-bottom : 30px;
+ // }
+ //
+ // .guide_grid .item {
+ //   width : 50%;
+ //   height : 280px;
+ //   padding : 0px;
+ //  }
+ //
+ // .guide_grid .item_2{
+ //  width : 50%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .guide_grid .item_3 {
+ //  width : 100%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .wrapper_section2 {
+ //  display : none;
+ // }
+ //
+ // .wrapper_section3 {
+ //  display : none;
+ // }
+ //
+ // .footer_nav li {
+ //  margin-right : 30px;
+ // }
+ //
+ //.footer_nav .service {
+ // margin-left : 30px;
+ //}
+ //
+ //.footer_nav li a {
+ // padding : 5px;
+ // display : block;
+ // font-size : 14px;
+ // color : #C5C7C9;
+ //}
+ //
+ //.footer h3 {
+ // padding-top : 20px;
+ // font-size : 14px;
+ //}
+ //}
+ //
+ //@media screen and (min-width : 350px) and (max-width : 639px) {
+ // .img_header {
+ //  height : 350px;
+ // }
+ //
+ // .basic_header {
+ //  display : none;
+ // }
+ //
+ // .mobile_header {
+ //  display : block;
+ // }
+ //
+ // .index_p{
+ //  color : white;
+ //  margin-top : 100px;
+ //  margin-left : 20px;
+ //  text-align : left;
+ // }
+ //
+ // .index_p h1{
+ //  font-size : 25px;
+ //  padding-right : 20px;
+ // }
+ //
+ // .index_p h4{
+ //  margin-top : 20px;
+ //  font-size : 15px;
+ //  padding-right : 20px;
+ // }
+ //
+ //   .wrapper_search {
+ //  background-color : #f7f7f7 ;
+ // }
+ //
+ // .search_input {
+ //  padding-top : 20px;
+ // }
+ //
+ // .city {
+ //  width : 85%;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .button {
+ //  width : 50px;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .search_best {
+ //  display : none;
+ // }
+ //
+ // .guide_section {
+ //  padding-top : 40px;
+ //  width : 100%;
+ // }
+ //
+ // .guide_section h2 {
+ //  font-size : 26px ;
+ //  margin-bottom : 15px;
+ // }
+ //
+ // .guide_section > h4 {
+ //  font-size : 16px;
+ //  margin-bottom : 30px;
+ // }
+ //
+ // .guide_grid .item {
+ //   width : 100%;
+ //   height : 280px;
+ //   padding : 0px;
+ //  }
+ //
+ // .guide_grid .item_2{
+ //  width : 100%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .guide_grid .item_3 {
+ //  width : 100%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .wrapper_section2 {
+ //  display : none;
+ // }
+ //
+ // .wrapper_section3 {
+ //  display : none;
+ // }
+ //
+ // .footer_nav li {
+ //  margin-right : 20px;
+ // }
+ //
+ //.footer_nav .service {
+ // margin-left : 20px;
+ //}
+ //
+ //.footer_nav li a {
+ // padding : 0px;
+ // display : block;
+ // font-size : 11px;
+ // color : #C5C7C9;
+ //}
+ //
+ //.footer h3 {
+ // padding-top : 20px;
+ // font-size : 13px;
+ //}
+ //}
 
 // mentoring _ process
 

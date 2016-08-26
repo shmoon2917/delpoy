@@ -24,27 +24,68 @@ class MentoringController < ApplicationController
     @a.complete = 0    
     @a.save
 
-    m = RealMentor.all
-    cnt = 0 ;
-    m.each do |men|
-      if men.area == @a.mentor_area
-        i =IndexOfApply.new
-        i.user_id = params[:id_of_user]
-        i.mentor_id = men.id
-        i.list_id = @a.id  # 현재 user의 1:N관계에 있는 list의 몇번째 idx에 있을까요 
-        i.complete=0 #아무것도 아닌 상태이니까 0으로 우선 주어 줌 
-        
-        cnt +=1
-        i.save 
+    # 1:1 관계에 있는 유저 : 멘토에서 멘토의 지역을 통해 유저(멘토)의 이름을 가져오기. -> 멘토들 이름 리스트로 뽑아내기
+
+    u = User.where('grade = 2')
+    cnt = 0;
+    @mentor_name = []
+    for i in 0..(u.length-1)
+      cnt += 1
+      if u[i].real_mentor.area == @a.mentor_area
+        @mentor_name.push(u[i].username)
       end
     end
-    if cnt == 0
+
+    # m = RealMentor.all
+    # cnt = 0;
+    # m.each do |men|
+    #   if men.area == @a.mentor_area
+    #
+    #   end
+    # end
+
+
+    # m = RealMentor.all
+    # cnt = 0 ;
+    # m.each do |men|
+    #   if men.area == @a.mentor_area
+    #     i =IndexOfApply.new
+    #     i.user_id = params[:id_of_user]
+    #     i.mentor_id = men.id
+    #     i.list_id = @a.id  # 현재 user의 1:N관계에 있는 list의 몇번째 idx에 있을까요
+    #     i.complete=0 #아무것도 아닌 상태이니까 0으로 우선 주어 줌
+    #
+    #     cnt +=1
+    #     i.save
+    #   end
+    # end
+    if @cnt == 0
       # 해당하는 멘토가 한명도 없을 때 ,예외 처리
     end
     
     # 그담에 알림 해야함
 
   end
+
+  def matching1
+    @user = current_user
+    @a = params[:chk_info]
+
+    # 선택한 멘토들의 정보가 indexOfapply 에 담기며 M : N 관계가 형성.
+
+    for i in 0..(@a.length-1)
+      u = User.find_by username: @a[i]
+
+      i = IndexOfApply.new
+      i.user_id = params[:id_of_user]
+      i.mentor_id = u.real_mentor.id
+      i.list_id = params[:id_of_applylist]
+      i.complete = 0
+
+      i.save
+    end
+  end
+
 
   def mentoring_auction
     @user = current_user

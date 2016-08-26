@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   
   get '/mentoring_process1' => 'mentoring#mentoring_apply_form_2'
   post '/mentoring_process2' => 'mentoring#success'
+  post '/mentoring_process3' => 'mentoring#matching1'
   
   get'mentor_view'=>'mentoring#mentor_view'
   get'mentor_viewdetail' =>'mentoring#mentor_viewdetail'
