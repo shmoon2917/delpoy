@@ -1,0 +1,136 @@
+<header>
+    <div class="img_header5">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="mobile_menu">
+                <%= image_tag("logo2.png", id:'mobile_nav_logo') %>
+                <%= image_tag("x.png", id:'x_logo') %>
+                <div>
+                    <ul>
+                        <li><a href="/mypage">안녕하세요! 비회원님</a></li>
+                        <li><a href="/service">서비스</a></li>
+                        <li><a href="/doum">도움말</a></li>
+                        <li><a href="enroll_mentor">멘토 등록하기</a></li>
+                    </ul>            
+                </div>
+            </div>
+            
+            <div class="mobile_header">
+                <%= image_tag("mobile_menu.png" , id: 'mobile_menu_logo') %>
+                <a class="mobile_brand" href="#page-top">
+                    <%= image_tag("logo.png", id:'mobile_logo') %>
+                </a>
+            </div>
+        
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <%= image_tag("logo.png" , id:'logo')  %>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li menu_help"><a href="/help" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+            <div class="">
+                <div class="my_page_p">
+                    <h1>MENTORING PAGE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section>
+	<div class="contaioner">
+		<div class="wrapper_section2 margin_plus2">
+			<h2 class="text_center"> 멘토링 신청 현황 </h2>
+			<div class="panel panel-default">
+				
+				<div class="panel-body">
+					<h3 class="text_center"> <%=@details.mentor_area%> 여행 (<%=@details.from%> ~ <%=@details.to%>)</h3>
+					<form action="/mentor_select" method="post">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>멘토 이름</th>
+								<th>상태</th>
+								<th>제안 비용</th>
+								<th>선택</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @index.each do |i|%>
+							<div class="radio-inline">
+								<tr>
+									<% @mentor.each do |m|%>
+										<%if m.id==i.mentor_id%>
+											<% @users.each do |u|%>
+											<%if u.id==m.user_id%>
+												<td><%=u.username%></td>
+												<%if i.complete==0%>
+													<td>미확</td>
+												<%elsif i.complete==1%>
+													<td>수락</td>
+												<%elsif i.complete==3%>
+													<td>거절</td>
+												<%end%>
+												<td><%=i.auction_price%></td>
+												<%if i.complete==1%>
+													<td><input type="radio" name="index_of_id" value="<%=i.id%>"></td>
+												<%else%>
+													<td></td>
+												<%end%>
+											<%end%>
+											<%end%>
+										<%end%>
+									<%end%>
+								</tr>
+								</div>
+							<%end%>
+						</tbody>
+					</table>
+					<span style="float: right">
+						<button type="submit" class="btn btn-default">멘토 선택</button>
+					</span>
+					</form>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+</section>
+<!-- <script>
+$(".reply_submit").click(function(){
+		var id=this.value;
+		var cost=promt("얼마를 제안하시겠습니까?");
+		
+		 // $.ajax({
+			 // method: "POST",
+			 // url: "/mentor_view/reply_admit",
+			 // data: { id: id, cost: cost },
+			 // .done(function( msg ) {
+			 // alert("리플이 작성되었습니다");
+			 // });
+		// });
+});
+ </script> -->

@@ -79,7 +79,7 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav_edit nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#now" aria-controls="home" role="tab" data-toggle="tab">현재 진행중인 여행</a></li>
-                    <li role="presentation"><a href="#seminar" aria-controls="profile" role="tab" data-toggle="tab">등록된 모임</a></li>
+                    <li role="presentation"><a href="#seminar" aria-controls="profile" role="tab" data-toggle="tab">등록된 여행</a></li>
                     <li role="presentation"><a href="#enrollmentor" aria-controls="messages" role="tab" data-toggle="tab">멘토 등록</a></li>
                     <li role="presentation"><a href="#mentees" aria-controls="settings" role="tab" data-toggle="tab">내게 등록한 멘티</a></li>
                     <li role="presentation"><a href="#setting" aria-controls="settings" role="tab" data-toggle="tab">개인정보 수정</a></li>
@@ -98,9 +98,19 @@
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="seminar">
-                    <table class="table table-hover">
-                    ...
-                    </table>
+                	<% @post.each do |p| %>
+                		<% if p.user_id == @user.id %>
+                			<!-- <div class="panel panel-default"> -->
+                				<div class="col-md-1"></div>
+                				<div class="form-group">
+                					<li>
+                						<a href="/mypage/checkout?list_id=<%=p.id%>"><%=p.mentor_area%> 여행 (<%=p.from%> ~ <%=p.to%>) 
+                							<br><div class="col-md-1"></div><h6><%=p.created_at%>에 저장됨</h6></a>
+                					</li>
+                				</div>
+            				<!-- </div> -->
+                		<% end %>
+                	<% end %>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="enrollmentor">...</div>
                 <div role="tabpanel" class="tab-pane" id="mentees">...</div>

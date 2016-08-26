@@ -1,0 +1,85 @@
+<header>
+    <div class="img_header5">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="mobile_menu">
+                <%= image_tag("logo2.png", id:'mobile_nav_logo') %>
+                <%= image_tag("x.png", id:'x_logo') %>
+                <div>
+                    <ul>
+                        <li><a href="/mypage">안녕하세요! 비회원님</a></li>
+                        <li><a href="/service">서비스</a></li>
+                        <li><a href="/doum">도움말</a></li>
+                        <li><a href="enroll_mentor">멘토 등록하기</a></li>
+                    </ul>            
+                </div>
+            </div>
+            
+            <div class="mobile_header">
+                <%= image_tag("mobile_menu.png" , id: 'mobile_menu_logo') %>
+                <a class="mobile_brand" href="#page-top">
+                    <%= image_tag("logo.png", id:'mobile_logo') %>
+                </a>
+            </div>
+        
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <%= image_tag("logo.png" , id:'logo')  %>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li menu_help"><a href="/help" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+            <div class="">
+                <div class="my_page_p">
+                    <h1>MENTORING PAGE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="wrapper_section2 margin_plus2"> 
+    	<h2 class="text-center"> 나의 <%=@details.mentor_area%> 여행 멘토링 </h2>
+    	<br>
+        <div class="panel panel-default panel-edit">
+            <div class="panel-body">
+                <img class="img-responsive" alt="a" src="http://presentationvoice.com/wp-content/uploads/2014/03/Photo-March-Issue_Facebook--1024x1024.jpg" style="width:200px;">
+                <div class="personal_info">
+                	<p> <b> <나의 멘토 정보> </b></p>
+                    <p> <b> E-mail </b> <%= @mentor.email %> </p>
+                    <p> <b> Username </b> <%= @mentor.username %>  </p>
+                    <p> <b> Region </b> <%=@mentor.region%></p>
+                    <% if @user.language == 0 %>
+                    <p> <b> Language </b> Korean </p>
+                    <% end %>
+                </div>
+                <!-- Nav tabs -->
+                <div>
+                <br>
+                <a class="btn btn-primary btn-lg btn-block" href="/mypage" role="button"> 멘토와 채팅하러 가기 </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
