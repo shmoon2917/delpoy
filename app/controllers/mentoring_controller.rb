@@ -100,6 +100,11 @@ class MentoringController < ApplicationController
     @find_my_apply= IndexOfApply.all
     @all_user=User.all
     
+    @myindex_a=IndexOfApply.where(mentor_id: @mentor.id)
+    @myindex=@myindex_a.where.not(complete: 3)
+    
+    @mentoring=@myindex.where(complete: 2)
+    @detail=ApplyListDetail.where.not(complete: 2)
   end
   
   def mentor_viewdetail
@@ -159,5 +164,13 @@ class MentoringController < ApplicationController
     @result=params[:result]
     @details = ApplyListDetail.find(params[:list_id])
     @mentee=User.find(@details.user_id)
+  end
+  
+  def show
+    #멘토링 신청 폼(db) 확인하기위한 page
+    @user=current_user
+    @index=IndexOfApply.all
+    @detail=ApplyListDetail.all
+    @mentor=RealMentor.all
   end
 end

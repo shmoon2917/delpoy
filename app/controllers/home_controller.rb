@@ -101,9 +101,13 @@ class HomeController < ApplicationController
   def mentor_select
     @user=current_user
     index=IndexOfApply.find(params[:index_of_id])
+    detail_id=index.list_id
     index.complete=2
+    detail=ApplyListDetail.find(detail_id)
+    detail.complete=1
     
     index.save
+    detail.save
     
     redirect_to '/mypage'
   end

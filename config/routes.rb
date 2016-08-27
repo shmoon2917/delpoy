@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   get 'down_grade'=>'home#down_grade'
   
   
-
+  get 'mentor_view/show' =>'mentoring#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

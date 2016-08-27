@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160819073107) do
     t.integer  "id_of_mentor"
     t.integer  "user_id"
     t.integer  "auction_price"
-    t.boolean  "complete"
+    t.integer  "complete"
     t.string   "mentor_area"
     t.string   "from"
     t.string   "to"
