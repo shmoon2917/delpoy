@@ -12,6 +12,7 @@ class HomeController < ApplicationController
 
   def mypage
     @user = current_user
+    @post=ApplyListDetail.all
   end
   def enroll_mentor
     @user = current_user
@@ -96,6 +97,48 @@ class HomeController < ApplicationController
     destroy_mentor.save
     redirect_to '/admin_mentor'
   end
+  
+  def checkout
+    @user=current_user
+    index=IndexOfApply.where(list_id: params[:list_id])
+    detail=ApplyListDetail.find(params[:list_id])
+    
+        
+    index.each do |i|
+      if i.complete==2
+        redirect_to :controller=>'home', :action=>'mentoring', :list_id => detail.id, :id=> i.id 
+        return
+      end
+    end
+    
+    redirect_to :controller => 'home', :action => 'apply_status', :list_id => detail.id
+  end
 
-
+  def apply_status
+    @user=current_user
+    @index=IndexOfApply.where(list_id: params[:list_id])
+    @details=ApplyListDetail.find(params[:list_id])
+    @mentor=RealMentor.all
+    @users=User.all
+  end
+  
+  def mentor_select
+    @user=current_user
+    index=IndexOfApply.find(params[:index_of_id])
+    index.complete=2
+    
+    index.save
+    
+    redirect_to '/mypage'
+  end
+  
+  def mentoring
+    @user=current_user
+    @index=IndexOfApply.find(params[:id])
+    @details=ApplyListDetail.find(params[:list_id])
+    
+    @mentor_id=RealMentor.find(@index.mentor_id)
+    @mentor=User.find(@mentor_id.user_id)
+    
+  end
 end

@@ -24,7 +24,10 @@ Rails.application.routes.draw do
   post 'meeting/participate_in'
   post '/need_mentor' => 'home#need_mentor'
 
-
+  get 'mypage/apply_status'=>'home#apply_status'
+  get 'mypage/checkout'=>'home#checkout'
+  get 'mentoring'=>'home#mentoring'
+  post 'mentor_select'=>'home#mentor_select'
 
 
   #mentoring related routing 

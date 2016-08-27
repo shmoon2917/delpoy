@@ -52,33 +52,34 @@
             </div>
             <div class="">
                 <div class="my_page_p">
-                    <h1>MENTOR PAGE</h1>
+                    <h1>MENTORING PAGE</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
-
 <section>
-	<div class="contaioner">
-		<div class="wrapper_section2 margin_plus2">
-			<h2 class="text_center"> 멘토링 수락 </h2>
-			<div class="panel panel-default">
-				<div class="panel-body">
-											
-					<form  method = "get" action="/mentor_view/reply_admit2">
-						<p> 멘토링 비용을 얼마에 제안하시겠습니까? </p>
-						<br>
-				        <div class="form-inline"><input type="number" name="cost" class="form-control" placeholder="비용 ($)">
-				        <input type="hidden" value ="<%= @list_id %>" name="list_id">
-				        <input type="hidden" value ="<%= @index_id %>" name="index_id">
-				        <input type="hidden" value ="0" name="result">
-				        <button type="submit" class="btn btn-primary"> 제안하기 </button>
-				        </div>
-				    </form>					
-				</div>
-			</div>
-	
-		</div>
-	</div>
+    <div class="wrapper_section2 margin_plus2"> 
+    	<h2 class="text-center"> 나의 <%=@details.mentor_area%> 여행 멘토링 </h2>
+    	<br>
+        <div class="panel panel-default panel-edit">
+            <div class="panel-body">
+                <img class="img-responsive" alt="a" src="http://presentationvoice.com/wp-content/uploads/2014/03/Photo-March-Issue_Facebook--1024x1024.jpg" style="width:200px;">
+                <div class="personal_info">
+                	<p> <b> <나의 멘토 정보> </b></p>
+                    <p> <b> E-mail </b> <%= @mentor.email %> </p>
+                    <p> <b> Username </b> <%= @mentor.username %>  </p>
+                    <p> <b> Region </b> <%=@mentor.region%></p>
+                    <% if @user.language == 0 %>
+                    <p> <b> Language </b> Korean </p>
+                    <% end %>
+                </div>
+                <!-- Nav tabs -->
+                <div>
+                <br>
+                <a class="btn btn-primary btn-lg btn-block" href="/mypage" role="button"> 멘토와 채팅하러 가기 </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

@@ -62,7 +62,7 @@
 <section>
 	<div class="contaioner">
 		<div class="wrapper_section2 margin_plus2">
-			<h2 class="text_center"> <%=@mentee.username%> 님의 멘토링 요청 세부 내용 </h2>
+			<h2 class="text_center"> <%=@mentee.username%> 님의 멘토링 요청 세부 내용 <%=@index.mentor_id%> <%=@index.id%> </h2>
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<input type="hidden" value ="<%= @user.id %>" name="id_of_user">
@@ -114,8 +114,8 @@
 					</div>
 					
 						
-					<a class="btn btn-primary btn-lg btn-block" href="mentor_view/reply_admit?list_id=<%=@details.id%>" role="button"> 수락하기 </a>
-					<a class="btn btn-default btn-lg btn-block" href="mentor_view/reply_reject?list_id=<%=@details.id%>" role="button"> 거절하기 </a>
+					<a class="btn btn-primary btn-lg btn-block" href="mentor_view/reply_admit?list_id=<%=@details.id%>&index_id=<%=@index.id%>" role="button"> 수락하기 </a>
+					<a class="btn btn-default btn-lg btn-block" href="mentor_view/reply_reject?list_id=<%=@details.id%>&index_id=<%=@index.id%>" role="button"> 거절하기 </a>
 					
 				</div>
 			</div>

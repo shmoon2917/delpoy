@@ -65,31 +65,56 @@
 			<h2 class="text_center">  </h2>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<% @index.each do |i|%>
-					<li>
-						<%=i.user_id%>
-						<%=i.complete%>
-						<%=i.auction_price%>
-					</li>
-					<%end%>
+					<table class="table table-bordered">
+                        	<thead>
+						      <tr>
+						      	<th>id</th>
+						      	<th>list id</th>
+						      	<th>user_id</th>
+						        <th>mentor_id</th>
+						        <th>area</th>
+						        <th>complete</th>
+						        <th>auction price</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						    	<% @index.each do |p|%>
+							    	<tr>
+							    		<td><%=p.id%></td>
+							    		<td><%=p.list_id%></td>
+							    		<td><%=p.user_id%></td>
+			                        	<td><%=p.mentor_id%></td>
+			                        	<% @detail.each do |d|%>
+			                        	<% if d.id==p.list_id%>
+			                        		<td><%=d.mentor_area%></td>
+		                        		<%end%>
+		                        		<%end%>
+			                        	<td><%=p.complete%></td>
+			                        	<td><%=p.auction_price%> </td>
+		                    		</tr>
+		                		<%end%>
+					    	</tbody>
+						</table>
+						
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>user id</th>
+									<th>mentor id</th>>
+								</tr>
+							</thead>
+							<tbody>
+								<%@mentor.each do |m|%>
+								<tr>
+									<td><%=m.user_id%></td>
+									<td><%=m.id%></td>
+								</tr>
+								<%end%>
+							</tbody>
+						</table>
 				</div>
 			</div>
 	
 		</div>
 	</div>
 </section>
-<!-- <script>
-$(".reply_submit").click(function(){
-		var id=this.value;
-		var cost=promt("얼마를 제안하시겠습니까?");
-		
-		 // $.ajax({
-			 // method: "POST",
-			 // url: "/mentor_view/reply_admit",
-			 // data: { id: id, cost: cost },
-			 // .done(function( msg ) {
-			 // alert("리플이 작성되었습니다");
-			 // });
-		// });
-});
- </script> -->

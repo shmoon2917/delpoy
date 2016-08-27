@@ -93,6 +93,8 @@ class MentoringController < ApplicationController
 
   def mentor_view
     @user = current_user
+    @mentor=RealMentor.find_by(user_id: @user.id)
+    
     @find_my_apply= IndexOfApply.all
     @all_user=User.all
     
@@ -100,7 +102,9 @@ class MentoringController < ApplicationController
   
   def mentor_viewdetail
     @user = current_user
+    # @index_id=params[:index_id]
     
+    @index=IndexOfApply.find_by(id: params[:index_id])
     @details = ApplyListDetail.find(params[:list_id])
     @mentee=User.find(@details.user_id)
   end
@@ -108,6 +112,7 @@ class MentoringController < ApplicationController
   def reply_admit
     @user = current_user
     @list_id = params[:list_id]
+    @index_id=params[:index_id]
     # myindex = IndexOfApply.find_by(list_id: params[:list_id])
     # myindex.complete=1
     
@@ -117,8 +122,9 @@ class MentoringController < ApplicationController
   def reply_admit2
     @user=current_user
     @list_id = params[:list_id]
+    @index_id=params[:index_id]
     
-    myindex = IndexOfApply.find_by(list_id: @list_id)
+    myindex = IndexOfApply.find_by(id: @index_id)
     myindex.complete=1
     myindex.auction_price=params[:cost]
     myindex.save
@@ -132,7 +138,9 @@ class MentoringController < ApplicationController
   def reply_reject
     @user=current_user
     @list_id=params[:list_id]
-    myindex=IndexOfApply.find_by(list_id: params[:list_id])
+    @index_id=params[:index_id]
+    
+    myindex=IndexOfApply.find_by(id: params[:index_id])
     myindex.complete=3  #멘토링 거절시 compelte=>3으로
     
     myindex.save
@@ -155,6 +163,7 @@ class MentoringController < ApplicationController
     #멘토링 신청 폼(db) 확인하기위한 page
     @user=current_user
     @index=IndexOfApply.all
-    
+    @detail=ApplyListDetail.all
+    @mentor=RealMentor.all
   end
 end
