@@ -84,6 +84,8 @@ class MentoringController < ApplicationController
 
       i.save
     end
+
+    redirect_to :controller => 'home', :action => 'apply_status', :list_id => i.list_id
   end
 
 
@@ -157,13 +159,5 @@ class MentoringController < ApplicationController
     @result=params[:result]
     @details = ApplyListDetail.find(params[:list_id])
     @mentee=User.find(@details.user_id)
-    
-  end
-  def show
-    #멘토링 신청 폼(db) 확인하기위한 page
-    @user=current_user
-    @index=IndexOfApply.all
-    @detail=ApplyListDetail.all
-    @mentor=RealMentor.all
   end
 end

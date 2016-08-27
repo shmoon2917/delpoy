@@ -7,8 +7,6 @@ class HomeController < ApplicationController
   def service
     @user = current_user
   end
-  def chat
-  end
 
   def mypage
     @user = current_user
@@ -31,9 +29,6 @@ class HomeController < ApplicationController
     
     redirect_to '/'
   end
-  def admin
-    @mentor_request = Mentor.all
-  end
 
   def admit
     admit_request = User.find_by(id: params[:hidden_personal_id])    # mentor db 상의 저장된 user_id를 이용해 User 를 찾음 
@@ -50,25 +45,6 @@ class HomeController < ApplicationController
     request_destroy.destroy
     redirect_to '/admin_apply'
   end
-  def search_list
-    @user = current_user
-    @region = Region.all
-    
-    @user_region = params[:region]
-    @all_users = User.all
-  end
-  
-  def mentor_page
-    @one_post = User.find(params[:id])
-  end
-
-  def need_mentor
-    @area = params[:mentor_area]
-    @from = params[:from]
-    @to = params[:to]
-    @text = params[:mentor_content]
-  end
-
   
   def admin_index  
   end

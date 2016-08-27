@@ -2,26 +2,6 @@
     <div class="img_header3">
         <div class="wrapper_header">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="mobile_menu">
-                <%= image_tag("logo2.png", id:'mobile_nav_logo') %>
-                <%= image_tag("x.png", id:'x_logo') %>
-                <div>
-                    <ul>
-                        <li><a href="/mypage">안녕하세요! <%= @user.username %>님</a></li>
-                        <li><a href="/service">서비스</a></li>
-                        <li><a href="/help">도움말</a></li>
-                        <li><a href="enroll_mentor">멘토 등록하기</a></li>
-                    </ul>            
-                </div>
-            </div>
-            
-            <div class="mobile_header">
-                <%= image_tag("mobile_menu.png" , id: 'mobile_menu_logo') %>
-                <a class="mobile_brand" href="#page-top">
-                    <%= image_tag("logo.png", id:'mobile_logo') %>
-                </a>
-            </div>
-
             <div class="basic_header">
                 <div class="logo">
                     <a href="/">
@@ -38,12 +18,15 @@
                                 <div class="user_scroll">
                                     <ul>
                                         <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                      <% if @user.grade == 2 %>
+                                          <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
+                                      <% end %>
                                         <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <% if @user.grade == 1 %>
-                            <div class="li menu_admin"><a href="/admin" class="li_a ">관리자 페이지</a></div>
+                            <div class="li menu_admin"><a href="/admin_all" class="li_a ">관리자 페이지</a></div>
                             <% end %>
                             <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
                         </div>

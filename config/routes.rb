@@ -8,21 +8,11 @@ Rails.application.routes.draw do
 
   get 'help' => 'home#help'
   get 'mypage' => 'home#mypage'
-  get 'chat' => 'home#chat'
   get 'enroll_mentor' => 'home#enroll_mentor'
   post 'enroll_process' => 'home#enroll_process'
   get 'admin' => 'home#admin'
   get 'service' => 'home#service'
   post 'admit' => 'home#admit'
-  post 'search_list' => 'home#search_list'
-  get 'mentor_page/:id'=>'home#mentor_page'
-  
-  get 'meeting/index' => 'meeting#index'
-  get 'meeting_detail/:id'=>'meeting#meeting_detail'
-  post 'meeting/register_meeting'
-
-  post 'meeting/participate_in'
-  post '/need_mentor' => 'home#need_mentor'
 
   get 'mypage/apply_status'=>'home#apply_status'
   get 'mypage/checkout'=>'home#checkout'
@@ -42,10 +32,8 @@ Rails.application.routes.draw do
   get'mentor_viewdetail' =>'mentoring#mentor_viewdetail'
   get'mentor_view/reply_admit'=>'mentoring#reply_admit'
   get 'mentor_view/reply_admit2'=>'mentoring#reply_admit2'
-  # post'mentor_view/reply_admit2'=>'mentoring#reply_admit2'
   get 'mentor_view/reply_reject'=>'mentoring#reply_reject'
   get 'mentor_view/apply_success'=>'mentoring#reply_success'
-  get 'mentor_view/show' =>'mentoring#show'
   
   get 'auction' => 'mentoring#mentoring_auction'
   
