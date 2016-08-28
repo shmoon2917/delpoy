@@ -1106,49 +1106,55 @@
   color : #27a8e0;
   padding : 10px 7px;
  }
+
+ .travel_now:hover {
+   -webkit-filter: brightness(70%); /* Chrome, Safari, Opera */
+   filter:brightness(70%);
+ }
  
  .travel_now {
-  padding : 30px;
+  padding : 20px;
   width : 580px;
-  height : 200px;
-  margin : 0 auto;
+  height : 150px;
+  margin : 0 auto 20px auto;
   background-image : url(travel_now);
   background-repeat : no-repeat;
   background-size : cover;
   border-radius : 10px;
  }
- 
- .travel_now div {
+
+ .travel_now_cancel {
+   padding : 20px;
+   width : 580px;
+   height : 150px;
+   margin : 0 auto 20px auto;
+   background-image : url(travel_now);
+   background-repeat : no-repeat;
+   background-size : cover;
+   border-radius : 10px;
+   -webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
+   filter:brightness(40%);
+ }
+
+ .travel_now div, .travel_now div {
   display : inline-block;
  }
  
- .travel_now h2 {
+ .travel_now h2, .travel_now_cancel h2 {
 
   font-size : 40px;
   color : white;
  }
  
- .travel_now p {
-  margin-top : 15px;
+ .travel_now p, .travel_now_cancel p {
+  margin-top : 10px;
   color : white;
   font-size : 18px;
  }
- 
- .travel_now a {
-  font-size : 16px;
-  color : white;
-  border-radius : 5px;
-  background-color : #27a8e0;
-  padding : 15px;
-  position : relative;
-  top : -30%;
-  left : 19%;
-  cursor : pointer;
- }
- 
- .travel_now a:hover {
-  text-decoration : none;
-  background-color : #37a9e0;
+
+
+ .remove_travel {
+   float : left;
  }
 
  // 견적서 작성 완료 (success.html)

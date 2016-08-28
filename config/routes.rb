@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'mypage/checkout'=>'home#checkout'
   get 'mentoring'=>'home#mentoring'
   post 'mentor_select'=>'home#mentor_select'
+  get 'remove_travel' => 'home#remove_travel'
 
 
   #mentoring related routing 
