@@ -71,39 +71,46 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="now">
-                    <div class="travel_now">
-                        <div>
-                            <h2>Prague</h2>
-                            <p>6/29 ~ 7/11 (13박 14일)</p>
-                            <p>프라하 - 체스키크룸로프 - 바이둘</p>
-                        </div>
-                        <a>플래너 수정하기</a>
-                    </div>
+                  <% @post.each do |q| %>
+                    <% if q.user_id == @user.id %>
+                      <% if q.complete == 1 %>
+                        <a class = "travel_now_a" href="/mypage/checkout?list_id=<%=q.id%>">
+                          <div class="travel_now">
+                            <div>
+                              <h2>여행 제목</h2>
+                              <p>(<%= q.from %> ~ <%= q.to %>)</p>
+                              <p><%= q.mentor_area %></p>
+                            </div>
+                          </div>
+                        </a>
+                      <% end %>
+                    <% end %>
+                  <% end %>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="seminar">
                 	<% @post.each do |p| %>
                 		<% if p.user_id == @user.id %>
-                          <% if p.complete == 3 %>
-                              <!--<a class = "travel_now_b" href="/mypage/checkout?list_id=<%=p.id%>">-->
-                                <div class="travel_now_cancel">
-                                  <div>
-                                    <h2>취소된 여행</h2>
-                                    <p>(<%= p.from %> ~ <%= p.to %>)</p>
-                                    <p><%= p.mentor_area %></p>
-                                  </div>
-                                </div>
-                              <!--</a>-->
-                          <% else %>
-                              <a class = "travel_now_a" href="/mypage/checkout?list_id=<%=p.id%>">
-                                <div class="travel_now">
-                                  <div>
-                                    <h2>여행 제목</h2>
-                                    <p>(<%= p.from %> ~ <%= p.to %>)</p>
-                                    <p><%= p.mentor_area %></p>
-                                  </div>
-                                </div>
-                              </a>
-                          <% end %>
+                      <% if p.complete == 3 %>
+                        <!--<a class = "travel_now_b" href="/mypage/checkout?list_id=<%=p.id%>">-->
+                          <div class="travel_now_cancel">
+                            <div>
+                              <h2>취소된 여행</h2>
+                              <p>(<%= p.from %> ~ <%= p.to %>)</p>
+                              <p><%= p.mentor_area %></p>
+                            </div>
+                          </div>
+                        <!--</a>-->
+                      <% elsif p.complete == 0 %>
+                          <a class = "travel_now_a" href="/mypage/checkout?list_id=<%=p.id%>">
+                            <div class="travel_now">
+                              <div>
+                                <h2>여행 제목</h2>
+                                <p>(<%= p.from %> ~ <%= p.to %>)</p>
+                                <p><%= p.mentor_area %></p>
+                              </div>
+                            </div>
+                          </a>
+                      <% end %>
                 		<% end %>
                 	<% end %>
                 </div>
