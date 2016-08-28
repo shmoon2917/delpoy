@@ -79,15 +79,11 @@
             <input type="hidden" value="<%= @a.user_id %>" name="id_of_user">
             <input type="hidden" value ="<%= @a.id %>" name="id_of_applylist">
             <div class="form-group">
-              <div class="mentor_list_content">
-                <input type="checkbox" name="chk_info[]" value="<%= @mentor_name[0] %>">&nbsp;&nbsp;<%= @mentor_name[0] %>
-              </div>
-              <div class="mentor_list_content">
-                <input type="checkbox" name="chk_info[]" value="<%= @mentor_name[1] %>">&nbsp;&nbsp;<%= @mentor_name[1] %>
-              </div>
-              <div class="mentor_list_content">
-                <input type="checkbox" name="chk_info[]" value="kangmao">&nbsp;&nbsp;kangmao
-              </div>
+              <% @mentor_name.each do |name| %>
+                <div class="mentor_list_content">
+                  <input type="checkbox" name="chk_info[]" value="<%= name %>">&nbsp;&nbsp;<%= name %>
+                </div>
+              <% end %>
             </div>
             <input type="submit" class="real_send_sheet_submit" value="submit">
           </form>

@@ -6,11 +6,11 @@ class CreateApplyListDetails < ActiveRecord::Migration
       t.integer "id_of_mentor"
       t.integer "user_id"
       t.integer "auction_price" # 최종 가격이적힌 
-      t.boolean "complete"  # 입찰이 끝났는지.. 1이면 해결 , 0 이면 아직 진행중인 것 .
+      t.integer "complete"  # 입찰이 끝났는지.. 1이면 해결 , 0 이면 아직 진행중인 것 .
       
       
       
-      # form 에서 받는 내용 
+      # form 에서 받는 내용
       t.string "mentor_area"
       t.string "from"
       t.string "to"

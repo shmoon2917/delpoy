@@ -96,6 +96,8 @@ class HomeController < ApplicationController
     @details=ApplyListDetail.find(params[:list_id])
     @mentor=RealMentor.all
     @users=User.all
+
+    @list_id = params[:list_id]
   end
   
   def mentor_select
@@ -115,6 +117,26 @@ class HomeController < ApplicationController
     
     @mentor_id=RealMentor.find(@index.mentor_id)
     @mentor=User.find(@mentor_id.user_id)
-    
+
+    @list_id = params[:list_id]
+  end
+
+  def remove_travel
+    @index = IndexOfApply.where(list_id: params[:list_id])
+    @details = ApplyListDetail.find(params[:list_id])
+
+    # 멘티의 취소에 따른 디비 삭제
+    #
+    # for i in 0..(@index.length-1)
+    #   @index[i].destroy
+    # end
+    #
+    # @details.destroy
+
+    @details.complete = 3
+    @details.save
+
+    redirect_to '/mypage#seminar'
+
   end
 end
