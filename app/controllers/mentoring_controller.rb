@@ -13,6 +13,8 @@ class MentoringController < ApplicationController
     @a = ApplyListDetail.new
     @a.user_id = params[:id_of_user]
 
+
+    @a.title = params[:title]
     @a.mentor_area  = params[:mentor_area]
     @a.from = params[:from]
     @a.to = params[:to]
@@ -172,5 +174,9 @@ class MentoringController < ApplicationController
     @index=IndexOfApply.all
     @detail=ApplyListDetail.all
     @mentor=RealMentor.all
+  end
+
+  def mentoring_view
+    @user = current_user
   end
 end

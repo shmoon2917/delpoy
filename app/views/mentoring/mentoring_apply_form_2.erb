@@ -57,6 +57,11 @@
 			<div class="panel-body">
 				<form action="/mentoring_process2" method="post">
 					<input type="hidden" value ="<%= @user.id %>" name="id_of_user">
+          <!-- 여행 제목 -->
+          <div class="form-group">
+            <label for="travel-title"> 여행 제목</label>
+            <input type="text" class="form-control enroll_input" id="travel-title" name ="title">
+          </div>
 					<!--지역-->
 					<div class="form-group">
 						<label for="mentor_area"> 1. 가고 싶은 지역 (검색창에서 검색 후 마커를 눌러주세요.)</label>

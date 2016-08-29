@@ -95,7 +95,7 @@
  /* Common CSS */
  body {
 	 font-family: 'RixJGulim B';
-    min-width : 1200px;
+    min-width : 1100px;
  }
  
  .wrapper_header {
@@ -347,9 +347,15 @@
  
  .nav .li a.nav_enroll_mentor:hover {
   text-decoration : none;
-  -webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
-  filter:brightness(80%);
+  background-color : #0e6bc4;
+  //-webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
+  //filter:brightness(80%);
  }
+
+.nav .li a.nav_enroll_mentor:active {
+  text-decoration : none;
+  background-color : #083F73;
+}
  
   .user_scroll {
     display : none;
@@ -406,20 +412,29 @@
   font-size : 21px;
  }
  
- .planner_button {
+ .planner_a_button {
   margin : 60px auto 0 auto;
-  width : 170px;
-  height : 60px;
+   padding : 0px 20px;
   line-height : 60px;
   border-radius : 5px;
   background-color : #27a8e0;
+   font-size : 16px;
+   color : white;
+   display : inline-block;
  }
- 
- .planner_a_button {
-  font-size : 16px;
+
+.planner_a_button:hover, .mentoring_a_button:hover {
+  text-decoration : none;
+  background-color : #0e6bc4;
   color : white;
- }
- 
+}
+
+.planner_a_button:active, .mentoring_a_button:active {
+  text-decoration : none;
+  background-color : #083F73;
+  color : white;
+}
+
  .best_list {
   overflow : hidden;
   display : inline-block;
@@ -492,8 +507,13 @@
  }
  
  .button:hover{
-  -webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
-  filter:brightness(80%);
+  //-webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
+  //filter:brightness(80%);
+  background-color : #0e6bc4;
+ }
+
+ .button:active {
+   background-color: #083F73;
  }
 
 
@@ -644,9 +664,15 @@
  }
  
  .comm_button:hover {
-  -webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
-  filter:brightness(80%);  
+  //-webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
+  //filter:brightness(80%);
+  background-color: #0e6bc4;
  }
+
+ .comm_button:active {
+  background-color: #083F73;
+ }
+
  .footer{
   padding-top : 50px;
   padding-bottom : 20px;
@@ -910,7 +936,7 @@
  }
  
  .margin_plus {
-  padding : 60px 0px;
+  padding : 60px 0px 30px 0px;
  }
  
  #img_planner, #img_partner, #img_talk {
@@ -1157,14 +1183,66 @@
    float : left;
  }
 
- // 견적서 작성 완료 (success.html)
+ // mentoring_apply_form 1
 
+  #mentoring_process_img {
+    width : 900px;
+    display: inherit;
+    margin : 0 auto 50px auto;
+  }
+
+  .img_mentoring_num {
+    width : 130px;
+    margin : 30px;
+  }
+
+  .mentoring_Info {
+    width : 630px;
+    display : inline-block;
+    height : 130px;
+    margin-top : 30px;
+    margin-bottom : 30px;
+    padding-left : 20px;
+    border-left : 3px solid #27a8e0;
+  }
+
+  .mentoring_info_section {
+    width : 900px;
+    margin : 0px auto 30px auto;
+    background-color : white;
+    border-radius : 10px;
+    height : 190px;
+  }
+
+  .mentoring_Info p {
+    margin-top : 15px;
+    font-size : 16px;
+  }
+
+
+  .a_button_wrapper {
+    text-align: center;
+  }
+
+  .mentoring_a_button {
+    margin-top : 20px;
+    padding : 0px 40px;
+    line-height : 60px;
+    border-radius : 5px;
+    background-color : #27a8e0;
+    font-size : 16px;
+    color : white;
+    display : inline-block;
+  }
+
+ // 견적서 작성 완료 (success.html)
 
 .mentoring_success_div {
   margin : 40px auto 40px;
   width : 1020px;
   height : 750px;
 }
+
 .sheet_list {
   width : 630px;
   height : 650px;
@@ -1624,7 +1702,49 @@ label[for="mentor_area"] {
   margin : 10px 0 15px 0;
   font-size : 18px;
 }
- 
+
+// mentoring view
+
+.mentoring_all_view_div {
+  margin : 20px auto 40px;
+  width : 1020px;
+  height : 750px;
+}
+
+.mentoring_view {
+  width : 630px;
+  height : 650px;
+  display : inline-block;
+  margin : 0;
+  float : left;
+  border-top : 3px solid #27a8e0;
+}
+
+.mentoring_view p, .chatting_view p {
+  text-align : center;
+  font-size : 20px;
+  // margin-bottom : 10px;
+}
+
+.mentoring_view h4 {
+  margin-top : 20px;
+  margin-bottom : 10px;
+}
+
+.chatting_view {
+  padding : 0px 20px;
+  width : 360px;
+  height : 650px;
+  display : inline-block;
+  margin : 0 0 0 25px;
+  border-top : 3px solid #27a8e0;
+}
+
+.chatting_view h5 {
+  margin-top : 20px;
+  margin-bottom : 15px;
+}
+
  //  @media only screen and (min-device-width : 320px) and (max-device-width : 667px) { 
  //    .img_header {
  //   height : 350px;

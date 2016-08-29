@@ -37,7 +37,10 @@ Rails.application.routes.draw do
   get 'mentor_view/apply_success'=>'mentoring#reply_success'
   
   get 'auction' => 'mentoring#mentoring_auction'
-  
+
+  get 'mentoring_view' => 'mentoring#mentoring_view'
+
+
   # admin_ page 
   get 'admin_index' => 'home#admin_all'
   get 'admin_all' =>'home#admin_all'
@@ -45,6 +48,9 @@ Rails.application.routes.draw do
   get 'admin_apply' =>'home#admin_apply'
   get 'admin_destroy' =>'home#admin_destroy'
   get 'down_grade'=>'home#down_grade'
+
+
+
   
   
   get 'mentor_view/show' =>'mentoring#show'

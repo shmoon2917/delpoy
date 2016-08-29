@@ -43,27 +43,25 @@
 </header>
 <section>
   <div class="wrapper_section2 margin_plus2">
-    <h2 class="text-center"> 나의 <%=@details.mentor_area%> 여행 멘토링 </h2>
-    <br>
-    <div class="panel panel-default panel-edit">
-      <div class="panel-body">
-        <img class="img-responsive" alt="a" src="http://presentationvoice.com/wp-content/uploads/2014/03/Photo-March-Issue_Facebook--1024x1024.jpg" style="width:200px;">
-        <div class="personal_info">
-          <p> <b> <나의 멘토 정보> </b></p>
-          <p> <b> E-mail </b> <%= @mentor.email %> </p>
-          <p> <b> Username </b> <%= @mentor.username %>  </p>
-          <p> <b> Region </b> <%=@mentor.region%></p>
-          <% if @user.language == 0 %>
-              <p> <b> Language </b> Korean </p>
-          <% end %>
-        </div>
-        <!-- Nav tabs -->
-        <div>
-          <br>
-          <a class="btn btn-primary btn-lg btn-block" href="/mentoring_view?list_id=<%= @list_id %>" role="button"> 멘토와 채팅하러 가기 </a>
-          <a href="/remove_travel?list_id=<%= @list_id %>" class="btn btn-default remove_travel">취소</a>
+    <h2 class="text-center"> 진행 상황 창 </h2>
+    <div class="mentoring_all_view_div">
+      <br>
+      <div class="panel panel-default panel-edit mentoring_view">
+        <div class="panel-body">
+          <p>진행 상황 창</p>
         </div>
       </div>
+      <div class="panel panel-default panel-edit chatting_view">
+        <div class="panel-body">
+          <p>1:1 채팅</p>
+        </div>
+      </div>
+      <a href="/complete">
+        <div class="send_sheet_button">
+          플래닝 완료
+        </div>
+      </a>
+
     </div>
   </div>
 </section>

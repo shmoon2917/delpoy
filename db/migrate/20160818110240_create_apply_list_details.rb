@@ -12,6 +12,7 @@ class CreateApplyListDetails < ActiveRecord::Migration
       
       
       # form 에서 받는 내용
+      t.string "title"
       t.string "mentor_area"
       t.string "from"
       t.string "to"

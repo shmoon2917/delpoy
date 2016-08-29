@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160819073107) do
     t.integer  "user_id"
     t.integer  "auction_price"
     t.integer  "complete"
+    t.string   "title"
     t.string   "mentor_area"
     t.string   "from"
     t.string   "to"
