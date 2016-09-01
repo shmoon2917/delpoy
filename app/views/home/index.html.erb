@@ -1,167 +1,166 @@
 <header>
-    <div class="img_header">
-        <div class="wrapper_header">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="basic_header">
-                <div class="logo">
-                    <a href="/">
-                    	<img src = " <%= image_path "logo.png" %> " id= "logo" >   
-                    
-                    </a>
-                </div>
-                <div class="menu">
-                    <nav>
-                        <div class="nav">
-                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
-                            <div class="li menu_help"><a href="/help" class="li_a">도움말</a></div>
-                            <div class="li menu_user">
-                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
-                                <div class="user_scroll">
-                                    <ul>
-                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
-                                        <% if @user.grade == 2 %>
-                                            <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
-                                        <% end %>
-			                                  <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <% if @user.grade == 1 %>
-                            <div class="li menu_admin"><a href="/admin_all" class="li_a ">관리자 페이지</a></div>
-                            <% end %>
-                                        	
-                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
-                        </div>
-                    </nav>
-                </div>     
-            </div>
-            <div class="">
-                <div class="index_p">
-                    <h1>행복하고 완벽한 여행을 위한 선택</h1>
-                    <h4>델포이의 멘토들과 함께 멋진 계획을 세우고, 최고의 여행을 즐기세요.</h4>
-                    <a href="/mentoring_apply" class="planner_a_button">
-                      멘토 상담 신청하기
-                    </a>
-                </div>
-            </div>  
-        </div>
-    </div>
+	<div class="img_header">
+		<div class="wrapper_header">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="basic_header">
+				<div class="logo">
+					<a href="/"> <img src = " <%= image_path "logo.png" %> " id= "logo" > </a>
+				</div>
+				<div class="menu">
+					<nav>
+						<div class="nav">
+							<div class="li menu_service">
+								<a href="/service" class="li_a">서비스</a>
+							</div>
+							<div class="li menu_help">
+								<a href="/help" class="li_a">도움말</a>
+							</div>
+							<div class="li menu_user">
+								<a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+								<div class="user_scroll">
+									<ul>
+										<li class="my_page">
+											<a href="/mypage">마이페이지</a>
+										</li>
+										<% if @user.grade == 2 %>
+										<li class="mentoring_page">
+											<a href="/mentor_view">멘토페이지</a>
+										</li>
+										<% end %>
+										<li class="log_out">
+											<a href="/users/sign_out">로그아웃</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<% if @user.grade == 1 %>
+							<div class="li menu_admin">
+								<a href="/admin_all" class="li_a ">관리자 페이지</a>
+							</div>
+							<% end %>
+
+							<div class="li menu_enroll">
+								<a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="">
+				<div class="index_p">
+					<h1>행복하고 완벽한 여행을 위한 선택</h1>
+					<h4>델포이의 멘토들과 함께 멋진 계획을 세우고, 최고의 여행을 즐기세요.</h4>
+					<a href="/mentoring_apply" class="planner_a_button"> 멘토 상담 신청하기 </a>
+				</div>
+			</div>
+		</div>
+	</div>
 </header>
 <article>
-    <section>
-        <div class="wrapper_search">
-            <form method="post" action="/search_list">
-                <div class="form-group search_input">
-                    <input list="test" class="form-control city" name="region" id="search" placeholder="여행하는 도시 이름을 검색" autocomplete="off">
-                    <datalist id="test">
-                        <% @region.each do |x| %>
-                            <option value="<%= x.region %>">
-                        <% end %>
-                    </datalist>
-                    <button class="form-control button">
-                        <span>검색</span>
-                    </button>
-                </div>
-                <div class="search_best">
-                    <ul class="best_list">
-                        <li><a href="/service">파리</a></li>
-                        <li><a href="">뉴욕</a></li>
-                        <li><a href="/mypage">런던</a></li>
-                        <li><a href="">바르셀로나</a></li>
-                        <li><a href="">로마</a></li>
-                        <li><a href="">베를린</a></li>
-                        <li><a href="" class="all_list">전체 여행지</a></li>
-                    </ul>
-                </div>
-            </form>
-        </div>
-    </section>
-    <section>
-        <div class="wrapper_section2">
-            <div class="mentor_section">
-                <%= link_to image_tag("mentor", id: "mentor_img") %>                    
-                <div class="enroll_Info">
-                    <h2>누군가의 여행의 든든한 멘토가 되세요!</h2>
-                    <h4>자신의 경험을 살려 수익을 창출하세요</h4>
-                    <a href="enroll_mentor">
-                        <button type="button" class="btn btn-primary btn-lg comm_button">멘토 등록하기</button>
-                    </a>    
-                </div>
-            </div>
-        </div>
-        <div class="wrapper_section1">
-            <div class="guide_section">
-                <h2>델포이 추천 플래너</h2>
-                <h4>평범한 여행을 거부한다면</h4>
-                <ul class="guide_grid">
-                    <li class="trip1 item">
-                        <a class="box">
-                            <%= image_tag("trip1.jpg" ) %>
-                            <div class="content">
-                                <h3>체스키 크룸로프</h3>
-                                <h4>체코의 숨겨진 동화같은 마을</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="trip2 item">
-                        <a class="box">
-                            <%= image_tag("trip2.jpg") %>
-                            <div class="content">
-                                <h3>체세니 온천</h3>
-                                <h4>온천 백배 즐기기</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="trip3 item">
-                        <a class="box">
-                            <%= image_tag("trip3.jpg") %>
-                            <div class="content">
-                                <h3>태국 치앙마이</h3>
-                                <h4>자유여행의 메카</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="trip4 item_2">
-                        <a class="box">
-                            <%= image_tag("trip4.jpg") %>
-                            <div class="content">
-                                <h3>우유니 사막</h3>
-                                <h4>어려운 남미, A부터 Z까지</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="trip5 item_2">
-                        <a class="box">
-                            <%= image_tag("trip5-1.jpg") %>
-                            <div class="content">
-                                <h3>파리</h3>
-                                <h4>현지인이 추천하는 히든 스팟</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="trip6 item">
-                        <a class="box">
-                            <%= image_tag("trip6.jpg") %>
-                            <div class="content">
-                                <h3>오사카</h3>
-                                <h4>현지인의 추천 먹방 투어</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="trip7 item_3">
-                        <a class="box">
-                            <%= image_tag("trip7.jpg") %>
-                            <div class="content">
-                                <h3>플리트비체 국립공원</h3>
-                                <h4>인생샷 건져오기</h4>
-                            </div>
-                        </a>
-                    </li>
-                 </ul>
-            </div>
-        </div>
-        
-    </section>
-    
+	<section>
+		<div class="wrapper_search">
+			<form method="post" action="/search_list">
+				<div class="form-group search_input">
+					<input list="test" class="form-control city" name="region" id="search" placeholder="여행하는 도시 이름을 검색" autocomplete="off">
+					<datalist id="test">
+						<% @region.each do |x| %>
+						<option value="<%= x.region %>"> <% end %>
+					</datalist>
+					<button class="form-control button">
+						<span>검색</span>
+					</button>
+				</div>
+				<div class="search_best">
+					<ul class="best_list">
+						<li>
+							<a href="/service">파리</a>
+						</li>
+						<li>
+							<a href="">뉴욕</a>
+						</li>
+						<li>
+							<a href="/mypage">런던</a>
+						</li>
+						<li>
+							<a href="">바르셀로나</a>
+						</li>
+						<li>
+							<a href="">로마</a>
+						</li>
+						<li>
+							<a href="">베를린</a>
+						</li>
+						<li>
+							<a href="" class="all_list">전체 여행지</a>
+						</li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section>
+		<div class="wrapper_section2">
+			<div class="mentor_section">
+
+				<img src = " <%= image_path "mentor" %> " id= "mentor_img" >
+
+				<div class="enroll_Info">
+					<h2>누군가의 여행의 든든한 멘토가 되세요!</h2>
+					<h4>자신의 경험을 살려 수익을 창출하세요</h4>
+					<a href="enroll_mentor">
+					<button type="button" class="btn btn-primary btn-lg comm_button">
+						멘토 등록하기
+					</button> </a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper_section1">
+			<div class="guide_section">
+				<h2>델포이 추천 플래너</h2>
+				<h4>평범한 여행을 거부한다면</h4>
+				<ul class="guide_grid">
+					<li class="trip1 item">
+						<a class="box"> <img src = " <%= image_path "trip1.jpg" %> ">
+						<div class="content">
+							<h3>체스키 크룸로프</h3>
+							<h4>체코의 숨겨진 동화같은 마을</h4>
+						</div> </a>
+					</li>
+					<li class="trip2 item">
+						<a class="box"> <img src = " <%= image_path "trip2.jpg" %> " >
+						<div class="content">
+							<h3>체세니 온천</h3>
+							<h4>온천 백배 즐기기</h4>
+						</div> </a>
+					</li>
+					<li class="trip3 item">
+						<a class="box"> <img src = " <%= image_path "trip3.jpg" %> " >
+						<div class="content">
+							<h3>태국 치앙마이</h3>
+							<h4>자유여행의 메카</h4>
+						</div> </a>
+					</li>
+					<li class="trip4 item_2">
+						<a class="box"> <img src = " <%= image_path "trip4.jpg" %> " >
+						<div class="content">
+							<h3>우유니 사막</h3>
+							<h4>어려운 남미, A부터 Z까지</h4>
+						</div> </a>
+					</li>
+					<li class="trip5 item_2">
+						<a class="box"> <img src = " <%= image_path "trip5-1.jpg" %> " >
+						<div class="content">
+							<h3>파리</h3>
+							<h4>현지인이 추천하는 히든 스팟</h4>
+						</div> </a>
+					</li>
+					
+					
+				</ul>
+			</div>
+		</div>
+
+	</section>
+
 </article>
 
