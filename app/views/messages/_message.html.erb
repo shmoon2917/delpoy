@@ -2,14 +2,14 @@
   <div class="card-block">
     <div class="row">
       <div class="col-md-1">
-        <%= gravatar_for message.user %>
+        <%= gravatar_for message, class: 'user-avatar' %>
       </div>
 
-      <div class="col-md-11">
-        <p class="card-text">
-          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
-          <%= message.body %>
-        </p>
+      <div class="col-md-7 card-message">
+        <p class="card-text"> <%= message.body %> </p>
+      </div>
+      <div class="col-md-4 card-datetime">
+          <span class="text-muted" style="font-size:12px;"><%= message.user.name %> <%= message.timestamp %></span>
       </div>
     </div>
   </div>
