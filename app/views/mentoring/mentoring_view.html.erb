@@ -46,21 +46,28 @@
     <h2 class="text-center"> 진행 상황 창 </h2>
     <div class="mentoring_all_view_div">
       <br>
-      <div class="panel panel-default panel-edit mentoring_view">
-        <div class="panel-body">
-          <p>진행 상황 창</p>
-        </div>
-      </div>
       <div class="panel panel-default panel-edit chatting_view">
         <div class="panel-body">
           <p>1:1 채팅</p>
+
+          <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+              <%= render @chat_room.messages %>
+          </div>
+
+          <%= form_for @message, url: '#' do |f| %>
+            <div class="form-group">
+              <%= f.text_area :body, class: 'form-control' %>
+            </div>
+
+            <%= f.submit "보내기", class: 'btn btn-primary btn-lg' %>
+          <% end %>
         </div>
       </div>
-      <a href="/complete">
+      <!--<a href="/complete">
         <div class="send_sheet_button">
           플래닝 완료
         </div>
-      </a>
+      </a>-->
 
     </div>
   </div>

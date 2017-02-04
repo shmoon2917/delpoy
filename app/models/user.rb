@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   
   has_many :index_of_applies
   has_many :real_mentors, :through => :index_of_applies
+  has_many :chat_rooms, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   has_many :post
 

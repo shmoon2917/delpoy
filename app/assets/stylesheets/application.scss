@@ -1709,6 +1709,7 @@ label[for="mentor_area"] {
   margin : 20px auto 40px;
   width : 1020px;
   height : 750px;
+  text-align: center;
 }
 
 .mentoring_view {
@@ -1733,10 +1734,10 @@ label[for="mentor_area"] {
 
 .chatting_view {
   padding : 0px 20px;
-  width : 360px;
+  //width : 360px;
   height : 650px;
   display : inline-block;
-  margin : 0 0 0 25px;
+  //margin : 0 0 0 25px;
   border-top : 3px solid #27a8e0;
 }
 

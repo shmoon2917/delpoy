@@ -107,7 +107,13 @@ class HomeController < ApplicationController
     index.complete=2
     detail=ApplyListDetail.find(detail_id)
     detail.complete=1
-    
+    detail.id_of_mentor = index.mentor_id
+
+    chat = ChatRoom.new
+    chat.user_id = current_user.id
+    chat.mentor_id = index.mentor_id
+
+    chat.save 
     index.save
     detail.save
     
