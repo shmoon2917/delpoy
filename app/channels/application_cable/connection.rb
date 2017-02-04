@@ -10,6 +10,7 @@ module ApplicationCable
       protected
 
       def find_verified_user
+          puts env['warden']
           if verified_user = env['warden'].user
               verified_user
           else

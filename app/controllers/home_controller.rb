@@ -78,7 +78,9 @@ class HomeController < ApplicationController
     @user=current_user
     index=IndexOfApply.where(list_id: params[:list_id])
     detail=ApplyListDetail.find(params[:list_id])
-    
+
+    puts "==========================="
+    puts detail.id_of_mentor
         
     index.each do |i|
       if i.complete==2
@@ -122,10 +124,13 @@ class HomeController < ApplicationController
   
   def mentoring
     @user=current_user
-    @index=IndexOfApply.find(params[:id])
+
     @details=ApplyListDetail.find(params[:list_id])
-    
-    @mentor_id=RealMentor.find(@index.mentor_id)
+
+    @mentee = User.find(@details.user_id)
+    puts @mentee.email
+
+    @mentor_id=RealMentor.find(@details.id_of_mentor)
     @mentor=User.find(@mentor_id.user_id)
 
     @list_id = params[:list_id]

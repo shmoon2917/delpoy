@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204145827) do
+ActiveRecord::Schema.define(version: 20170204162940) do
 
   create_table "apply_list_details", force: :cascade do |t|
     t.integer  "id_of_mentor"
@@ -32,10 +32,9 @@ ActiveRecord::Schema.define(version: 20170204145827) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "mentor_id"
-    t.integer  "chat_room_id"
     t.index ["user_id"], name: "index_chat_rooms_on_user_id"
   end
 
@@ -70,9 +69,10 @@ ActiveRecord::Schema.define(version: 20170204145827) do
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
+    t.integer  "chat_room_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "chat_room_id"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 

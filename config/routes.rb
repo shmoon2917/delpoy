@@ -18,7 +18,10 @@ Rails.application.routes.draw do
 
   get 'mypage/apply_status'=>'home#apply_status'
   get 'mypage/checkout'=>'home#checkout'
+
   get 'mentoring'=>'home#mentoring'
+  get 'menteeing'=>'mentoring#menteeing'
+
   post 'mentor_select'=>'home#mentor_select'
   get 'remove_travel' => 'home#remove_travel'
 
