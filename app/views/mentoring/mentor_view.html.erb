@@ -92,7 +92,7 @@
                 	<% @mentoring.each do |m|%>
                 		<% @detail.each do |p|%>
                 			<% if m.list_id==p.id && p.complete==1 %>
-		                    <a class = "travel_now_a" href="/mypage/mentoring?list_id=<%=m.id%>">
+		                    <a class = "travel_now_a" href="/menteeing?list_id=<%=p.id%>">
 		                    	<div class="travel_now">
 			                      <div>
 			                        <h2>여행제목</h2>

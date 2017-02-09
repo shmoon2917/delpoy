@@ -178,5 +178,26 @@ class MentoringController < ApplicationController
 
   def mentoring_view
     @user = current_user
+    # TODO mentor 찾고 id 2개로 채팅방 만들기
+    @message = Message.new
+    puts params[:list_id]
+    details = ApplyListDetail.find_by(id: params[:list_id])
+    puts current_user.id
+    puts details.id_of_mentor
+    @chat_room = ChatRoom.includes(:messages).where("user_id = ? and mentor_id = ?", details.user_id, details.id_of_mentor).take
+  end
+
+  def menteeing
+    @user=current_user
+
+    @details=ApplyListDetail.find(params[:list_id])
+
+    @mentee = User.find(@details.user_id)
+    puts @mentee.email
+
+    @mentor_id=RealMentor.find(@details.id_of_mentor)
+    @mentor=User.find(@mentor_id.user_id)
+
+    @list_id = params[:list_id]
   end
 end

@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-block">
+    <div class="row">
+      <div class="col-md-1">
+        <%= gravatar_for message, class: 'user-avatar' %>
+      </div>
+
+      <div class="col-md-7 card-message">
+        <p class="card-text"> <%= message.body %> </p>
+      </div>
+      <div class="col-md-4 card-datetime">
+          <span class="text-muted" style="font-size:12px;"><%= message.user.name %> <%= message.timestamp %></span>
+      </div>
+    </div>
+  </div>
+</div>
+
