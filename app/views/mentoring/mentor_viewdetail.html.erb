@@ -1,0 +1,124 @@
+<header>
+    <div class="img_header5">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+        
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <%= image_tag("logo.png" , id:'logo')  %>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li menu_help"><a href="/help" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                        <% if @user.grade == 2 %>
+                                            <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
+                                        <% end %>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin_all" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+            <div class="">
+                <div class="my_page_p">
+                    <h1>MENTOR PAGE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+	<div class="contaioner">
+		<div class="wrapper_section2 margin_plus2">
+			<h2 class="text_center"> <%=@mentee.username%> 님의 멘토링 요청 세부 내용 <%=@index.mentor_id%> <%=@index.id%> </h2>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<input type="hidden" value ="<%= @user.id %>" name="id_of_user">
+					<!--지역-->
+					<div class="form-group">
+						<label for="mentor_area"> 가고 싶은 지역 (지도 API 넣기 ) </label>
+						<p><%=@details.mentor_area%></p>
+					</div>
+
+					<!-- 날짜 -->
+					<div class="form-group">
+
+						<script>
+							$(function() {
+								$("#datepicker1, #datepicker2").datepicker({
+									dateFormat : 'yy-mm-dd'
+								});
+							});
+						</script>
+
+						<p>
+							<label for="mentor_period">여행 일정 </label>
+							<br><%=@details.from%> ~ <%=@details.to%>
+						</p>
+					</div>
+					<!-- 여행 인원 -->
+					<div class="form-group">
+						<label for="mentor_area"> 여행 인원 (선택 ) </label>
+						<sbr><%=@details.numOfMem%> 명
+					</div>
+					<!--여행 테마 -->
+					<div class="form-group">
+						<label for="mentor_area"> 여행 테마 ( 사진 + text + checkbox? ) </label>
+						<br><%=@details.themeOfPlan%>
+					</div>
+
+					<div class="form-group">
+						<label for="mentor_content"> 예산 범위 </label>
+						<br><%=@details.budget%>
+					</div>
+					<div class="form-group">
+						<label for="mentor_area"> 숙박 유형 (사진 + 호텔, 호스텔 , 민박, 펜션 ,기타 , 섞어서 등등 ) </label>
+						<br><%=@details.accomodation%>
+					</div>
+					
+					<div class="form-group">
+						<label for="mentor_content">멘토에게 하고 싶은 말 </label>
+						<br><%=@details.mentor_content%>
+					</div>
+					
+						
+					<a class="btn btn-primary btn-lg btn-block" href="mentor_view/reply_admit?list_id=<%=@details.id%>&index_id=<%=@index.id%>" role="button"> 수락하기 </a>
+					<a class="btn btn-default btn-lg btn-block" href="mentor_view/reply_reject?list_id=<%=@details.id%>&index_id=<%=@index.id%>" role="button"> 거절하기 </a>
+					
+				</div>
+			</div>
+	
+		</div>
+	</div>
+</section>
+<!-- <script>
+$(".reply_submit").click(function(){
+		var id=this.value;
+		var cost=promt("얼마를 제안하시겠습니까?");
+		
+		 // $.ajax({
+			 // method: "POST",
+			 // url: "/mentor_view/reply_admit",
+			 // data: { id: id, cost: cost },
+			 // .done(function( msg ) {
+			 // alert("리플이 작성되었습니다");
+			 // });
+		// });
+});
+ </script> -->

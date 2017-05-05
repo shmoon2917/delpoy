@@ -1,0 +1,51 @@
+
+<header>
+    <div class="img_header">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <%= image_tag("logo.png" , id:'logo')  %>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li menu_help"><a href="/help" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                        <% if @user.grade == 2 %>
+                                            <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
+                                        <% end %>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin_all" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+</header>
+
+<section>
+	<div class="wrapper_section2 margin_plus2">
+		<h2 class="text_center"> 1-1. 여행 기본 정보 작성하기 </h2>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+					
+			</div>
+		</div>
+
+	</div>
+</section>

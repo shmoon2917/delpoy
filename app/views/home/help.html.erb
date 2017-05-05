@@ -1,0 +1,87 @@
+<header>
+    <div class="img_header4">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <img src = " <%= image_path 'logo.png' %>" id='logo'>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li mene_help"><a href="/help" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                      <% if @user.grade == 2 %>
+                                          <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
+                                      <% end %>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin_all" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+            <div class="">
+                <div class="service_introduce">
+                    <h1 class="service_introduce_h1"><%= @user.username %>님, 안녕하세요! 무엇을 도와드릴까요?</h1>
+                    <h4 class="service_introduce_h2">모르는 것들 무엇이든 여쭤보세요</h4>
+                </div>
+            </div>  
+        </div>
+    </div>
+</header>
+<section> 
+    <div class="wrapper_section2 margin_plus">
+        <div class="help_section">
+            <div class="help_nav">
+                <ul>
+                    <li id="">시작하기</li>
+                    <li>계정과 프로필</li>
+                    <li>플래너 작성하기</li>
+                    <li>멘토 찾기</li>
+                    <li>결제와 주문</li>
+                    <li>멘토링</li>
+                    <li>후기 등록</li>
+                </ul>
+            </div>
+            <div class="help_content">
+                <span>시작하기</span>
+
+                <div>
+                    <div>
+                        <h3>공유를 바탕으로 한 커뮤니티</h3>
+                        <p>델포이는 20016년에 두 명의 개발자가 여행 계획을 짜는 데 어려움을 겪는데부터 시작했습니다. 이제는 전 세계에 백만 명이 넘는 멘토와 멘티가 델포이에 무료로 가입하여 자신들의 여행 경험을 맘껏 나누고 있습니다.</p>
+                    </div>
+                    <%= image_tag("start1.png", class: 'start') %>
+                    <img src = " <%= image_path 'start1.png' %>" class='start'>      
+                </div>
+                <div>
+                    <div>
+                        <h3>신뢰를 바탕으로 하는 서비스</h3>
+                        <p>델포이는 쉽고 믿을 만하고 안전 합니다. 델포이는 개인 프로필과 개인 정보를 인증합니다. 스마트한 메시징 시스템을 통해 멘토와 멘티는 마음 놓고 여행에 관해 이야기를 할 수 있으며, 안전한 전자거래 서비스를 제공하고 있습니다.</p>
+                    </div>
+                   <img src = " <%= image_path 'start2.png' %>" class='start'>
+                </div>
+                <div class="start_3">
+                    <div>
+                        <h3>연중무휴 고객 지원</h3>
+                        <p>델포이는 회원님의 멘토링 또는 여행의 경험 전 과정을 함께합니다. 델포이에 관해 가장 자주 묻는 질문은 도움말 센터에서 찾으실 수 있습니다. 그리고 언제든 Delpoy.co.kr/contact를 방문하여 직접 연락하실 수 있습니다.</p>
+                    </div>
+                    <img src = " <%= image_path 'start3.png' %>" class='start'>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

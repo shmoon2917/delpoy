@@ -1,0 +1,256 @@
+<!-- 멘토링 신청 양식입니다  페이지 2 ,   -->
+<!-- logo 만 남기고 시프다 -->
+
+<header>
+	<div class="img_header5">
+		<div class="wrapper_header">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="basic_header">
+				<div class="logo">
+					<a href="/"> <%= image_tag("logo.png" , id:'logo')  %> </a>
+				</div>
+				<div class="menu">
+					<nav>
+						<div class="nav">
+							<div class="li menu_service">
+								<a href="/service" class="li_a">서비스</a>
+							</div>
+							<div class="li menu_help">
+								<a href="/help" class="li_a">도움말</a>
+							</div>
+							<div class="li menu_user">
+								<a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+								<div class="user_scroll">
+									<ul>
+										<li class="my_page">
+											<a href="/mypage">마이페이지</a>
+										</li>
+                    <% if @user.grade == 2 %>
+                        <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
+                    <% end %>
+										<li class="log_out">
+											<a href="/users/sign_out">로그아웃</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<% if @user.grade == 1 %>
+							<div class="li menu_admin">
+								<a href="/admin_all" class="li_a ">관리자 페이지</a>
+							</div>
+							<% end %>
+							<div class="li menu_enroll">
+								<a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+    </div>
+  </div>
+</header>
+
+<section>
+	<div class="wrapper_section2 margin_plus2">
+		<h2 class="text_center"> 1-1. 여행 기본 정보 작성하기 </h2>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form action="/mentoring_process2" method="post">
+					<input type="hidden" value ="<%= @user.id %>" name="id_of_user">
+          <!-- 여행 제목 -->
+          <div class="form-group">
+            <label for="travel-title"> 여행 제목</label>
+            <input type="text" class="form-control enroll_input" id="travel-title" name ="title">
+          </div>
+					<!--지역-->
+					<div class="form-group">
+						<label for="mentor_area"> 1. 가고 싶은 지역 (검색창에서 검색 후 마커를 눌러주세요.)</label>
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <div id="map"></div>
+            <div id="mentoring_area_block"></div>
+						<input type="text" class="form-control enroll_input mentoring_area" name="mentor_area" id="mentor_area" placeholder="나라 혹은 도시">
+					</div>
+
+					<!-- 날짜 -->
+					<div class="form-group">
+
+
+						<p>
+							<label for="mentor_period">여행 일정 </label>
+							<input type="text" id="datepicker1" name="from">
+							~
+							<input type="text" id="datepicker2" name="to">
+						</p>
+					</div>
+					<!-- 여행 인원 -->
+					<div class="form-group">
+						<label for="mentor_number"> 여행 인원 (선택 ) </label>
+						<input type="text" class="form-control enroll_input" id="" name ="numOfMem">
+					</div>
+					<!--여행 테마 -->
+					<div class="form-group">
+            <label for="mentor_theme"> 여행 유형</label>
+            <div class="mentor_theme_group">
+              <div class="mentoring_theme"><input type="radio" name="theme" class="mentoring_radio_theme" value="family">가족</div>
+              <div class="mentoring_theme"><input type="radio" name="theme" class="mentoring_radio_theme" value="friend">우정</div>
+              <div class="mentoring_theme"><input type="radio" name="theme" class="mentoring_radio_theme" value="couple">커플</div>
+              <div class="mentoring_theme"><input type="radio" name="theme" class="mentoring_radio_theme" value="family">솔로</div>
+              <div class="mentoring_theme"><input type="radio" name="theme" class="mentoring_radio_theme" value="friend">허니문</div>
+              <div class="mentoring_theme"><input type="radio" name="theme" class="mentoring_radio_theme" value="couple">비즈니스</div>
+            </div>
+					</div>
+
+					<div class="form-group">
+						<label for="mentor_budget"> 예산 범위 </label>
+						<textarea class="form-control" name = "budget"  rows="10"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="mentor_accom"> 숙박 유형</label>
+            <div class="mentoring_accom"><input type="radio" name="accomodation" class="mentoring_radio_accom" value="hotel">호텔</div>
+            <div class="mentoring_accom"><input type="radio" name="accomodation" class="mentoring_radio_accom" value="hostel">호스텔</div>
+            <div class="mentoring_accom" style="font-size : 15px;"><input type="radio" name="accomodation" class="mentoring_radio_accom" value="guesthouse">게스트하우스</div>
+            <div class="mentoring_accom"><input type="radio" name="accomodation" class="mentoring_radio_accom" value="minbak">민박</div>
+            <div class="mentoring_accom"><input type="radio" name="accomodation" class="mentoring_radio_accom" value="pension">펜션</div>
+            <div class="mentoring_accom"><input type="radio" name="accomodation" class="mentoring_radio_accom" value="couchsurfing">카우치서핑</div>
+            <div class="mentoring_accom"><input type="radio" name="accomodation" class="mentoring_radio_accom" value="camping">캠핑</div>
+          </div>
+					
+					<div class="form-group">
+						<label for="mentor_plus">멘토에게 하고 싶은 말 (추가 요청 사항) </label>
+						<textarea class="form-control" name = "mentor_content" id="mentor_content" rows="10"></textarea>
+					</div>
+					
+					<br>
+
+					<button type="submit" class="btn btn-default enroll_mentoring_button ">
+						견적서 제출하기 
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script>
+
+  function initAutocomplete() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 30.8688, lng: 181.2195},
+      zoom: 2,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    // Create the search box and link it to the UI element.
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    // Bias the SearchBox results towards current map's viewport.
+    map.addListener('bounds_changed', function() {
+      searchBox.setBounds(map.getBounds());
+    });
+
+    var markers = '';
+    // [START region_getplaces]
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+
+      if (places.length == 0) {
+        return;
+      }
+
+      // Clear out the old markers.
+//      markers.forEach(function(marker) {
+//        marker.setMap(null);
+//      });
+//      markers = [];
+
+      // For each place, get the icon, name and location.
+      var bounds = new google.maps.LatLngBounds();
+      places.forEach(function(place) {
+        var icon = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(35, 35)
+        };
+
+        // Create a marker for each place.
+//        markers.push(new google.maps.Marker({
+//          map: map,
+//          icon: icon,
+//          title: place.name,
+//          position: place.geometry.location,
+//        }));
+
+        var marker = new google.maps.Marker({
+          map: map,
+          icon: icon,
+          title: place.name,
+          position: place.geometry.location,
+        });
+
+        if (place.geometry.viewport) {
+          // Only geocodes have viewport.
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+
+        marker.addListener('click',function(){
+          if (markers == '') {
+            markers = place.name;
+          } else {
+            markers = markers + ' ' + place.name;
+          }
+          $('.mentoring_area').val(markers);
+          $('#mentoring_area_block').append("<div class='area_block'>" + place.name + "</div>")
+//          $('#mentoring_area_block').append($('#mentoring_area_block').find('.area_block').get().reverse());
+          map.setZoom(2);
+          map.setCenter(map.center);
+          $('#pac-input').val('');
+        });
+      });
+      map.fitBounds(bounds);
+    });
+    // [END region_getplaces]
+  }
+
+
+  // datepicker
+  $(function() {
+    $("#datepicker1, #datepicker2").datepicker({
+      dateFormat : 'yy-mm-dd'
+    });
+  });
+
+  $(function() {
+    $("input:text").keydown(function(evt) {
+      if (evt.keyCode == 13)
+        return false;
+    });
+  });
+
+  $('.mentoring_theme').click(function(){
+    $('.mentoring_theme').css('background-color','#27a8e0');
+    $('.mentoring_radio_theme').prop('checked',false);
+    $(this).css('background-color', '#0e6bc4');
+    $(this).children().prop('checked',true);
+  })
+
+  $('.mentoring_accom').click(function(){
+    $('.mentoring_accom').css('background-color','#27a8e0');
+    $('.mentoring_radio_accom').prop('checked',false);
+    $(this).css('background-color', '#0e6bc4');
+    $(this).children().prop('checked',true);
+  })
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA72zF0QFMu6C2d3aim0lUlMJLsmbQEwIo&libraries=places&callback=initAutocomplete"
+        async defer></script>
+
+

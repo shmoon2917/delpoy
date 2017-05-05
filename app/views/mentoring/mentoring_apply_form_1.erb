@@ -1,0 +1,104 @@
+<header>
+  <div class="img_header5">
+    <div class="wrapper_header">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="basic_header">
+        <div class="logo">
+          <a href="/"> <%= image_tag("logo.png" , id:'logo')  %> </a>
+        </div>
+        <div class="menu">
+          <nav>
+            <div class="nav">
+              <div class="li menu_service">
+                <a href="/service" class="li_a">서비스</a>
+              </div>
+              <div class="li menu_help">
+                <a href="/help" class="li_a">도움말</a>
+              </div>
+              <div class="li menu_user">
+                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                <div class="user_scroll">
+                  <ul>
+                    <li class="my_page">
+                      <a href="/mypage">마이페이지</a>
+                    </li>
+                    <% if @user.grade == 2 %>
+                        <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
+                    <% end %>
+                    <li class="log_out">
+                      <a href="/users/sign_out">로그아웃</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <% if @user.grade == 1 %>
+                  <div class="li menu_admin">
+                    <a href="/admin_all" class="li_a ">관리자 페이지</a>
+                  </div>
+              <% end %>
+              <div class="li menu_enroll">
+                <a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="service_introduce">
+          <h1 class="service_introduce_h1">Delpoy의 멘토링 매칭 시스템</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+	<div class="wrapper_section2 margin_plus">
+		<div><%= image_tag("mentoring_explain.png", id: "mentoring_process_img")  %></div>
+    <div class="mentoring_info_section">
+      <%= image_tag("1.png", class: "img_mentoring_num") %>
+      <div class="mentoring_Info">
+        <h2>견적서 작성 & 멘토 선정</h2>
+        <p>&nbsp;첫번째로, 당신이 여행하려고 하는 지역, 날짜, 인원, 여행의 유형 등 당신이 기대하는 여행에 대한 간략한 내용을 견적서에 작성합니다.<br>&nbsp;견적서를 작성한 후에는, 저희가 당신이 원하는 지역의 추천 멘토들을 선정해 리스트에 올립니다. 당신은 그 중 마음에 드는 멘토들을 여러 명 선택하여 견적서를 보내게 됩니다.</p>
+      </div>
+    </div>
+    <div class="mentoring_info_section">
+      <%= image_tag("2.png", class: "img_mentoring_num") %>
+      <div class="mentoring_Info">
+        <h2>멘토 견적 제시</h2>
+        <p>&nbsp;당신이 선택한 멘토들은 당신의 견적서를 받아본 후, 멘토링 여부를 결정합니다.<br>&nbsp;멘토들은 자신의 상황에 따라서 불가피하게 거절할 수도 있지만 대부분의 멘토들은 당신의 요청을 수락하고 자신이 생각하기에 알맞은 금액을 제시할 것입니다.</p>
+      </div>
+    </div>
+    <div class="mentoring_info_section">
+      <%= image_tag("3.png", class: "img_mentoring_num") %>
+      <div class="mentoring_Info">
+        <h2>멘토 선택 & 플래너 제작</h2>
+        <p>&nbsp;당신은 견적 금액을 제시해온 멘토들 중 가격과 평점을 고려하여 가장 알맞는 멘토 한 명을 최종적으로 선정하게 됩니다.<br>&nbsp;이제부터 당신은 당신의 개인 멘토와 함께 플래너를 만들어갈 것입니다. 진행 상황 창에서는 플래너 제작의 진행 상황을 볼 수 있고, 실시간 채팅을 통해 요구사항을 즉각적으로 반영할 수 있습니다.</p>
+      </div>
+    </div>
+    <div class="mentoring_info_section">
+      <%= image_tag("4.png", class: "img_mentoring_num") %>
+      <div class="mentoring_Info">
+        <h2>멘토 & 사용자 플래너 수정</h2>
+        <p>&nbsp;플래너 파일을 받아본 후, 마음에 들지 않는다면 다시 멘토에게 수정 사항을 요구할 수 있습니다.<br>&nbsp;멘토는 당신이 만족할 수 있는 플래너를 만들기 위해 끝까지 노력할 것입니다.</p>
+      </div>
+    </div>
+    <div class="mentoring_info_section">
+      <%= image_tag("5.png", class: "img_mentoring_num") %>
+      <div class="mentoring_Info">
+        <h2>플래너 최종 승인 & 결제</h2>
+        <p>&nbsp;당신이 받은 플래너가 마음에 드는 경우, 당신은 플래너 프로세스의 과정을 마무리지으면 됩니다.<br>&nbsp;플래닝 과정이 마무리된 후, 당신은 멘토가 제시한 견적 금액을 서비스 상에서 결제함으로써 모든 과정이 마무리가 됩니다. 당신이 이제부터 할 일은 다가올 여행을 기다리고, 완벽한 계획 하에 여행을 즐기면 됩니다!</p>
+      </div>
+    </div>
+
+    <div class="a_button_wrapper">
+      <a href="/mentoring_process1" class="mentoring_a_button">멘토링 시작하기</a>
+    </div>
+
+	</div>
+
+</section>
+
+<section>
+	<div class="wrapper_section2 margin_plus">
+
+	</div>
+
+</section>

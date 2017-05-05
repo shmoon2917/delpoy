@@ -1,0 +1,217 @@
+<header>
+    <div class="img_header5">
+        <div class="wrapper_header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+        
+            <div class="basic_header">
+                <div class="logo">
+                    <a href="/">
+                    <%= image_tag("logo.png" , id:'logo')  %>
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <div class="nav">
+                            <div class="li menu_service"><a href="/service" class="li_a">서비스</a></div>
+                            <div class="li menu_help"><a href="/help" class="li_a">도움말</a></div>
+                            <div class="li menu_user">
+                                <a href="/mypage" class="li_a ">안녕하세요! <%= @user.username %>님</a>
+                                <div class="user_scroll">
+                                    <ul>
+                                        <li class="my_page"><a href="/mypage">마이페이지</a></li>
+                                        <% if @user.grade == 2 %>
+                                            <li class="mentoring_page"><a href="/mentor_view">멘토페이지</a></li>
+                                        <% end %>
+                                        <li class="log_out"><a href="/users/sign_out">로그아웃</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <% if @user.grade == 1 %>
+                            <div class="li menu_admin"><a href="/admin_all" class="li_a ">관리자 페이지</a></div>
+                            <% end %>
+                            <div class="li menu_enroll"><a href="enroll_mentor" class="li_a nav_enroll_mentor">멘토 등록하기</a></div>                     
+                        </div>
+                    </nav>
+                </div>     
+            </div>
+            <div class="">
+                <div class="my_page_p">
+                    <h1>MENTOR PAGE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+	<div class="wrapper_section2 margin_plus2">
+		<h2 class="text_center"> 멘토링 요청 리스트 </h2>
+		<%@find_my_apply.each do |p|%>
+			<%if p.mentor_id == @mentor.id && p.complete== 0 %>
+			<!-- 접속 아이디가 멘토 아이디이고 해당 indexofapply의 complete==0인것	 -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<!-- <input type="hidden" value ="<%=p.user_id %>" name="mentee_id"> -->
+							<%@all_user.each do |u|%>
+								<%if u.id==p.user_id%>
+									<li>
+										<a href="/mentor_viewdetail?list_id=<%=p.list_id%>&index_id=<%=p.id%>">  
+											<%=u.username%> 님의 멘토링 요청 확인하기 </a>
+									</li>
+								<%end%>
+							<%end%>
+					</div>
+				</div>
+			<%end%>
+		<%end%>	
+		
+		
+		
+		
+	</div>
+
+</section>
+<section>
+    <div class="wrapper_section2 margin_plus"> 
+        <div class="panel panel-default panel-edit">
+            <div class="panel-body">
+                
+                <!-- Nav tabs -->
+                <ul class="nav nav_edit nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#now" aria-controls="home" role="tab" data-toggle="tab">현재 진행중인 멘토링</a></li>
+                    <li role="presentation"><a href="#seminar" aria-controls="profile" role="tab" data-toggle="tab">멘토링 요청 리스트</a></li>
+                    <li role="presentation"><a href="#enrollmentor" aria-controls="messages" role="tab" data-toggle="tab">멘토링 수락</a></li>
+                    <li role="presentation"><a href="#mentees" aria-controls="settings" role="tab" data-toggle="tab">내게 등록한 멘티</a></li>
+                    <li role="presentation"><a href="#setting" aria-controls="settings" role="tab" data-toggle="tab">개인정보 수정</a></li>
+                </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="now">
+                	<% @mentoring.each do |m|%>
+                		<% @detail.each do |p|%>
+                			<% if m.list_id==p.id && p.complete==1 %>
+		                    <a class = "travel_now_a" href="/menteeing?list_id=<%=p.id%>">
+		                    	<div class="travel_now">
+			                      <div>
+			                        <h2>여행제목</h2>
+			                        <p>(<%= p.from %> ~ <%= p.to %>)</p>
+			                        <p><%= p.mentor_area %></p>
+			                      </div>
+			                    </div>
+		                 	</a>
+		                 	<br>
+		                 	<% end %>
+	                 	<% end %>
+                 	<% end %>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="seminar">
+                	<table class="table table-striped">
+                    	<thead>
+                    		<tr>
+                    			<th>#</th>
+                    			<th>신청 리스트</th>
+                    			<th>상태</th>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		<% @myindex.each.with_index do |m|%>
+	                    		<% @detail.each do |d|%>
+		                    		<% if m.list_id==d.id && d.complete==3%>
+			                    		<tr>
+			                    			<th><input type="checkbox" name="index_of_id" value="<%=m.id%>"></th>
+			                    			<% @all_user.each do |u|%>
+			                    			<% if u.id==d.user_id%>
+			                    			<th><%=u.username%> 님의 멘토링 요청</th>
+			                    			<th>여행 취소</th>
+			                    			<% end %>
+			                    			<% end %>
+			                    		</tr>
+			                    		
+			                    	<% elsif m.list_id==d.id && d.complete==1 && m.complete!=2%>
+			                    		<tr>
+			                    			<th><input type="checkbox" name="index_of_id" value="<%=m.id%>"></th>
+			                    			<% @all_user.each do |u|%>
+			                    			<% if u.id==d.user_id%>
+			                    			<th><%=u.username%> 님의 멘토링 요청</th>
+			                    			<th>다른 멘토 선택</th>
+			                    			<% end %>
+			                    			<% end %>
+			                    		</tr>
+			                    	
+			                    	<% elsif m.list_id==d.id && d.complete==0 && m.complete==0%>
+			                    		<tr>
+			                    			<th></th>
+			                    			<% @all_user.each do |u|%>
+			                    			<% if u.id==d.user_id%>
+			                    			<th><a href="/mentor_viewdetail?list_id=<%=m.list_id%>&index_id=<%=m.id%>">  
+											<%=u.username%> 님의 멘토링 요청 확인하기 </a></th>
+			                    			<th>미확인</th>
+			                    			<% end %>
+			                    			<% end %>
+			                    		</tr>
+			                    		
+			                    	<% elsif m.list_id==d.id && d.complete==0 && m.complete==1 %>
+			                    		<tr>
+			                    			<th></th>
+			                    			<% @all_user.each do |u|%>
+			                    			<% if u.id==d.user_id%>
+			                    			<th><%=u.username%> 님의 멘토링 요청</th>
+			                    			<th>대기중</th>
+			                    			<% end %>
+			                    			<% end %>
+			                    		</tr>
+		                    		<% end %>
+	                    		<% end %>
+                    		<% end %>
+                    	</tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="enrollmentor">
+                	<%@find_my_apply.each do |p|%>
+						<%if p.mentor_id == @mentor.id && p.complete== 0 %>
+						<!-- 접속 아이디가 멘토 아이디이고 해당 indexofapply의 complete==0인것	 -->
+									<!-- <input type="hidden" value ="<%=p.user_id %>" name="mentee_id"> -->
+							<div class="col-md-1"></div>
+							<%@all_user.each do |u|%>
+								<%if u.id==p.user_id%>
+									<li>
+										<a href="/mentor_viewdetail?list_id=<%=p.list_id%>&index_id=<%=p.id%>">  
+											<%=u.username%> 님의 멘토링 요청 확인하기 </a>
+										<br></br>
+									</li>
+								<%end%>
+							<%end%>
+						<%end%>
+					<%end%>
+                	<% @myindex.each do |m|%>
+                		<%=m.id%>
+                	<% end %>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="mentees">...</div>
+                <div role="tabpanel" class="tab-pane" id="setting">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">비밀번호</label>
+                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">비밀번호 확인</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password Confirmation">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPhonenumber">핸드폰 번호</label>
+                        <input type="text" class="form-control" id="exampleInputPhone" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">프로필 사진</label>
+                        <input type="file" id="exampleInputFile">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>

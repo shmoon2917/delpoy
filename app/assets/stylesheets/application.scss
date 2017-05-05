@@ -1,0 +1,1957 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+ 
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'home';
+ @import "chatting";
+
+
+#map {
+  width : 700px;
+}
+
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+
+ /* CSS Reset */
+
+ 
+ .container,body,p,div,a,ul,h1,h2,h3,h4,h5,h6 {
+  margin : 0px;
+  padding : 0px;
+  // border: 2px solid black;
+ }
+ 
+ a {
+  text-decoration : none;
+ }
+
+ a:hover {
+   text-decoration: none;
+ }
+ 
+ li {
+  list-style-type : none;
+ }
+ 
+ img {
+  vertical-align: top;
+  /* 세로 정렬을 위한 것이므로 이것을 하면 border spacing 해결 */
+ }
+
+ 
+ /* Common CSS */
+ body {
+	 font-family: 'RixJGulim B';
+    min-width : 1100px;
+ }
+ 
+ .wrapper_header {
+  width : 100%;
+  height : 70px;
+ }
+ 
+ .header_black{
+  background-color : #424242;
+ }
+ 
+ .wrapper_login_section {
+  width : 100%;
+  height : 800px;
+  background-image : url(login_back.jpg);
+  background-repeat : none;
+  background-size : 100%;
+  padding-top : 30px;
+ }
+ 
+ .wrapper_banner {
+  background-image : url(back_banner.png);
+  background-repeat : no-repeat;
+  background-size : cover;
+  height : 600px;
+ }
+ 
+ .wrapper_search {
+  // height : 100px;
+  // background-color : black;
+  // opacity : 0.8;
+  width : 100%;
+
+ }
+ 
+ .wrapper_section1 {
+  // background-color : #edefed;
+  // position : relative;
+  width : 100%;
+  border-top : 2px solid #edefed;
+ }
+ 
+ .guide_section {
+  width : 1020px;
+  margin : 0 auto;
+  padding-top : 60px;
+  padding-bottom : 60px;
+  
+  text-align: center;
+  color : #3A3D3B;
+ }
+ 
+ .wrapper_section2 {
+  width : 100%;
+  background-color : #f7f7f7;
+ }
+ 
+ .mentor_section{
+  width : 1020px;
+  margin : 0 auto;
+  padding-top: 50px;
+  padding-bottom : 50px;
+  
+  text-align : center;
+  // display : flex;
+  overflow : hidden;
+  height : 100%;
+ }
+ 
+ .wrapper_section3 {
+  background-image : url(community.jpg);
+  background-repeat : none;
+  background-size : cover;
+  background-position : 50% 45%;
+  width : 100%;
+  height : 650px;
+ }
+ 
+ .comm_section {
+  width : 90%;
+  margin : 0 auto;
+  padding-top : 230px;
+  text-align : center;
+  color : white;
+ }
+
+ .footer_wrapper {
+  background-color : #2b2d2e;
+  width : 100%;
+ }
+
+/* CSS Customizing */
+ 
+ .img_header {
+  background-image : url(back3.jpg);
+  background-position : 50% 55%;
+  background-size : cover;
+  background-repeat : no-repeat;
+  width : 100%;
+  height : 580px;
+ }
+ 
+ .img_header2{
+  background-image : url(banner.jpg);
+  background-size : cover;
+  background-repeat : no-repeat;
+  height : 500px;
+  width : 100%;
+ }
+ 
+ .img_header3{
+  background-image : url(mentor2.jpg);
+  background-size : cover;
+  background-repeat : no-repeat;
+  height : 500px;
+  width : 100%;
+ }
+ 
+ .img_header4{
+  background-image : url(help_back.jpg);
+  background-position : 50% 60%;
+  background-size : cover;
+  background-repeat : no-repeat;
+  height : 500px;
+  width : 100%;
+ }
+ 
+ .img_header5 {
+  background-image : url(mypage_back.jpg);
+  background-position : 50% 60%;
+  background-size : cover;
+  background-repeat : no-repeat;
+  height : 350px;
+  width : 100%;
+ }
+ 
+ .logo {
+  width : 70px;
+  display : inline;
+ }
+ 
+ #logo {
+  width : 90px;
+  margin: 10px;
+ }
+ 
+ #mobile_logo {
+  width : 80px;
+  margin-top : 10px;
+  margin-left : 15px;
+ }
+ 
+ #mobile_nav_logo {
+  width : 37.6px;
+  margin-left : 15px;
+  margin-top : 10px;
+ }
+ 
+ .mobile_header {
+  display : none;
+ }
+ 
+ .mobile_brand {
+  text-align : center;
+  font-size : 22px;
+  color : #27a8e0;
+ }
+ 
+ #mobile_menu_logo, #x_logo {
+  width : 17px;
+  position : absolute;
+  right : 0px;
+  margin-top : 24px;
+  margin-right : 15px;
+  cursor : pointer;
+ }
+ 
+ .mobile_menu {
+  background-color : #424242;
+  display : none;
+  z-index : 2;
+  position : absolute;
+  width : 100%;
+ }
+ 
+ .mobile_menu div {
+  margin : 10px 10px 10px 10px;
+  border-top : 1px solid white;
+ }
+ 
+ .mobile_menu ul {
+  margin-top : 18px;
+  margin-left : 10px;
+ }
+ 
+ .mobile_menu ul li {
+  padding-bottom : 10px;
+ }
+ 
+ .mobile_menu ul a:hover {
+  text-decoration : none;
+  color : #27a8e0;
+ }
+ 
+ .mobile_menu ul a {
+
+  color : white;
+ }
+ 
+ .menu {
+  display : inline-block;
+ }
+ 
+ 
+ .nav {
+  margin-right : 30px;
+ }
+ 
+ .nav, .menu_search_list {
+  position : absolute;
+  right : 0px;
+  // float : right;
+ } 
+ 
+ .nav .li, .menu_search_list li {
+  position : relative;
+  display : inline-block;
+  float : left;
+  margin-left : 10px;
+ }
+ 
+ .nav .li .li_a {
+  text-decoration : none;
+  padding : 10px;
+  display : block;
+  color : white;
+  font-size : 15px;
+ }
+
+ 
+ .nav .li a.nav_enroll_mentor{
+  border-radius : 3px;
+  background-color : #27a8e0;
+  padding-left: 30px;
+  padding-right : 30px;
+  -webkit-filter: brightness(100%); /* Chrome, Safari, Opera */
+  filter:brightness(100%);
+ }
+ 
+ .nav .li a.nav_enroll_mentor:hover {
+  text-decoration : none;
+  background-color : #0e6bc4;
+  //-webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
+  //filter:brightness(80%);
+ }
+
+.nav .li a.nav_enroll_mentor:active {
+  text-decoration : none;
+  background-color : #083F73;
+}
+ 
+  .user_scroll {
+    display : none;
+    position : absolute;
+    right : 6%;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0px 20px;
+ }
+ 
+ .menu_user:hover .user_scroll, .user_scroll:hover .user_scroll {
+  display : block;
+ }
+ 
+ .user_scroll ul li{
+  padding : 20px 0px;
+ }
+ 
+ .user_scroll ul a {
+  color : #424242;
+  cursor : pointer;
+  font-size : 15px;
+
+ }
+ 
+ .user_scroll ul a:hover {
+  color : #27a8e0;
+  text-decoration : none;
+ }
+ 
+ .my_page, .mentoring_page {
+  border-bottom : 1px solid #c6c6c6;
+ }
+ 
+ .menu_search_list li a {
+  padding : 10px;
+  display : block;
+  color : black;
+ }
+ 
+ .index_p{
+  color : white;
+  margin : 150px auto 0px auto;
+  text-align : center;
+ }
+ 
+ .index_p h1{
+  font-size : 55px;
+ }
+ 
+  .index_p h4{
+  margin-top : 30px;
+  font-size : 21px;
+ }
+ 
+ .planner_a_button {
+  margin : 60px auto 0 auto;
+   padding : 0px 20px;
+  line-height : 60px;
+  border-radius : 5px;
+  background-color : #27a8e0;
+   font-size : 16px;
+   color : white;
+   display : inline-block;
+ }
+
+.planner_a_button:hover, .mentoring_a_button:hover {
+  text-decoration : none;
+  background-color : #0e6bc4;
+  color : white;
+}
+
+.planner_a_button:active, .mentoring_a_button:active {
+  text-decoration : none;
+  background-color : #083F73;
+  color : white;
+}
+
+ .best_list {
+  overflow : hidden;
+  display : inline-block;
+ }
+ .best_list li{
+  font-size : 15px;
+  text-align : center;
+  float : left;
+  margin : 20px;
+ }
+ .best_list a {
+  color : #666465;
+ }
+ 
+ .best_list a:hover {
+  color : black;
+  text-decoration : none;
+ }
+ a.all_list {
+  color : #6796E8;
+ }
+ 
+ a.all_list:hover {
+  color : #253BAD;
+ }
+ 
+
+ .search_input {
+  // position : absolute;
+  // left : 50%;
+  // top: 50%;
+  // transform: translate(-50%, -50%);
+  position : relative;
+  margin : 0 auto;
+  text-align: center;
+  padding-top : 60px;
+  padding-bottom : 20px;
+ }
+ 
+ .search_best {
+  margin : 0 auto;
+  text-align : center;
+  padding-bottom : 40px;
+  height : 100px;
+  color : black;
+ }
+
+ 
+ .city {
+  display: inline;
+  font-size : 15px;
+  width : 400px;
+  height: 45px;
+  border-radius : 0px;
+ }
+ 
+
+ .button {
+  border-radius : 0px;
+  display : inline;
+  width : 60px;
+  background-color : #27a8e0;
+  font-size : 15px;
+  border : 0px;
+  padding : 0;
+  height : 45px;
+  color : white;
+  -webkit-filter: brightness(100%); /* Chrome, Safari, Opera */
+  filter:brightness(100%);
+ }
+ 
+ .button:hover{
+  //-webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
+  //filter:brightness(80%);
+  background-color : #0e6bc4;
+ }
+
+ .button:active {
+   background-color: #083F73;
+ }
+
+
+ .guide_section h2 {
+  font-size : 35px ;
+  margin-bottom : 15px;
+ }
+ 
+ .guide_section > h4 {
+  font-size : 18px;
+  margin-bottom : 40px;
+ }
+ 
+ 
+ // Grid
+ 
+.guide_grid {
+  overflow : hidden;
+  margin : 0 -10px;
+}
+
+.guide_grid .item {
+  width : 33.33333%;
+  height : 320px;
+  float : left;
+  padding : 10px;
+  box-sizing: border-box;
+  /* margin 말고 padding 을 쓴다. margin 은 밖에 더 추가되는 기능이라서
+  그리고 box-sizing 쓴디.*/
+}
+
+.guide_grid .item_2{
+ width : 50%;
+ height : 320px;
+ float : left;
+ padding : 10px;
+ box-sizing : border-box;
+}
+
+.guide_grid .item_3 {
+ width : 66.66666%;
+ height : 320px;
+ float : left;
+ padding : 10px;
+ box-sizing : border-box;
+}
+
+.box {
+ display : block;
+ position : relative;
+ cursor : pointer;
+}
+
+.guide_grid img {
+ width : 100%;
+ height : 300px;
+ -webkit-filter: brightness(100%); /* Chrome, Safari, Opera */
+ filter:brightness(100%);
+}
+
+.guide_grid img:hover{
+ -webkit-filter: brightness(50%); /* Chrome, Safari, Opera */
+ filter:brightness(50%);
+ 
+}
+
+ .content {
+  position : absolute;
+  top: 45%; 
+  left: 0; 
+  width: 100%; 
+ }
+ 
+.content h4 {
+  color : white;
+  height : 30px;
+  line-height: 30px;
+  // border-top:3px solid #3A3D3B;
+  // /* border 해도 이상한 마진이 생김 */
+}
+
+ .content h3 {
+  font-size : 30px;
+  text-align : center;
+  color : white;
+  height : 40px;
+  line-height: 40px;
+}
+
+
+ #mentor_img {
+  float : left;
+  width : 660px;
+  height : 340px;
+  border-top-left-radius : 5px;
+  border-bottom-left-radius : 5px;
+ }
+ 
+ .enroll_Info {
+  float : left;
+  width : 360px;
+  display : inline-block;
+  background-color : white;
+  height : 340px;
+  border-top-right-radius : 5px;
+  border-bottom-right-radius : 5px;
+ }
+
+
+ .mentor_section h2 {
+  padding : 70px 40px 20px 40px;
+  line-height : 40px;
+ }
+ 
+ .mentor_section h4 {
+  padding-bottom : 40px;
+ }
+ .mentor_section button {
+  margin-bottom : 64px;
+  background-color : #27a8e0;
+  border : 0px;
+  border-radius : 2px;
+  height : 40px;
+  font-size : 14px;
+  // display : inline-block;
+ }
+ 
+
+ .comm_section h2 {
+  font-size : 49px;
+  margin-bottom : 20px;
+ }
+ 
+ .comm_section h4 {
+  font-size : 23px;
+ }
+ 
+ .comm_section .comm_button {
+  margin-top : 80px;
+  margin-bottom : 170px;
+  background-color : #27a8e0;
+  font-size : 18px;
+  width : 200px;
+  height : 50px;
+  border : 0px;
+  -webkit-filter: brightness(100%); /* Chrome, Safari, Opera */
+  filter:brightness(100%);
+ }
+ 
+ .comm_button:hover {
+  //-webkit-filter: brightness(80%); /* Chrome, Safari, Opera */
+  //filter:brightness(80%);
+  background-color: #0e6bc4;
+ }
+
+ .comm_button:active {
+  background-color: #083F73;
+ }
+
+ .footer{
+  padding-top : 50px;
+  padding-bottom : 20px;
+  margin : 0 auto;
+  width : 100%;
+  text-align : center;
+  height : 200px;
+  color : #C5C7C9;
+ }
+ 
+ .footer_nav {
+  display : inline-block;
+  overflow : hidden;
+ }
+ 
+ .footer_nav li {
+  float : left;
+  margin-right : 50px;
+  font-size : 18px;
+ }
+ 
+ .footer_nav .service {
+  margin-left : 50px;
+ }
+ 
+ .footer_nav li a {
+  padding : 10px;
+  display : block;
+  font-size : 15px;
+  color : #C5C7C9;
+ }
+ 
+ .footer h3 {
+  padding-top : 30px;
+  font-size : 17px;
+ }
+ 
+
+ // Login Page
+ 
+ .login, .sign_up {
+  width : 450px;
+  margin : 0 auto;
+  height : 580px;
+  background-color : white;
+  border-radius : 5px;
+  margin-top : 20px;
+  padding : 30px;
+  // text-align : center;
+ }
+ 
+ .login_icon {
+  text-align : center;
+  width : 200px;
+  margin : 0 auto;
+ }
+ 
+ .login_icon img, .banner img {
+  width : 150px;
+ }
+ 
+ .login img {
+  width : 30px;
+  height : 30px;
+  margin-top : 15px;
+  margin-left : 15px;
+ }
+ 
+ .login h2, .sign_up h2 {
+  font-size : 23px;
+ }
+ 
+ .login h2.h2_email_login {
+  margin-top : 22px;
+ }
+ 
+ .login h3 {
+  font-size : 16px;
+ }
+ 
+ .login a span {
+  font-size : 17px;
+
+
+
+  margin-top : 18px;
+
+  width : 300px;
+  display : inline-block;
+  text-align : center;
+ }
+ 
+ 
+ .login_facebook {
+  display : block;
+  width : 100%;
+  height : 60px;
+  font-size : 15px;
+  margin-top : 22px;
+  background-color : #3a5699;
+  color : white;
+  cursor : pointer;
+ }
+ 
+ .login_facebook:hover {
+  color : white;
+ }
+ 
+ .login_google {
+  border : 1px solid #bcbcbc;
+  display : block;
+  width : 100%;
+  height : 60px;
+  font-size : 15px;
+  margin-top : 10px;
+  background-color : white;
+  color : #424242;
+   cursor : pointer;
+ }
+ 
+ .login_email {
+  border : 1px solid #bcbcbc;
+  padding : 10px;
+  // padding-right : 30px;
+  // background-image : url(email_icon.jpg);
+  // background-size : 20px;
+  // background-repeat : no-repeat;
+  // background-position : 98%;
+  font-size : 15px;
+  margin-top : 22px;
+  width : 100%;
+  height : 60px;  
+ }
+ 
+ .login_pw {
+  border : 1px solid #bcbcbc;
+  padding : 10px;
+  font-size : 15px;
+  margin-top : 6px;
+  margin-bottom : 15px;
+  width : 100%;
+  height : 60px; 
+ }
+ 
+ .login_remember_pw {
+  display : inline;
+  padding-left : 5px;
+ }
+ 
+ .login_forgot_pw {
+  display : inline-block;
+ }
+
+ .login_forgot_pw a {
+  font-size : 15px;
+  position : relative;
+  left : 192px;
+  color : #27a8e0;
+ } 
+ 
+ .login_submit {
+  margin-top : 10px;
+  font-size : 17px;
+  width : 100%;
+  height : 60px;
+  background-color : #27a8e0;
+  border : 0px;
+  color : white;
+  text-align : center;
+ }
+ 
+ .login_sign_up {
+  width : 100%;
+  height : 50px;
+  margin-top : 20px;
+  font-size : 15px;
+ }
+ 
+ .login_sign_up_button {
+  position : relative;
+  left : 145px;
+  font-size : 15px;
+  color : #27a8e0;
+
+ }
+ 
+ .sign_up {
+  text-align : center;
+ }
+ 
+ .sign_up h2 {
+  margin-bottom : 10px;
+ }
+ 
+ .sign_up_input {
+  width : 100%;
+  height : 40px;
+  margin-top : 10px;
+  padding : 15px;
+ }
+ 
+ .sign_up_button {
+  width : 100%;
+  height : 60px;
+  background-color : #27a8e0;
+  color : white;
+  font-size : 17px;
+  text-align : center;
+  border : 0px;
+  margin-top : 30px;
+ }
+ 
+ .gender {
+  display : inline-block;
+  margin-top : 15px;
+ }
+ 
+ .language {
+  display : inline-block;
+ }
+ 
+ .sign_up_img {
+  margin-top : 15px;
+ }
+ 
+  .profile_img{
+  margin : 0 auto;
+  padding-left : 100px;
+ }
+ 
+ 
+ // service tap
+ 
+ .service_introduce {
+  color : white;
+  margin : 120px auto 220px auto;
+  text-align : center;
+
+ }
+ 
+ .service_introduce h1 {
+  font-size : 40px;
+  margin-bottom : 30px;
+  line-height : 1.5;
+ }
+ 
+ .service_introduce h2 {
+  font-size : 21px;
+ }
+ 
+ .planner_section, .partner_section, .talk_section {
+  width : 1020px;
+  margin : 0 auto;
+  background-color : white;
+  border-radius : 10px;
+  height : 280px;
+ }
+ 
+ .partner_section, .talk_section {
+  margin-top : 60px;
+ }
+ 
+ .margin_plus {
+  padding : 60px 0px 30px 0px;
+ }
+ 
+ #img_planner, #img_partner, #img_talk {
+  width : 200px;
+  margin : 40px;
+ }
+ 
+ .service_Info, {
+  width : 680px;
+  display : inline-block;
+  height : 200px;
+  margin-top : 40px;
+  margin-bottom : 40px;
+  padding-left : 20px;
+  border-left : 3px solid #27a8e0;
+ }
+ 
+ .service_Info p {
+  margin-top : 20px;
+  font-size : 17px;
+ }
+ 
+ // mentor_enroll
+ 
+ .text_center {
+  text-align : center;
+ }
+ 
+ .panel {
+  width : 700px;
+  margin : 30px auto 0px auto;
+ }
+ 
+ .panel-body{
+  padding : 25px;
+  font-size : 17px;
+ }
+ 
+ .panel-body h5 {
+  font-size : 17px;
+  margin-bottom : 5px;
+ }
+ 
+ .margin_plus2 {
+  padding-top : 40px;
+  padding-bottom : 40px;
+ }
+ 
+ .enroll_input {
+  height : 40px;
+  
+ }
+ 
+ .enroll_mentor_button {
+  width : 100%;
+  height : 60px;
+  background-color : #27a8e0;
+  color : white;
+  font-size : 17px;
+  text-align : center;
+  border : 0px;
+ }
+ 
+ // help 
+ 
+ .help_section {
+  width : 1020px;
+  border-radius : 5px;
+  background-color : white;
+  margin : 0 auto;
+  padding : 40px 40px;
+  position : relative;
+ }
+ 
+ .help_nav {
+  position : absolute;
+  display : inline-block;
+  width : 220px;
+  height : 600px;
+
+ }
+
+ .help_nav li {
+  font-size : 18px;
+  margin-bottom : 20px;
+  color : #424242;
+  cursor : pointer;
+ }
+ 
+ .help_nav li:hover {
+  color : #27a8e0;
+ }
+ 
+ .help_nav li:click {
+  
+ }
+ 
+ .help_content {
+  display : inline-block;
+  position : relative;
+  left : 23%;
+  width : 740px;
+  padding : 0px 0px 0px 30px;
+  border-left : 3px solid #27a8e0;
+ }
+ 
+ .help_content span {
+  font-size : 45px;
+  color : #27a8e0;
+ }
+ 
+ .help_content div {
+  margin : 30px 0px;
+  font-size : 28px;
+ }
+ 
+ .help_content div div {
+  width : 520px;
+  display : inline-block;
+ }
+ 
+ 
+ .help_content p {
+  margin-top : 15px;
+  font-size : 18px;
+ }
+ 
+ .start {
+  margin-left : 25px;
+  padding-top : 25px;
+  width : 130px;
+ }
+ 
+ .start_3 {
+  margin-bottom : 0px;
+ }
+ 
+ // mypage
+ 
+ #logo:hover {
+  border-radius : 3px;
+  background-color : #c2c2c2;
+ }
+ 
+ .text_black .li .li_a{
+  color : black;
+ }
+ 
+ .nav .li a.nav_enroll_mentor2{
+  border-radius : 3px;
+  background-color : #fafafa;
+  border: 2px solid #27a8e0;
+  padding-left: 30px;
+  padding-right : 30px;
+  -webkit-filter: brightness(100%); /* Chrome, Safari, Opera */
+  filter:brightness(100%);
+ }
+ 
+ .my_page_p {
+   color : white;
+   margin : 100px auto 50px auto;
+   text-align : center;
+ }
+ 
+ .my_page_p h1 {
+  font-size : 50px;
+ }
+ 
+ .panel-edit {
+  margin : 0px auto 30px auto;
+ }
+ 
+ .personal_info {
+  display : inline-block;
+ }
+ 
+ .img-responsive {
+  display : inline;
+ }
+ 
+ .personal_info p {
+  padding : 7px 20px;
+ }
+ 
+ .nav_edit {
+  position : initial;
+  margin-right : 0px;
+  margin-top : 15px;
+  margin-bottom : 30px;
+ }
+ 
+ .nav-tabs > li > a {
+  color : #27a8e0;
+  padding : 10px 7px;
+ }
+
+ .travel_now:hover {
+   -webkit-filter: brightness(70%); /* Chrome, Safari, Opera */
+   filter:brightness(70%);
+ }
+ 
+ .travel_now {
+  padding : 20px;
+  width : 580px;
+  height : 150px;
+  margin : 0 auto 20px auto;
+  background-image : url(travel_now);
+  background-repeat : no-repeat;
+  background-size : cover;
+  border-radius : 10px;
+ }
+
+ .travel_now_cancel {
+   padding : 20px;
+   width : 580px;
+   height : 150px;
+   margin : 0 auto 20px auto;
+   background-image : url(travel_now);
+   background-repeat : no-repeat;
+   background-size : cover;
+   border-radius : 10px;
+   -webkit-filter: brightness(40%); /* Chrome, Safari, Opera */
+   filter:brightness(40%);
+ }
+
+ .travel_now div, .travel_now div {
+  display : inline-block;
+ }
+ 
+ .travel_now h2, .travel_now_cancel h2 {
+
+  font-size : 40px;
+  color : white;
+ }
+ 
+ .travel_now p, .travel_now_cancel p {
+  margin-top : 10px;
+  color : white;
+  font-size : 18px;
+ }
+
+
+ .remove_travel {
+   float : left;
+ }
+
+ // mentoring_apply_form 1
+
+  #mentoring_process_img {
+    width : 900px;
+    display: inherit;
+    margin : 0 auto 50px auto;
+  }
+
+  .img_mentoring_num {
+    width : 130px;
+    margin : 30px;
+  }
+
+  .mentoring_Info {
+    width : 630px;
+    display : inline-block;
+    height : 130px;
+    margin-top : 30px;
+    margin-bottom : 30px;
+    padding-left : 20px;
+    border-left : 3px solid #27a8e0;
+  }
+
+  .mentoring_info_section {
+    width : 900px;
+    margin : 0px auto 30px auto;
+    background-color : white;
+    border-radius : 10px;
+    height : 190px;
+  }
+
+  .mentoring_Info p {
+    margin-top : 15px;
+    font-size : 16px;
+  }
+
+
+  .a_button_wrapper {
+    text-align: center;
+  }
+
+  .mentoring_a_button {
+    margin-top : 20px;
+    padding : 0px 40px;
+    line-height : 60px;
+    border-radius : 5px;
+    background-color : #27a8e0;
+    font-size : 16px;
+    color : white;
+    display : inline-block;
+  }
+
+ // 견적서 작성 완료 (success.html)
+
+.mentoring_success_div {
+  margin : 40px auto 40px;
+  width : 1020px;
+  height : 750px;
+}
+
+.sheet_list {
+  width : 630px;
+  height : 650px;
+  display : inline-block;
+  margin : 0;
+  float : left;
+  border-top : 3px solid #27a8e0;
+}
+
+.sheet_list p, .mentor_list p {
+  text-align : center;
+  font-size : 20px;
+  // margin-bottom : 10px;
+}
+
+.sheet_list h4 {
+  margin-top : 20px;
+  margin-bottom : 10px;
+}
+
+.mentor_list {
+  padding : 25px 20px;
+  width : 360px;
+  height : 650px;
+  display : inline-block;
+  margin : 0 0 0 25px;
+  border-top : 3px solid #27a8e0;
+}
+
+.mentor_list h5 {
+  margin-top : 20px;
+  margin-bottom : 15px;
+}
+
+.mentor_list .form-group {
+  border-top : 1px solid #ddd;
+}
+
+.mentor_list_content {
+  margin : 0 auto;
+  height : 40px;
+  width : 320px;
+  line-height : 40px;
+  padding-left : 15px;
+  border-bottom : 1px solid #ddd;
+  //box-shadow : 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.send_sheet_button {
+  width : 400px;
+  height : 70px;
+  line-height : 70px;
+  text-align: center;
+  font-size : 18px;
+  color : white;
+  margin : 30px auto;
+  text-align: center;
+  border-radius : 10px;
+  background-color: #27a8e0;
+  cursor : pointer;
+}
+
+.send_sheet_button:hover {
+  background-color : #0e6bc4;
+}
+
+.send_sheet_button:active {
+  background-color: #083F73;
+  //box-shadow: 0 1px #666;
+  //transform: translateY(1px);
+}
+
+.real_send_sheet_submit {
+  display : none;
+}
+ //@media screen and (min-width : 768px) and (max-width : 1024px) {
+ //
+ // .nav li {
+ //  margin-left : 0px;
+ // }
+ //
+ // .mobile_header {
+ //  display : none;
+ // }
+ //
+ // .nav li a.nav_enroll_mentor{
+ //  padding-left : 15px;
+ //  padding-right : 15px;
+ // }
+ //
+ // .nav > li > a {
+ //  padding : 10px 7px;
+ // }
+ // // .img_header {
+ // //  height : 500px;
+ // // }
+ //
+ // .index_p{
+ //  color : white;
+ //  margin : 120px auto 220px auto;
+ //  text-align : center;
+ // }
+ //
+ // .index_p h1{
+ //  font-size : 45px;
+ // }
+ //
+ // .index_p h4{
+ //  margin-top : 30px;
+ //  font-size : 16px;
+ // }
+ //
+ // .mentor_section{
+ //  width : 692px;
+ //  padding-top : 30px;
+ //  padding-bottom : 30px;
+ // }
+ //
+ //  #mentor_img {
+ //  width : 442px;
+ //  height : 250px;
+ // }
+ //
+ // .mentor_section .enroll_Info{
+ //  width : 250px;
+ //  height : 250px;
+ // }
+ //
+ // .mentor_section h2 {
+ //  padding : 40px 20px 10px 20px;
+ //  line-height : 30px;
+ //  font-size : 22px;
+ // }
+ //
+ // .mentor_section h4 {
+ //  padding : 0px 40px 30px 40px;
+ //  font-size : 15px;
+ // }
+ //
+ // .guide_section {
+ //  width : 692px;
+ // }
+ //
+ // .guide_grid .item {
+ //  width : 50%;
+ // }
+ //
+ // .guide_grid .item_2{
+ // width : 50%;
+ // }
+ //
+ // .guide_grid .item_3 {
+ //  width : 100%;
+ // }
+ //
+ // .guide_grid img {
+ //  width : 100%;
+ //  height : 300px;
+ // }
+ //
+ // .comm_section h2 {
+ //  font-size : 44px;
+ //  margin-bottom : 20px;
+ // }
+ //
+ // .comm_section h4 {
+ //  font-size : 20px;
+ // }
+ //}
+ //
+ //@media screen and (min-width : 640px) and (max-width : 767px) {
+ //
+ // .img_header {
+ //  height : 350px;
+ // }
+ //
+ // .basic_header {
+ //  display : none;
+ // }
+ //
+ // .mobile_header {
+ //  display : block;
+ // }
+ //
+ // .index_p{
+ //  color : white;
+ //  margin-top : 100px;
+ //  margin-left : 20px;
+ //  text-align : left;
+ // }
+ //
+ // .index_p h1{
+ //  font-size : 25px;
+ // }
+ //
+ // .index_p h4{
+ //  margin-top : 20px;
+ //  font-size : 15px;
+ // }
+ //
+ // .wrapper_search {
+ //  background-color : #f7f7f7 ;
+ // }
+ //
+ // .search_input {
+ //  padding-top : 20px;
+ // }
+ //
+ // .city {
+ //  width : 85%;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .button {
+ //  width : 50px;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .search_best {
+ //  display : none;
+ // }
+ //
+ // .guide_section {
+ //  width : 100%;
+ //  padding-top : 40px;
+ // }
+ //
+ // .guide_section h2 {
+ //  font-size : 28px ;
+ //  margin-bottom : 15px;
+ // }
+ //
+ // .guide_section > h4 {
+ //  font-size : 17px;
+ //  margin-bottom : 30px;
+ // }
+ //
+ // .guide_grid .item {
+ //   width : 50%;
+ //   height : 280px;
+ //   padding : 0px;
+ //  }
+ //
+ // .guide_grid .item_2{
+ //  width : 50%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .guide_grid .item_3 {
+ //  width : 100%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .wrapper_section2 {
+ //  display : none;
+ // }
+ //
+ // .wrapper_section3 {
+ //  display : none;
+ // }
+ //
+ // .footer_nav li {
+ //  margin-right : 30px;
+ // }
+ //
+ //.footer_nav .service {
+ // margin-left : 30px;
+ //}
+ //
+ //.footer_nav li a {
+ // padding : 5px;
+ // display : block;
+ // font-size : 14px;
+ // color : #C5C7C9;
+ //}
+ //
+ //.footer h3 {
+ // padding-top : 20px;
+ // font-size : 14px;
+ //}
+ //}
+ //
+ //@media screen and (min-width : 350px) and (max-width : 639px) {
+ // .img_header {
+ //  height : 350px;
+ // }
+ //
+ // .basic_header {
+ //  display : none;
+ // }
+ //
+ // .mobile_header {
+ //  display : block;
+ // }
+ //
+ // .index_p{
+ //  color : white;
+ //  margin-top : 100px;
+ //  margin-left : 20px;
+ //  text-align : left;
+ // }
+ //
+ // .index_p h1{
+ //  font-size : 25px;
+ //  padding-right : 20px;
+ // }
+ //
+ // .index_p h4{
+ //  margin-top : 20px;
+ //  font-size : 15px;
+ //  padding-right : 20px;
+ // }
+ //
+ //   .wrapper_search {
+ //  background-color : #f7f7f7 ;
+ // }
+ //
+ // .search_input {
+ //  padding-top : 20px;
+ // }
+ //
+ // .city {
+ //  width : 85%;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .button {
+ //  width : 50px;
+ //  font-size : 13px;
+ //  height : 40px;
+ // }
+ //
+ // .search_best {
+ //  display : none;
+ // }
+ //
+ // .guide_section {
+ //  padding-top : 40px;
+ //  width : 100%;
+ // }
+ //
+ // .guide_section h2 {
+ //  font-size : 26px ;
+ //  margin-bottom : 15px;
+ // }
+ //
+ // .guide_section > h4 {
+ //  font-size : 16px;
+ //  margin-bottom : 30px;
+ // }
+ //
+ // .guide_grid .item {
+ //   width : 100%;
+ //   height : 280px;
+ //   padding : 0px;
+ //  }
+ //
+ // .guide_grid .item_2{
+ //  width : 100%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .guide_grid .item_3 {
+ //  width : 100%;
+ //  height : 280px;
+ //  padding : 0px;
+ // }
+ //
+ // .wrapper_section2 {
+ //  display : none;
+ // }
+ //
+ // .wrapper_section3 {
+ //  display : none;
+ // }
+ //
+ // .footer_nav li {
+ //  margin-right : 20px;
+ // }
+ //
+ //.footer_nav .service {
+ // margin-left : 20px;
+ //}
+ //
+ //.footer_nav li a {
+ // padding : 0px;
+ // display : block;
+ // font-size : 11px;
+ // color : #C5C7C9;
+ //}
+ //
+ //.footer h3 {
+ // padding-top : 20px;
+ // font-size : 13px;
+ //}
+ //}
+
+// mentoring _ process
+
+.mentoring_area {
+  margin-top : 30px;
+  display : none;
+}
+
+.mentoring_theme, .mentoring_accom {
+  display : inline-block;
+  width : 90px;
+  height : 50px;
+  border-radius: 10px;
+  background-color: #27a8e0;
+  line-height : 50px;
+  color : white;
+  text-align: center;
+  cursor : pointer;
+  margin-left : 5px;
+  margin-right : 5px;
+  margin-bottom : 15px;
+}
+
+.mentoring_radio_theme, .mentoring_radio_accom {
+  display : none;
+}
+
+.mentor_theme_group {
+  text-align : center;
+  margin-top : 20px;
+}
+
+.area_block {
+  width : 100px;
+  height : 50px;
+  border-radius : 10px;
+  background-color : #27a8e0;
+  color : white;
+  text-align : center;
+  line-height : 50px;
+  font-size : 17px;
+  display : inline-block;
+  margin-top : 20px;
+  margin-right : 15px;
+
+}
+
+label[for="mentor_period"], label[for="mentor_theme"], label[for="mentor_number"],label[for="mentor_accom"], label[for="mentor_budget"], label[for="mentor_plus"]{
+  display : block;
+  margin : 20px 0 15px 0;
+  font-size : 18px;
+}
+
+label[for="mentor_area"] {
+  margin : 10px 0 15px 0;
+  font-size : 18px;
+}
+
+// mentoring view
+
+.mentoring_all_view_div {
+  margin : 20px auto 40px;
+  width : 1020px;
+  height : 750px;
+  text-align: center;
+}
+
+.mentoring_view {
+  width : 630px;
+  height : 650px;
+  display : inline-block;
+  margin : 0;
+  float : left;
+  border-top : 3px solid #27a8e0;
+}
+
+.mentoring_view p, .chatting_view p {
+  text-align : center;
+  font-size : 20px;
+  // margin-bottom : 10px;
+}
+
+.mentoring_view h4 {
+  margin-top : 20px;
+  margin-bottom : 10px;
+}
+
+.chatting_view {
+  padding : 0px 20px;
+  //width : 360px;
+  height : 650px;
+  display : inline-block;
+  //margin : 0 0 0 25px;
+  border-top : 3px solid #27a8e0;
+}
+
+.chatting_view h5 {
+  margin-top : 20px;
+  margin-bottom : 15px;
+}
+
+ //  @media only screen and (min-device-width : 320px) and (max-device-width : 667px) { 
+ //    .img_header {
+ //   height : 350px;
+ //  }
+  
+ //  .basic_header {
+ //   display : none;
+ //  }
+  
+ //  .mobile_header {
+ //   display : block;
+ //  }
+   
+ //  .index_p{
+ //   color : white;
+ //   margin-top : 100px;
+ //   margin-left : 20px;
+ //   text-align : left;
+ //  }
+  
+ //  .index_p h1{
+ //   font-size : 25px;
+ //   padding-right : 20px;
+ //  }
+  
+ //  .index_p h4{
+ //   margin-top : 20px;
+ //   font-size : 15px;
+ //   padding-right : 20px;
+ //  }
+  
+ //    .wrapper_search {
+ //   background-color : #f7f7f7 ;
+ //  }
+  
+ //  .search_input {
+ //   padding-top : 20px;
+ //  }
+  
+ //  .city {
+ //   width : 85%;
+ //   font-size : 13px;
+ //   height : 40px;
+ //  }
+  
+ //  .button {
+ //   width : 50px;
+ //   font-size : 13px;
+ //   height : 40px;
+ //  }
+  
+ //  .search_best {
+ //   display : none;
+ //  }
+  
+ //  .guide_section {
+ //   padding-top : 40px;
+ //   width : 100%;
+ //  }
+  
+ //  .guide_section h2 {
+ //   font-size : 26px ;
+ //   margin-bottom : 15px;
+ //  }
+ 
+ //  .guide_section > h4 {
+ //   font-size : 16px;
+ //   margin-bottom : 30px;
+ //  }
+  
+ //  .guide_grid .item {
+ //    width : 100%;
+ //    height : 280px;
+ //    padding : 0px;
+ //   }
+   
+ //  .guide_grid .item_2{
+ //   width : 100%;
+ //   height : 280px;
+ //   padding : 0px;
+ //  }
+  
+ //  .guide_grid .item_3 {
+ //   width : 100%;
+ //   height : 280px;
+ //   padding : 0px;
+ //  }
+
+ //  .wrapper_section2 {
+ //   display : none;
+ //  }
+  
+ //  .wrapper_section3 {
+ //   display : none;
+ //  }
+  
+ //  .footer_nav li {
+ //   margin-right : 20px;
+ //  }
+ 
+ // .footer_nav .service {
+ //  margin-left : 20px;
+ // }
+ 
+ // .footer_nav li a {
+ //  padding : 0px;
+ //  display : block;
+ //  font-size : 11px;
+ //  color : #C5C7C9;
+ // }
+ 
+ // .footer h3 {
+ //  padding-top : 20px;
+ //  font-size : 13px;
+ // }
+  
+ // }
+ 
+ // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+ //  .nav li {
+ //   margin-left : 0px;
+ //  }
+  
+ //  .mobile_header {
+ //   display : none;
+ //  }
+   
+ //  .nav li a.nav_enroll_mentor{
+ //   padding-left : 15px;
+ //   padding-right : 15px;
+ //  }
+   
+ //  .img_header {
+ //   height : 500px;
+ //  }
+   
+ //  .index_p{
+ //   color : white;
+ //   margin : 120px auto 220px auto;
+ //   text-align : center;
+ //  }
+  
+ //  .index_p h1{
+ //   font-size : 36px;
+ //  }
+  
+ //  .index_p h4{
+ //   margin-top : 30px;
+ //   font-size : 16px;
+ //  }
+  
+ //  .mentor_section{
+ //   width : 692px;
+ //   padding-top : 30px;
+ //   padding-bottom : 30px;
+ //  }
+  
+ //   #mentor_img {
+ //   width : 442px;
+ //   height : 250px;
+ //  }
+  
+ //  .mentor_section .enroll_Info{
+ //   width : 250px;
+ //   height : 250px;
+ //  }
+ 
+ //  .mentor_section h2 {
+ //   padding : 40px 20px 10px 20px;
+ //   line-height : 30px;
+ //   font-size : 22px;
+ //  }
+  
+ //  .mentor_section h4 {
+ //   padding : 0px 40px 30px 40px;
+ //   font-size : 15px;
+ //  }
+  
+ //  .guide_section {
+ //   width : 692px;
+ //  }
+ 
+ //  .guide_grid .item {
+ //   width : 50%;
+ //  }
+ 
+ //  .guide_grid .item_2{
+ //  width : 50%;
+ //  }
+ 
+ //  .guide_grid .item_3 {
+ //   width : 100%;
+ //  }
+ 
+ //  .guide_grid img {
+ //   width : 100%;
+ //   height : 300px;
+ //  }
+  
+ //  .comm_section h2 {
+ //   font-size : 44px;
+ //   margin-bottom : 20px;
+ //  }
+ 
+ //  .comm_section h4 {
+ //   font-size : 20px;
+ //  } 
+ // }

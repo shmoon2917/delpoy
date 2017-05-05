@@ -1,0 +1,61 @@
+<section>
+  <div class="wrapper_login_section">
+    <div class="login_icon">
+      <%= image_tag("logo.png")  %>
+    </div>
+    
+    <div class="login">
+
+      <h2>다른 계정으로 로그인</h2>
+      <%- if devise_mapping.omniauthable? %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to omniauth_authorize_path(resource_name, provider), class:'login_facebook' do %>
+                  <%= image_tag "facebook_icon.png", class:"f&g_icon" %>
+                  <%= '<span>페이스북 계정으로 로그인</span>'.html_safe %>
+              <% end %>
+          <% end -%>
+      <% end -%>
+
+
+
+
+      <a class="login_google">
+        <%= image_tag("google_icon.png", class:'f&g_icon') %>
+        <span>구글 계정으로 로그인</span>
+      </a>    
+      <h2 class="h2_email_login">이메일 로그인</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, placeholder: '이메일을 입력하세요',class: 'login_email' %>
+      </div>
+    
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "off", placeholder: '비밀번호를 입력하세요.' ,class:'login_pw' %>
+      </div>
+      
+      <div class="login_forgot_pw">
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "비밀번호가 생각나지 않으신가요?", new_password_path(resource_name) %><br />
+      <% end %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit "로그인", class: 'login_submit' %>
+      </div>
+      
+      <div class="login_sign_up">
+        <span>델포이 계정이 아직 없으신가요?</span>
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to "회원가입", new_registration_path(resource_name), class: 'login_sign_up_button' %><br />
+        <% end %>
+      </div>
+      
+      <% end %>
+    </div>
+  </div>
+</section>
+
+
+
+
+
